@@ -41,7 +41,7 @@ export default function InvestorConnectPage() {
           </h1>
           <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed font-light">
             PanditaAI is bridging the gap between digital cognition and physical
-            actuation. We are building the marketplace where Kaushals — physical AI skills — are
+            actuation. We are building the marketplace where physical AI skills are
             traded for the next billion robotic workers.
           </p>
         </div>

@@ -238,7 +238,7 @@ export default function PitchDeckPage() {
             </div>
             <div className="flex flex-col justify-center">
               <p className="text-on-surface-variant text-sm italic mb-6 leading-relaxed">
-                &ldquo;PanditaAI is not just building robots; they are building the marketplace for Kaushals — the tradeable skills that allow robots to master the physical universe. This is the last frontier of AI.&rdquo;
+                &ldquo;PanditaAI is not just building robots; they are building the marketplace for physical skills — the tradeable abilities that allow robots to master the physical universe. This is the last frontier of AI.&rdquo;
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary-container"></div>

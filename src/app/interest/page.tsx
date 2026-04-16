@@ -40,7 +40,7 @@ export default function InterestPage() {
             <span className="text-primary">PHYSICAL INTELLIGENCE.</span>
           </h1>
           <p className="max-w-xl text-on-surface-variant font-body text-lg leading-relaxed">
-            PanditaAI is building the foundational marketplace for trading Kaushals — physical
+            PanditaAI is building the foundational marketplace for trading physical
             AI skills for the next generation of robotics. We are seeking
             partners to deploy, develop, and redefine the physical world.
           </p>
@@ -83,7 +83,7 @@ export default function InterestPage() {
               </h3>
             </div>
             <div className="font-body text-sm text-on-surface-variant">
-              Deploy PanditaAI&apos;s end-to-end Kaushal delivery and sensory fusion
+              Deploy PanditaAI&apos;s end-to-end physical skill delivery and sensory fusion
               stack on your hardware.
             </div>
           </div>

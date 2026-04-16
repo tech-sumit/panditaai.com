@@ -41,7 +41,7 @@ export default function AboutPage() {
             INTELLIGENCE.
           </h1>
           <p className="text-on-surface-variant text-xl leading-relaxed max-w-2xl font-light">
-            PANDITAAI is the marketplace where Kaushals — physical AI skills — are
+            PANDITAAI is the marketplace where physical AI skills are
             traded. Born from the labs of Pandit.ai, we are defining how
             machines acquire, trade, and master expertise in the real world.
           </p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
             <p>
               PanditaAI was conceptualized as the marketplace extension of
               the Pandit.ai framework. While Pandit provides the cognitive
-              reasoning, PanditaAI provides the marketplace for trading Kaushals — physical skill assets.
+              reasoning, PanditaAI provides the marketplace for trading physical skills.
             </p>
             <p>
               Our origin story begins with a simple question: &ldquo;Why can AI
@@ -141,7 +141,7 @@ export default function AboutPage() {
               NEURAL SYNERGY
             </h3>
             <p className="text-on-surface-variant font-body text-sm leading-relaxed">
-              PanditaAI isn&apos;t just a marketplace—it&apos;s a kinetic OS for trading Kaushals. We
+              PanditaAI isn&apos;t just a marketplace—it&apos;s a kinetic OS for trading physical skills. We
               integrate directly with existing hardware to bypass the
               simulation-to-reality gap.
             </p>
@@ -165,7 +165,7 @@ export default function AboutPage() {
             <div className="bg-surface-container-high p-8 group cursor-pointer border-l-4 border-transparent hover:border-primary transition-all">
               <div className="flex justify-between items-center">
                 <h4 className="font-headline font-bold text-lg uppercase tracking-wider">
-                  What constitutes a &ldquo;Kaushal&rdquo; in the PanditaAI
+                  What constitutes a &ldquo;Physical Skill&rdquo; in the PanditaAI
                   framework?
                 </h4>
                 <span className="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">
@@ -173,7 +173,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
-                A Kaushal is a quantized unit of kinetic behavior — a tradeable skill asset. From simple
+                A physical skill is a quantized unit of kinetic behavior — a tradeable skill asset. From simple
                 &ldquo;Pick and Place&rdquo; to complex &ldquo;Micro-Solder,
                 &rdquo; these are modular neural weights that can be purchased on PanditaAI and hot-swapped
                 onto any compatible hardware platform.

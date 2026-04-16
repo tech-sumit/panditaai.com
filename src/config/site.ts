@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "PANDITAAI",
-  tagline: "The Kaushal Marketplace",
+  tagline: "The Physical Skills Marketplace",
   description:
-    "The open marketplace where Kaushals — physical AI skills trained in NVIDIA Isaac Sim — are traded, deployed, and executed on robots.",
+    "The open marketplace where physical AI skills trained in NVIDIA Isaac Sim are traded, deployed, and executed on robots.",
   url: "https://panditaai.com",
   nav: [
     { label: "Home", href: "/" },

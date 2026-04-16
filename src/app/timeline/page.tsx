@@ -273,7 +273,7 @@ export default function TimelinePage() {
             </h2>
             <p className="text-on-surface-variant text-xl max-w-3xl leading-relaxed mb-12">
               By EOY 2026, PanditaAI will function as the orchestration layer
-              for a decentralized Kaushal trading network. We
+              for a decentralized physical skill trading network. We
               transition from a development platform to the global marketplace for
               physical AI skills.
             </p>

@@ -22,10 +22,10 @@ export default function HomePage() {
             </span>
           </div>
           <h1 className="text-6xl md:text-9xl font-black font-headline tracking-tighter leading-none mb-6 text-white uppercase italic">
-            The Kaushal <br /> <span className="text-primary not-italic">Marketplace</span>
+            The Kaushal<br />(Skill) <span className="text-primary not-italic">Marketplace</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-light tracking-wide mb-12">
-            The open marketplace where Kaushals — physical AI skills trained in NVIDIA Isaac Sim — are traded,
+            The open marketplace where physical AI skills trained in NVIDIA Isaac Sim are traded,
             deployed, and executed on robots. PanditaAI is expertise, delivered.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -56,13 +56,13 @@ export default function HomePage() {
       <section className="bg-primary-container py-4 overflow-hidden whitespace-nowrap border-y border-primary">
         <div className="flex animate-marquee items-center gap-12">
           <span className="text-on-primary-fixed font-black text-sm uppercase tracking-[0.4em] font-headline">
-            Seed Round Open // $2.5M Target // Kaushal Marketplace // Deployment Ready
+            Seed Round Open // $2.5M Target // Physical Skills Marketplace // Deployment Ready
           </span>
           <span className="text-on-primary-fixed font-black text-sm uppercase tracking-[0.4em] font-headline">
-            Seed Round Open // $2.5M Target // Kaushal Marketplace // Deployment Ready
+            Seed Round Open // $2.5M Target // Physical Skills Marketplace // Deployment Ready
           </span>
           <span className="text-on-primary-fixed font-black text-sm uppercase tracking-[0.4em] whitespace-nowrap font-headline">
-            Seed Round Open // $2.5M Target // Kaushal Marketplace // Deployment Ready
+            Seed Round Open // $2.5M Target // Physical Skills Marketplace // Deployment Ready
           </span>
         </div>
       </section>
@@ -75,8 +75,8 @@ export default function HomePage() {
                 The End of <br /> <span className="text-primary">Hard-Coded</span> <br /> Robotics.
               </h2>
               <p className="text-on-surface-variant text-lg mb-12 leading-relaxed">
-                Robots today are brittle. PanditaAI replaces rigid code with <b>Downloadable Kaushals</b>. Each Kaushal is a
-                pre-trained neural skill optimized for specific physical tasks, from warehouse picking to surgical
+                Robots today are brittle. PanditaAI replaces rigid code with <b>Downloadable Physical Skills</b>. Each physical skill is a
+                pre-trained neural module optimized for specific physical tasks, from warehouse picking to surgical
                 assistance.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -304,7 +304,7 @@ export default function HomePage() {
             Fuel the Physical <br /> Revolution.
           </h2>
           <p className="max-w-2xl mx-auto text-on-primary-fixed/80 text-xl font-medium mb-16">
-            PanditaAI is raising a Seed round to scale the Kaushal marketplace and launch our simulation-as-a-service backend.
+            PanditaAI is raising a Seed round to scale the physical skills marketplace and launch our simulation-as-a-service backend.
             Join the leaderboard of Embodied AI infrastructure.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">

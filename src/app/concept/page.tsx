@@ -29,7 +29,7 @@ export default function ConceptPage() {
           <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
             We are transitioning from static automation to dynamic physical
             intelligence. PanditaAI defines the blueprint for modular,
-            transferable, and deployable Kaushals — robotic expertise you can trade.
+            transferable, and deployable physical skills — robotic expertise you can trade.
           </p>
         </div>
         <div className="absolute bottom-12 right-12 flex flex-col items-end gap-2">
@@ -109,7 +109,7 @@ export default function ConceptPage() {
       <section className="py-32 px-12">
         <div className="text-center mb-24">
           <h2 className="font-headline text-5xl font-bold tracking-tight mb-6">
-            WHAT IS A KAUSHAL?
+            WHAT IS A PHYSICAL SKILL?
           </h2>
           <div className="w-24 h-[2px] bg-primary mx-auto mb-12" />
         </div>
@@ -313,7 +313,7 @@ export default function ConceptPage() {
       <section className="py-32 px-12 bg-surface-container-low border-y border-outline-variant/10">
         <div className="text-center max-w-3xl mx-auto mb-24">
           <h2 className="font-headline text-5xl font-bold tracking-tight uppercase mb-6 italic">
-            The Kaushal Marketplace.
+            The Physical Skills Marketplace.
           </h2>
           <p className="text-on-surface-variant leading-relaxed">
             A global repository of physical intelligence. Developers build and
@@ -352,7 +352,7 @@ export default function ConceptPage() {
                 Benchmark
               </h4>
               <p className="text-on-surface-variant text-sm">
-                We run your Kaushal against the &quot;PanditaAI Standard&quot; to
+                We run your physical skill against the &quot;PanditaAI Standard&quot; to
                 assign a reliability rating.
               </p>
             </div>

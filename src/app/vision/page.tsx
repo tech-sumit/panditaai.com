@@ -206,9 +206,9 @@ export default function VisionPage() {
               friction, collaboration, and rapid iteration.&rdquo;
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              PanditaAI isn&apos;t just a platform; it&apos;s a protocol for trading Kaushals. We
+              PanditaAI isn&apos;t just a platform; it&apos;s a protocol for trading physical skills. We
               believe the future of robotics shouldn&apos;t be controlled by a
-              single factory. By opening our Kaushal-native infrastructure to
+              single factory. By opening our skill-native infrastructure to
               developers worldwide, we create a compound effect of utility that
               no siloed company can match.
             </p>
@@ -242,7 +242,7 @@ export default function VisionPage() {
                 <p className="text-on-surface-variant text-sm">
                   Becoming the default layer for robot skill distribution means
                   every hardware OEM becomes a PanditaAI partner. We are the
-                  &lsquo;Intel Inside&rsquo; for the Kaushal economy.
+                  &lsquo;Intel Inside&rsquo; for the physical skills economy.
                 </p>
               </div>
             </div>
@@ -290,8 +290,8 @@ export default function VisionPage() {
           </h2>
           <p className="text-2xl text-on-surface-variant font-light mb-16 leading-relaxed">
             By 2030, the question won&apos;t be &ldquo;What can your robot
-            do?&rdquo; but &ldquo;How many Kaushals does it run?&rdquo; PanditaAI is
-            standardizing the physical world, one Kaushal at a time.
+            do?&rdquo; but &ldquo;How many physical skills does it run?&rdquo; PanditaAI is
+            standardizing the physical world, one physical skill at a time.
           </p>
           <Link
             href="/interest"

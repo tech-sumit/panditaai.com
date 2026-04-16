@@ -19,7 +19,7 @@ export default function PlatformPage() {
             <span className="text-primary">AI ARCHITECTURE</span>
           </h1>
           <p className="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
-            PanditaAI is the unified substrate for trading Kaushals. We bridge the gap
+            PanditaAI is the unified substrate for trading physical skills. We bridge the gap
             between high-level creator logic and edge-device execution through a
             distributed, high-performance telemetry pipeline.
           </p>
@@ -93,7 +93,7 @@ export default function PlatformPage() {
                       Publish &amp; Version
                     </h4>
                     <p className="text-on-surface-variant text-sm">
-                      Push to the global Kaushal Registry. Every publish generates
+                      Push to the global Physical Skills Registry. Every publish generates
                       a unique cryptographic hash for runtime verification.
                     </p>
                   </div>

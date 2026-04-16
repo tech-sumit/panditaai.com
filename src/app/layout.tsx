@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PANDITAAI | The Kaushal Marketplace",
+  title: "PANDITAAI | The Physical Skills Marketplace",
   description:
-    "The open marketplace where Kaushals — physical AI skills trained in NVIDIA Isaac Sim — are traded, deployed, and executed on robots.",
+    "The open marketplace where physical AI skills trained in NVIDIA Isaac Sim are traded, deployed, and executed on robots.",
   keywords: [
     "physical AI",
     "robotics",
