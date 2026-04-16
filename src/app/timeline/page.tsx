@@ -81,8 +81,8 @@ export default function TimelinePage() {
               <div className="relative w-full aspect-video overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
-                  alt="Close-up of a high-tech motherboard with glowing blue and orange circuits in a dark laboratory setting"
-                  src="/images/timeline-motherboard.webp"
+                  alt="Humanoid robot prototype standing centred in a motion-capture studio surrounded by tracking cameras"
+                  src="/images/timeline-humanoid-prototype.webp"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
                 <div className="absolute bottom-8 left-8 flex gap-2">
@@ -123,8 +123,8 @@ export default function TimelinePage() {
               <div className="relative w-full aspect-video overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
-                  alt="High-resolution digital interface showing complex data nodes and neural network pathways in glowing orange and white"
-                  src="/images/timeline-neural.webp"
+                  alt="100 identical humanoid robots arranged in a grid inside NVIDIA Isaac Sim, each wrapped in an amber wireframe training bound"
+                  src="/images/sim-parallel-army.webp"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
                 <div className="absolute bottom-8 left-8 flex gap-2">
@@ -216,8 +216,8 @@ export default function TimelinePage() {
               <div className="relative w-full aspect-video overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
-                  alt="Industrial robotic arm working on a sophisticated carbon fiber structure with bright spotlighting and sparks"
-                  src="/images/timeline-industrial.webp"
+                  alt="Three different humanoid robots from different OEMs receiving the same skill file from an overhead registry"
+                  src="/images/vision-open-ecosystem.webp"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
                 <div className="absolute bottom-8 right-8 text-right">

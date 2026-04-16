@@ -9,9 +9,9 @@ export default function ConceptPage() {
       <header className="relative min-h-screen flex flex-col justify-center px-12 pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            alt="A cinematic wide shot of a futuristic robotics lab with dark atmospheric lighting, orange laser grids, and mechanical arms in the background."
-            className="w-full h-full object-cover opacity-20 grayscale brightness-50"
-            src="/images/concept-hero.webp"
+            alt="Skill transfer between human expert in motion-capture suit and humanoid robot — the core concept of PanditaAI"
+            className="w-full h-full object-cover opacity-30 brightness-75"
+            src="/images/hero-mocap-mirror.webp"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
         </div>
@@ -32,12 +32,12 @@ export default function ConceptPage() {
         </div>
         <div className="absolute bottom-12 right-12 flex flex-col items-end gap-2">
           <div className="text-primary font-headline text-xs tracking-widest uppercase">
-            System Status
+            Status
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="font-headline text-sm font-bold tracking-widest">
-              ORBITAL COMMAND ACTIVE
+              CONCEPT · PROTOTYPING
             </span>
           </div>
         </div>
@@ -81,9 +81,9 @@ export default function ConceptPage() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <img
-              alt="Abstract macro shot of futuristic electronic circuits with glowing orange lines and sharp geometric shadows to represent fragmented technology."
-              className="w-full grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
-              src="/images/fragmented-circuits.webp"
+              alt="An elderly master chef's weathered hands holding a Japanese gyuto knife mid-slice, with amber data particles rising as the skill is digitized"
+              className="w-full brightness-90 hover:brightness-110 transition-all duration-700"
+              src="/images/concept-expert-hands.webp"
             />
             <div className="absolute top-8 right-8 p-4 bg-surface-container-high/80 backdrop-blur-md">
               <span className="material-symbols-outlined text-primary mb-2 block">
@@ -163,9 +163,9 @@ export default function ConceptPage() {
             {/* Large Feature */}
             <div className="col-span-12 md:col-span-8 bg-surface-container-low relative overflow-hidden flex flex-col justify-end p-12">
               <img
-                alt="Digital twin representation of a robotic arm in a simulated blue-tinted warehouse environment with data overlays."
-                className="absolute inset-0 w-full h-full object-cover opacity-30 hover:scale-105 transition-transform duration-[2000ms]"
-                src="/images/sim-warehouse.webp"
+                alt="Top-down view of 100 identical humanoid robots training in parallel inside NVIDIA Isaac Sim, each in an orange wireframe bounding box"
+                className="absolute inset-0 w-full h-full object-cover opacity-50 hover:scale-105 transition-transform duration-[2000ms]"
+                src="/images/sim-parallel-army.webp"
               />
               <div className="relative z-10">
                 <div className="font-headline text-primary text-xs tracking-widest uppercase mb-4">
@@ -373,13 +373,22 @@ export default function ConceptPage() {
           BUILD THE FUTURE <br />
           OF MOTION.
         </h2>
+        <p className="max-w-xl mx-auto text-on-surface-variant text-lg mb-12">
+          The marketplace isn&apos;t live yet — we&apos;re still in prototyping. If the concept resonates, join as an early partner or investor.
+        </p>
         <div className="flex flex-col md:flex-row gap-6 justify-center">
-          <button className="bg-primary-container text-on-primary-fixed font-headline font-bold uppercase text-lg px-12 py-5 tracking-[0.2em] hover:scale-105 duration-300">
-            Start Training
-          </button>
-          <button className="border-2 border-outline-variant/30 text-white font-headline font-bold uppercase text-lg px-12 py-5 tracking-[0.2em] hover:bg-white/5 duration-300">
-            Read the Whitepaper
-          </button>
+          <Link
+            href="/interest"
+            className="bg-primary-container text-on-primary-fixed font-headline font-bold uppercase text-lg px-12 py-5 tracking-[0.2em] hover:scale-105 duration-300"
+          >
+            Register Interest
+          </Link>
+          <Link
+            href="/pitch-deck"
+            className="border-2 border-outline-variant/30 text-white font-headline font-bold uppercase text-lg px-12 py-5 tracking-[0.2em] hover:bg-white/5 hover:border-primary hover:text-primary duration-300"
+          >
+            Read the Pitch
+          </Link>
         </div>
       </section>
     </>

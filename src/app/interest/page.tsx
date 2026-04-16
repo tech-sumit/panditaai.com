@@ -406,9 +406,9 @@ export default function InterestPage() {
         <div className="relative overflow-hidden aspect-video bg-surface-container-low group">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700 scale-110 group-hover:scale-100"
-            alt="Cinematic close-up of high-precision robotic arm joints with glowing orange internal lights in a dark futuristic laboratory"
-            src="/images/interest-robotic-joints.webp"
+            className="w-full h-full object-cover brightness-90 group-hover:brightness-110 transition-all duration-700 scale-105 group-hover:scale-100"
+            alt="Expert hand in a VR teleoperation glove with tracking markers casting amber data trails as motion is captured"
+            src="/images/interest-vr-capture.webp"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
           <div className="absolute bottom-8 left-8">

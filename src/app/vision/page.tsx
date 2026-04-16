@@ -120,12 +120,15 @@ export default function VisionPage() {
                 01
               </div>
               <img
-                className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale"
-                alt="Detailed view of a metallic robotic hand performing a precise industrial assembly task under spotlight"
-                src="/images/robotic-hand-assembly.webp"
+                className="absolute inset-0 w-full h-full object-cover opacity-30"
+                alt="Three different humanoid robots receiving the same glowing amber skill file from an overhead registry node"
+                src="/images/vision-open-ecosystem.webp"
               />
               <h3 className="font-headline text-3xl font-bold mb-4 relative z-10">
                 Neural Skill Registry
+                <span className="block text-[10px] font-bold tracking-[0.3em] text-primary/80 mt-2">
+                  PLANNED · 2027
+                </span>
               </h3>
               <p className="text-on-surface-variant relative z-10">
                 A centralized, high-fidelity repository of neural-weighted
@@ -190,9 +193,9 @@ export default function VisionPage() {
                 </span>
               </div>
               <img
-                className="w-full h-full object-cover mix-blend-overlay"
-                alt="Abstract macro shot of a blue and orange circuit board representing high-speed data transmission"
-                src="/images/data-transmission.webp"
+                className="w-full h-full object-cover"
+                alt="Glowing amber skill packet flowing along circuit paths from a cloud-trained policy to a humanoid robot silhouette"
+                src="/images/skill-packet-deploy.webp"
               />
             </div>
           </div>

@@ -10,9 +10,9 @@ export default function PitchDeckPage() {
         <div className="absolute inset-0 z-0 opacity-40">
           <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
           <img
-            className="w-full h-full object-cover grayscale contrast-125"
-            alt="Cinematic shot of a humanoid robotic hand interacting with a neural network holographic interface in a dark, high-tech laboratory setting."
-            src="/images/pitch-hero.webp"
+            className="w-full h-full object-cover contrast-110"
+            alt="Human martial artist in motion-capture suit and a humanoid robot mirroring the same strike — the core PanditaAI thesis"
+            src="/images/hero-mocap-mirror.webp"
           />
         </div>
         <div className="relative z-10 max-w-5xl">
@@ -136,9 +136,9 @@ export default function PitchDeckPage() {
           </div>
           <div className="md:w-1/2 h-full min-h-[500px] relative">
             <img
-              className="w-full h-full object-cover grayscale"
-              alt="Detailed close-up of a sophisticated robotic arm with carbon fiber textures performing a delicate precision assembly task in a dimly lit factory."
-              src="/images/pitch-robotic-arm.webp"
+              className="w-full h-full object-cover"
+              alt="Humanoid robot gripper holding a chef knife mid-cut over a wooden board in a dark professional kitchen"
+              src="/images/robot-chef-knife.webp"
             />
             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
           </div>

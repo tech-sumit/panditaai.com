@@ -111,9 +111,9 @@ export default function InvestorConnectPage() {
           </div>
           <div className="bg-surface-container-low p-0 aspect-square overflow-hidden border-l border-r border-t border-outline-variant/10">
             <img
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              alt="Futuristic robotic arm performing precise assembly tasks in a dark, high-tech industrial laboratory with orange accent lighting"
-              src="/images/pitch-robotic-arm.webp"
+              className="w-full h-full object-cover brightness-90 hover:brightness-110 transition-all duration-700"
+              alt="Humanoid robot gripper performing a human-trained chef knife cut in a professional kitchen"
+              src="/images/robot-chef-knife.webp"
             />
           </div>
         </div>

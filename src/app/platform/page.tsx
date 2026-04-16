@@ -11,7 +11,7 @@ export default function PlatformPage() {
           <div className="flex items-center gap-3 mb-6">
             <span className="w-3 h-3 bg-primary animate-pulse" />
             <span className="font-headline text-primary tracking-[0.3em] uppercase text-xs font-bold">
-              Orbital Command Unit
+              Concept Architecture · Prototype
             </span>
           </div>
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tight leading-[0.9] mb-8">
@@ -96,9 +96,12 @@ export default function PlatformPage() {
               </div>
             </div>
             <div className="mt-12">
-              <button className="border border-outline-variant/30 text-primary px-8 py-3 font-headline text-xs font-bold uppercase tracking-widest hover:bg-primary/10 transition-all">
-                Launch Studio
-              </button>
+              <Link
+                href="/interest"
+                className="inline-block border border-outline-variant/30 text-primary px-8 py-3 font-headline text-xs font-bold uppercase tracking-widest hover:bg-primary/10 transition-all"
+              >
+                Register as an Expert
+              </Link>
             </div>
             <div className="absolute -right-20 -bottom-20 opacity-5 group-hover:opacity-10 transition-opacity">
               <span className="material-symbols-outlined text-[300px]">
@@ -152,9 +155,9 @@ export default function PlatformPage() {
           {/* Marketplace Preview Skill Card */}
           <div className="col-span-12 md:col-span-4 bg-surface-container-low p-6">
             <h3 className="font-headline font-bold uppercase text-xs text-on-surface-variant mb-6 flex justify-between items-center">
-              Marketplace Preview
+              Skill Card · Sample Design
               <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 tracking-tighter">
-                LIVE FEED
+                PROTOTYPE
               </span>
             </h3>
             <div className="bg-surface p-4 border-l border-primary/40 group hover:bg-surface-container-highest transition-colors">
@@ -185,11 +188,11 @@ export default function PlatformPage() {
               </div>
               <div className="flex justify-between items-center pt-4 border-t border-outline-variant/10">
                 <span className="text-xs font-headline text-on-surface-variant uppercase tracking-widest">
-                  Pricing TBD · Early Access
+                  Pricing TBD · Not Yet Live
                 </span>
-                <button className="text-[10px] font-headline font-bold uppercase tracking-widest text-primary">
-                  Preview
-                </button>
+                <span className="text-[10px] font-headline font-bold uppercase tracking-widest text-primary/50">
+                  Sample
+                </span>
               </div>
             </div>
           </div>
@@ -234,9 +237,9 @@ export default function PlatformPage() {
             <div className="p-8 md:p-12 flex flex-col justify-center items-center text-center relative overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale"
-                alt="Technical schematic of a circuit board and microchips with blue glowing light paths and futuristic digital interface elements"
-                src="/images/platform-schematic.webp"
+                className="absolute inset-0 w-full h-full object-cover opacity-40"
+                alt="Amber skill file binary streaming through circuit traces from a training cloud to a humanoid robot — runtime deployment"
+                src="/images/skill-packet-deploy.webp"
               />
               <div className="relative z-10">
                 <div className="mb-6 inline-block p-4 border border-primary">
@@ -341,9 +344,12 @@ export default function PlatformPage() {
             >
               Investor Connect
             </Link>
-            <button className="border-2 border-on-primary-fixed text-on-primary-fixed px-12 py-5 font-headline font-bold uppercase text-sm tracking-widest hover:bg-on-primary-fixed hover:text-primary transition-colors">
-              Documentation
-            </button>
+            <Link
+              href="/interest"
+              className="border-2 border-on-primary-fixed text-on-primary-fixed px-12 py-5 font-headline font-bold uppercase text-sm tracking-widest hover:bg-on-primary-fixed hover:text-primary transition-colors text-center"
+            >
+              Register Interest
+            </Link>
           </div>
         </div>
       </section>

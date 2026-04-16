@@ -11,9 +11,9 @@ export default function HomePage() {
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-40 brightness-50"
-            alt="Cinematic shot of a robotic arm performing high-precision movements in a high-tech lab with glowing amber lighting and orange sparks"
-            src="/images/hero-robotics-lab.webp"
+            className="w-full h-full object-cover opacity-50 brightness-75"
+            alt="Human martial artist in motion-capture suit with a humanoid robot mirroring the identical strike pose — skill transfer concept"
+            src="/images/hero-mocap-mirror.webp"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         </div>
@@ -21,7 +21,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 bg-surface-container-highest px-4 py-1 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold font-headline text-primary">
-              Live Training Systems Active
+              Concept Phase · Prototyping 2026
             </span>
           </div>
           <h1 className="text-6xl md:text-9xl font-black font-headline tracking-tighter leading-[1.05] mb-6 text-white uppercase italic">
@@ -65,16 +65,24 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Link
-              href="/platform"
+              href="/concept"
               className="w-full md:w-auto bg-primary-container text-on-primary-fixed px-10 py-5 font-black uppercase tracking-[0.2em] text-sm hover:translate-y-[-2px] transition-transform"
             >
-              Explore The Marketplace
+              See How It Works
             </Link>
-            <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest font-headline text-white/50">
-              <span>Prototyping Phase</span>
-              <span className="w-1 h-1 bg-outline-variant rounded-full" />
-              <span>NVIDIA Inception Member</span>
-            </div>
+            <Link
+              href="/pitch-deck"
+              className="w-full md:w-auto border border-outline-variant/30 text-white px-10 py-5 font-black uppercase tracking-[0.2em] text-sm hover:border-primary hover:text-primary transition-colors"
+            >
+              Read the Pitch
+            </Link>
+          </div>
+          <div className="mt-10 flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-widest font-headline text-white/40">
+            <span>Pre-Revenue</span>
+            <span className="w-1 h-1 bg-outline-variant rounded-full" />
+            <span>NVIDIA Inception Applicant</span>
+            <span className="w-1 h-1 bg-outline-variant rounded-full" />
+            <span>Seed Open</span>
           </div>
         </div>
         <div className="absolute bottom-10 left-12 hidden md:flex flex-col gap-4">
@@ -83,7 +91,7 @@ export default function HomePage() {
             className="text-[10px] tracking-widest uppercase text-primary/70 rotate-180"
             style={{ writingMode: "vertical-rl" }}
           >
-            Telemetry Scroll
+            Scroll
           </span>
         </div>
       </header>
@@ -151,7 +159,7 @@ export default function HomePage() {
             </span>
             <h2 className="text-4xl md:text-5xl font-black font-headline uppercase">The Core Pipeline</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-outline-variant/20">
+          <div className="pipeline-rail grid grid-cols-1 md:grid-cols-5 gap-px bg-outline-variant/20">
             <div className="bg-surface p-8 group hover:bg-surface-container-low transition-colors duration-500">
               <div className="text-primary text-4xl font-black mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
                 01
@@ -215,11 +223,11 @@ export default function HomePage() {
                   <span className="text-[10px] font-bold text-primary uppercase mb-1">Industrial Edge</span>
                   <span className="text-sm font-bold uppercase font-headline">NVIDIA IGX Platform</span>
                 </div>
-                <div className="col-span-2 aspect-[21/9] bg-surface-container-highest flex items-center justify-center">
+                <div className="col-span-2 aspect-[21/9] bg-surface-container-highest flex items-center justify-center overflow-hidden">
                   <img
-                    className="w-full h-full object-cover grayscale opacity-50"
-                    alt="Top-down view of a sophisticated green circuit board with glowing copper paths and microchips under neon orange accent light"
-                    src="/images/jetson-orin-lineup.webp"
+                    className="w-full h-full object-cover"
+                    alt="NVIDIA Jetson AGX Orin module mounted inside a humanoid robot's carbon-fibre compute bay"
+                    src="/images/jetson-in-humanoid.webp"
                   />
                 </div>
               </div>
@@ -239,7 +247,7 @@ export default function HomePage() {
                   >
                     check_circle
                   </span>
-                  NVIDIA Inception Member
+                  NVIDIA Inception Applicant
                 </li>
                 <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest">
                   <span
@@ -282,7 +290,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary transition-all group">
+            <div className="skill-card bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary/80 group">
               <span
                 className="material-symbols-outlined text-4xl text-primary mb-8"
                 style={{ fontVariationSettings: "'FILL' 0" }}
@@ -294,7 +302,7 @@ export default function HomePage() {
                 Human training ~10 years. Robot training in sim ~48 hours. Transfer to a new humanoid ~2 hours.
               </p>
             </div>
-            <div className="bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary transition-all group">
+            <div className="skill-card bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary/80 group">
               <span
                 className="material-symbols-outlined text-4xl text-primary mb-8"
                 style={{ fontVariationSettings: "'FILL' 0" }}
@@ -306,7 +314,7 @@ export default function HomePage() {
                 Human training ~3 years. Robot training in sim ~24 hours. Transfer to a new humanoid ~1 hour.
               </p>
             </div>
-            <div className="bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary transition-all group">
+            <div className="skill-card bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary/80 group">
               <span
                 className="material-symbols-outlined text-4xl text-primary mb-8"
                 style={{ fontVariationSettings: "'FILL' 0" }}
