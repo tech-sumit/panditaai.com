@@ -13,7 +13,7 @@ export default function TimelinePage() {
               Roadmap_2026–2027
             </span>
             <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-8">
-              18 MONTHS
+              10 MONTHS
               <br />
               <span className="text-outline-variant/30">TO MARKETPLACE</span>
             </h1>
