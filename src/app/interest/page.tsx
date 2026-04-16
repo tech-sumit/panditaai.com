@@ -8,17 +8,20 @@ import Link from "next/link";
  * HubSpot public Forms API from the browser — no backend is required, which
  * keeps the site deployable as a pure static export.
  *
- * Configure in `.env.local`:
- *   NEXT_PUBLIC_HUBSPOT_PORTAL_ID=12345678
- *   NEXT_PUBLIC_HUBSPOT_FORM_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ * Portal + form ids are public once embedded on any HubSpot-hosted form, so
+ * they are safe to ship in the bundle. Staging deploys can override them via
+ * NEXT_PUBLIC_HUBSPOT_PORTAL_ID / NEXT_PUBLIC_HUBSPOT_FORM_ID.
  *
  * The HubSpot form must expose these contact properties (standard + custom):
  *   Standard: email, firstname, lastname, company, website, message
  *   Custom:   investor_type, ticket_size, investment_timeline, nda_requested
  */
 
-const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "";
-const HUBSPOT_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID || "";
+const HUBSPOT_PORTAL_ID =
+  process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "245933164";
+const HUBSPOT_FORM_ID =
+  process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID ||
+  "8f60c6a9-48fc-473e-a8d1-3f4e428fc144";
 
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 
@@ -82,7 +85,7 @@ export default function InterestPage() {
 
     try {
       const res = await fetch(
-        `https://api.hsforms.com/submissions/v3/integrations/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -91,7 +94,17 @@ export default function InterestPage() {
       );
       if (!res.ok) {
         const body = await res.text().catch(() => "");
-        throw new Error(`HubSpot ${res.status}: ${body.slice(0, 200)}`);
+        let reason = body.slice(0, 200);
+        try {
+          const parsed = JSON.parse(body);
+          reason =
+            parsed?.errors?.[0]?.message ||
+            parsed?.message ||
+            reason;
+        } catch {
+          // not JSON, fall back to raw body
+        }
+        throw new Error(`HubSpot ${res.status}: ${reason}`);
       }
       setStatus("sent");
     } catch (err) {
