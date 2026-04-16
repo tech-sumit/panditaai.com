@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import SkillWordCycle, { SKILL_WORDS } from "@/components/ui/SkillWordCycle";
+import SlotPhrase, { SKILL_WORDS } from "@/components/ui/SlotPhrase";
 
 export default function HomePage() {
   const [skillIndex, setSkillIndex] = useState(0);
@@ -24,8 +24,8 @@ export default function HomePage() {
               Concept Phase · Prototyping 2026
             </span>
           </div>
-          <h1 className="text-6xl md:text-9xl font-black font-headline tracking-tighter leading-[1.05] mb-6 text-white uppercase italic">
-            The <SkillWordCycle onChange={setSkillIndex} />
+          <h1 className="hero-headline font-black font-headline tracking-tighter leading-[1.05] mb-6 text-white uppercase italic">
+            The <SlotPhrase onChange={setSkillIndex} />
             <br />
             <span className="text-primary not-italic">Marketplace</span>
           </h1>

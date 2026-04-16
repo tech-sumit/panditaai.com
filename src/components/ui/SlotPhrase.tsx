@@ -1,16 +1,16 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export type SkillWord = {
+export type SlotWord = {
   word: string;
   lang: string;
   fontClass?: string;
   dir?: "ltr" | "rtl";
 };
 
-export const SKILL_WORDS: SkillWord[] = [
+export const SKILL_WORDS: SlotWord[] = [
+  { word: "Skill", lang: "English" },
   { word: "कौशल", lang: "Hindi", fontClass: "font-devanagari" },
   { word: "Kaushal", lang: "Sanskrit" },
   { word: "技能", lang: "Japanese", fontClass: "font-jp" },
@@ -20,21 +20,26 @@ export const SKILL_WORDS: SkillWord[] = [
   { word: "навык", lang: "Russian" },
   { word: "habilidad", lang: "Spanish" },
   { word: "compétence", lang: "French" },
-  { word: "Skill", lang: "English" },
 ];
 
 type Props = {
-  words?: SkillWord[];
+  words?: SlotWord[];
   intervalMs?: number;
-  className?: string;
   onChange?: (index: number) => void;
+  className?: string;
 };
 
-export default function SkillWordCycle({
+/**
+ * Word cycle with a simple fade/slide replace animation. Cycles through the
+ * given words, cross-fading the next word in while nudging it upward. Keeps
+ * the surrounding heading stable: the word inherits the H1's font-size so no
+ * layout jumps or container overflow.
+ */
+export default function SlotPhrase({
   words = SKILL_WORDS,
-  intervalMs = 2400,
-  className = "",
+  intervalMs = 2800,
   onChange,
+  className = "",
 }: Props) {
   const [index, setIndex] = useState(0);
 
@@ -53,22 +58,16 @@ export default function SkillWordCycle({
 
   return (
     <span
-      className={`relative inline-block align-baseline ${className}`}
-      aria-live="polite"
+      className={`slot-phrase ${className}`}
+      aria-label={current.word}
     >
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.span
-          key={current.word}
-          dir={current.dir ?? "ltr"}
-          className={`inline-block not-italic ${current.fontClass ?? ""}`}
-          initial={{ y: "0.6em", opacity: 0, filter: "blur(10px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          exit={{ y: "-0.6em", opacity: 0, filter: "blur(10px)" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {current.word}
-        </motion.span>
-      </AnimatePresence>
+      <span
+        key={index}
+        className={`slot-swap ${current.fontClass ?? ""}`}
+        dir={current.dir ?? "ltr"}
+      >
+        {current.word}
+      </span>
     </span>
   );
 }

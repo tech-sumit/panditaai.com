@@ -184,4 +184,47 @@
     background: rgba(255, 145, 89, 0.4);
     animation: soft-pulse 2.4s ease-in-out infinite;
   }
+
+  /* Hero headline uses a fluid font-size that scales with viewport width so
+     long multilingual words (compétence, habilidad, навык, कौशल, ทักษะ) never
+     blow out of the container. Range clamps between ~2.5rem on phones and
+     8rem on xl desktop, driven by 11vw so the SlotPhrase can never overflow
+     its parent at any breakpoint. */
+  .hero-headline {
+    font-size: clamp(2.75rem, 11vw, 8rem);
+  }
+
+  /* Simple word-swap cycle: the active word fades and slides in from below
+     while the previous one is replaced. Uses inline-block so the word flows
+     naturally with the surrounding "The ___ Marketplace" headline and never
+     forces the container wider than the viewport. */
+  .slot-phrase {
+    display: inline-block;
+    vertical-align: baseline;
+    max-width: 100%;
+  }
+  .slot-swap {
+    display: inline-block;
+    animation: slot-swap 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes slot-swap {
+    0% {
+      opacity: 0;
+      transform: translateY(0.35em);
+      filter: blur(6px);
+    }
+    60% {
+      filter: blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slot-swap {
+      animation: none;
+    }
+  }
 }
