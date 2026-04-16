@@ -19,7 +19,7 @@ export default function VisionPage() {
           <div className="flex items-center gap-4 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             <span className="font-headline text-primary tracking-[0.4em] uppercase text-xs">
-              Strategic Mandate // 2024-2034
+              Strategic Mandate // 2026-2030
             </span>
           </div>
           <h1 className="font-headline text-7xl md:text-9xl font-black tracking-tighter leading-none mb-12">
@@ -150,28 +150,27 @@ export default function VisionPage() {
             </div>
             <div className="md:col-span-2 bg-surface p-10 border-l border-primary/30">
               <h3 className="font-headline text-2xl font-bold mb-4">
-                India-Origin Talent
+                Pune, India · Global Reach
               </h3>
               <p className="text-sm text-on-surface-variant mb-6">
-                Leveraging the world&apos;s most dense engineering ecosystem to
-                solve global physical bottlenecks.
+                Built by Shailka Systems Pvt. Ltd. in Pune — proximity to a deep robotics and manufacturing talent pool, global deployment targets.
               </p>
               <div className="flex items-center gap-6">
                 <div className="flex flex-col">
                   <span className="font-headline text-3xl font-black text-primary">
-                    12K+
+                    $38B
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-outline">
-                    Engineers
+                    TAM by 2030
                   </span>
                 </div>
                 <div className="w-px h-8 bg-outline-variant"></div>
                 <div className="flex flex-col">
                   <span className="font-headline text-3xl font-black text-primary">
-                    Global
+                    Any
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-outline">
-                    Demand Reach
+                    NVIDIA-Compatible Robot
                   </span>
                 </div>
               </div>
@@ -221,28 +220,24 @@ export default function VisionPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-8">
             <h2 className="font-headline text-5xl font-black tracking-tighter mb-12">
-              INDIA ORIGIN. <br />
+              PUNE ORIGIN. <br />
               <span className="text-primary">GLOBAL SCALE.</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-4">
                 <h4 className="font-headline font-bold text-primary text-sm tracking-widest uppercase">
-                  The Talent Reservoir
+                  Why Open Wins
                 </h4>
                 <p className="text-on-surface-variant text-sm">
-                  We draw from a demographic dividend unmatched in history.
-                  PanditaAI is the conduit for Indian engineering excellence to
-                  solve the labor shortage in the West and East alike.
+                  Figure and Boston Dynamics stay vertically integrated. Skild trains internally on humanoids they don&apos;t own. We supply a neutral skill layer — any expert, any robot.
                 </p>
               </div>
               <div className="space-y-4">
                 <h4 className="font-headline font-bold text-primary text-sm tracking-widest uppercase">
-                  The Distribution Vision
+                  Why Skills Compound
                 </h4>
                 <p className="text-on-surface-variant text-sm">
-                  Becoming the default layer for robot skill distribution means
-                  every hardware OEM becomes a PanditaAI partner. We are the
-                  &lsquo;Intel Inside&rsquo; for the physical skills economy.
+                  Every published skill becomes a referenceable capability. Every deployment generates real-world data that refines the next version — a flywheel the vertically integrated players cannot match alone.
                 </p>
               </div>
             </div>
@@ -251,18 +246,18 @@ export default function VisionPage() {
             <div className="space-y-12">
               <div>
                 <span className="font-headline text-4xl font-black block">
-                  85%
+                  1000x
                 </span>
                 <span className="text-xs text-outline uppercase tracking-widest">
-                  Efficiency Gain per Deployment
+                  Parallel Sim vs Real-World Hours
                 </span>
               </div>
               <div>
                 <span className="font-headline text-4xl font-black block">
-                  24/7
+                  &lt;5ms
                 </span>
                 <span className="text-xs text-outline uppercase tracking-widest">
-                  Cross-Platform Sync
+                  Jetson Inference via TensorRT
                 </span>
               </div>
               <Link

@@ -36,14 +36,12 @@ export default function AboutPage() {
             </span>
           </div>
           <h1 className="text-6xl md:text-8xl font-headline font-black tracking-tighter leading-none mb-8">
-            THE ORIGIN OF{" "}
-            <span className="text-primary text-glow italic">PHYSICAL</span>{" "}
-            INTELLIGENCE.
+            BUILT IN{" "}
+            <span className="text-primary text-glow italic">PUNE</span>.{" "}
+            DEPLOYED EVERYWHERE.
           </h1>
           <p className="text-on-surface-variant text-xl leading-relaxed max-w-2xl font-light">
-            PANDITAAI is the marketplace where physical AI skills are
-            traded. Born from the labs of Pandit.ai, we are defining how
-            machines acquire, trade, and master expertise in the real world.
+            PanditaAI is an operating unit of Shailka Systems Pvt. Ltd., headquartered in Pune, India. We are a father-and-son founding team building the open marketplace of physical skills for humanoid robots.
           </p>
         </div>
         <div className="col-span-12 md:col-span-4 flex justify-end">
@@ -62,19 +60,14 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 md:grid-cols-2 bg-surface-container-low">
         <div className="p-12 md:p-24 flex flex-col justify-center border-b md:border-b-0 md:border-r border-outline-variant/10">
           <h2 className="text-3xl font-headline font-bold tracking-widest uppercase mb-8">
-            THE PANDIT.AI NEXUS
+            THE FOUNDING STORY
           </h2>
           <div className="space-y-6 text-on-surface-variant font-body">
             <p>
-              PanditaAI was conceptualized as the marketplace extension of
-              the Pandit.ai framework. While Pandit provides the cognitive
-              reasoning, PanditaAI provides the marketplace for trading physical skills.
+              Sumit Agrawal — 8+ years across AI, Web3, and cloud-native systems, operator of the MCP/WebMCP tooling ecosystem with over $1.2B AUM across his portfolio — teamed up with his father, Shailendra Agrawal, an electrician and mechanical specialist with a lifelong fascination for humanoid hardware.
             </p>
             <p>
-              Our origin story begins with a simple question: &ldquo;Why can AI
-              reason about physics but fail to manipulate a screwdriver?&rdquo;
-              We solved the translation layer between high-level logic and
-              low-level torque.
+              The observation: humanoid robots are shipping, but they arrive without skills. Every OEM is re-training from scratch. Meanwhile, human experts — chefs, martial artists, gardeners — hold expertise that can only be preserved if someone captures it. PanditaAI is that bridge.
             </p>
           </div>
           <div className="mt-12 flex gap-4">
@@ -108,16 +101,14 @@ export default function AboutPage() {
           <div className="group border border-outline-variant/15 p-8 hover:bg-surface-container-high transition-all duration-300">
             <div className="text-primary mb-6">
               <span className="material-symbols-outlined scale-150">
-                precision_manufacturing
+                person
               </span>
             </div>
             <h3 className="text-xl font-headline font-bold mb-4">
-              FOUNDER EXPERTISE
+              SUMIT AGRAWAL · CEO
             </h3>
             <p className="text-on-surface-variant font-body text-sm leading-relaxed">
-              Led by pioneers in reinforcement learning and mechatronics. Our
-              team combines Tier-1 robotics research with decades of aerospace
-              manufacturing experience.
+              8+ years across AI, Web3, and cloud-native infrastructure. Operator of the MCP/WebMCP tooling ecosystem with over $1.2B AUM across his portfolio. Leads product, engineering, and capital strategy.
             </p>
           </div>
           <div className="group border border-outline-variant/15 p-8 hover:bg-surface-container-high transition-all duration-300 bg-primary/5">
@@ -128,22 +119,18 @@ export default function AboutPage() {
               THE MISSION
             </h3>
             <p className="text-on-surface-variant font-body text-sm leading-relaxed">
-              To commoditize physical mastery. We believe every robotic chassis
-              should be capable of performing any human skill within 15 minutes
-              of training.
+              Capture human expertise before it disappears, and make it downloadable to any NVIDIA-compatible humanoid. An open skill layer for the physical economy.
             </p>
           </div>
           <div className="group border border-outline-variant/15 p-8 hover:bg-surface-container-high transition-all duration-300">
             <div className="text-primary mb-6">
-              <span className="material-symbols-outlined scale-150">hub</span>
+              <span className="material-symbols-outlined scale-150">build</span>
             </div>
             <h3 className="text-xl font-headline font-bold mb-4">
-              NEURAL SYNERGY
+              SHAILENDRA AGRAWAL · PRESIDENT
             </h3>
             <p className="text-on-surface-variant font-body text-sm leading-relaxed">
-              PanditaAI isn&apos;t just a marketplace—it&apos;s a kinetic OS for trading physical skills. We
-              integrate directly with existing hardware to bypass the
-              simulation-to-reality gap.
+              Electrician, mechanic, and hardware specialist. Lifelong passion for humanoid robotics. Owns the physical build, hardware integration, and motion-capture studio operations.
             </p>
           </div>
         </div>
@@ -172,11 +159,8 @@ export default function AboutPage() {
                   add
                 </span>
               </div>
-              <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
-                A physical skill is a quantized unit of kinetic behavior — a tradeable skill asset. From simple
-                &ldquo;Pick and Place&rdquo; to complex &ldquo;Micro-Solder,
-                &rdquo; these are modular neural weights that can be purchased on PanditaAI and hot-swapped
-                onto any compatible hardware platform.
+              <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-60 transition-all duration-500">
+                A physical skill is a TensorRT-optimized policy trained in NVIDIA Isaac Sim from expert human demonstration. Sizes range from 500MB to 2GB. Once licensed, a skill deploys OTA to a robot&apos;s Jetson Orin / IGX compute and runs at sub-5ms inference.
               </p>
             </div>
             <div className="bg-surface-container-high p-8 group cursor-pointer border-l-4 border-transparent hover:border-primary transition-all">
@@ -188,10 +172,8 @@ export default function AboutPage() {
                   add
                 </span>
               </div>
-              <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
-                We support all major ROS2-compatible platforms, including Boston
-                Dynamics, Unitree, and custom industrial armatures via our
-                proprietary Bridge-Link hardware.
+              <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-60 transition-all duration-500">
+                Our deployment target is any humanoid running NVIDIA Jetson Orin or IGX. We&apos;re launching with Unitree-class humanoids as the reference platform and expanding to additional OEMs as pilots ship.
               </p>
             </div>
             <div className="bg-surface-container-high p-8 group cursor-pointer border-l-4 border-transparent hover:border-primary transition-all">
@@ -203,10 +185,8 @@ export default function AboutPage() {
                   add
                 </span>
               </div>
-              <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
-                Safety is baked into the latent space. Our &ldquo;Kinetic
-                Guardrail&rdquo; technology performs real-time physics validation
-                2000 times per second to prevent collisions and system fatigue.
+              <p className="mt-6 text-on-surface-variant font-body text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-60 transition-all duration-500">
+                Every skill is validated against randomized physics and friction parameters in Isaac Sim before publishing. Operators can enforce torque, speed, and workspace limits at runtime on Jetson / IGX through the skill manifest.
               </p>
             </div>
           </div>
@@ -296,12 +276,25 @@ export default function AboutPage() {
                 </span>
                 <div>
                   <h4 className="font-headline font-bold text-xs tracking-widest uppercase mb-2">
-                    Primary Lab
+                    HQ · Shailka Systems Pvt. Ltd.
                   </h4>
                   <p className="text-on-surface-variant font-mono text-sm uppercase">
-                    Sector 7-G // Industrial Grid
+                    HD 072, WeWORK Futura, Magarpatta
                     <br />
-                    San Francisco, CA 94103
+                    Hadapsar, Pune — 411028, MH, India
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-6">
+                <span className="material-symbols-outlined text-primary">
+                  alternate_email
+                </span>
+                <div>
+                  <h4 className="font-headline font-bold text-xs tracking-widest uppercase mb-2">
+                    Direct Line
+                  </h4>
+                  <p className="text-on-surface-variant font-mono text-sm">
+                    sumit@panditaai.com
                   </p>
                 </div>
               </div>

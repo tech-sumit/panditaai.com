@@ -15,39 +15,37 @@ export default function PlatformPage() {
             </span>
           </div>
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tight leading-[0.9] mb-8">
-            THE PHYSICAL <br />
-            <span className="text-primary">AI ARCHITECTURE</span>
+            THE SKILL <br />
+            <span className="text-primary">PLATFORM</span>
           </h1>
           <p className="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
-            PanditaAI is the unified substrate for trading physical skills. We bridge the gap
-            between high-level creator logic and edge-device execution through a
-            distributed, high-performance telemetry pipeline.
+            PanditaAI is the open marketplace for physical skills. Experts capture expertise, we train it in NVIDIA Omniverse, and robots license it for deployment on Jetson Orin or IGX.
           </p>
         </div>
         <div className="col-span-12 md:col-span-4 border-l border-outline-variant/20 pl-8 pb-4">
           <div className="space-y-4">
             <div>
               <div className="text-[10px] text-outline font-headline uppercase tracking-[0.2em] mb-1">
-                Status
+                Stage
               </div>
               <div className="text-sm font-headline uppercase text-white">
-                System: Operational
+                Prototyping · Pre-Revenue
               </div>
             </div>
             <div>
               <div className="text-[10px] text-outline font-headline uppercase tracking-[0.2em] mb-1">
-                Compute Backend
+                Training Stack
               </div>
               <div className="text-sm font-headline uppercase text-white">
-                Cloudflare Workers Edge
+                NVIDIA Isaac Sim · Omniverse
               </div>
             </div>
             <div>
               <div className="text-[10px] text-outline font-headline uppercase tracking-[0.2em] mb-1">
-                Throughput
+                Inference Target
               </div>
               <div className="text-sm font-headline uppercase text-white">
-                4.2 PB/s Telemetry Hub
+                &lt;5ms via TensorRT
               </div>
             </div>
           </div>
@@ -62,10 +60,10 @@ export default function PlatformPage() {
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-12">
                 <span className="material-symbols-outlined text-primary text-4xl">
-                  upload_file
+                  sports_martial_arts
                 </span>
                 <h3 className="text-3xl font-headline font-bold tracking-tight uppercase">
-                  Creator Workflow
+                  Expert Onboarding
                 </h3>
               </div>
               <div className="space-y-8">
@@ -75,12 +73,10 @@ export default function PlatformPage() {
                   </div>
                   <div>
                     <h4 className="font-headline font-bold uppercase tracking-wider mb-2">
-                      Neural Upload
+                      Record Your Skill
                     </h4>
                     <p className="text-on-surface-variant text-sm">
-                      Drag and drop trained weights (PyTorch/ONNX). PanditaAI
-                      sanitizes and optimizes kernels for target hardware
-                      architectures automatically.
+                      Partner with our motion-capture studios or use VR teleoperation. We record your expertise across varied scenarios until the sim policy matches your technique.
                     </p>
                   </div>
                 </div>
@@ -90,11 +86,10 @@ export default function PlatformPage() {
                   </div>
                   <div>
                     <h4 className="font-headline font-bold uppercase tracking-wider mb-2">
-                      Publish &amp; Version
+                      Earn On Every Deployment
                     </h4>
                     <p className="text-on-surface-variant text-sm">
-                      Push to the global Physical Skills Registry. Every publish generates
-                      a unique cryptographic hash for runtime verification.
+                      Your skill ships to the marketplace under your name. You earn royalties every time a robot operator licenses it.
                     </p>
                   </div>
                 </div>
@@ -116,29 +111,29 @@ export default function PlatformPage() {
           <div className="col-span-12 md:col-span-5 bg-surface-container-high p-8 flex flex-col justify-between border-t-2 border-primary">
             <div>
               <h3 className="font-headline font-bold tracking-widest uppercase text-xs text-primary mb-8">
-                Deployment Pipeline
+                Training Targets
               </h3>
               <div className="space-y-6">
                 <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                   <span className="text-xs font-headline uppercase text-on-surface-variant">
-                    Auth Handshake
+                    Parallel Sim Instances
                   </span>
-                  <span className="text-sm font-mono text-white">0.4ms</span>
+                  <span className="text-sm font-mono text-white">1,000</span>
                 </div>
                 <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                   <span className="text-xs font-headline uppercase text-on-surface-variant">
-                    Global Routing
+                    Inference Latency
                   </span>
                   <span className="text-sm font-mono text-white">
-                    CF-Workers/Anycast
+                    &lt;5ms (TensorRT)
                   </span>
                 </div>
                 <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                   <span className="text-xs font-headline uppercase text-on-surface-variant">
-                    Runtime Inject
+                    Deploy Target
                   </span>
                   <span className="text-sm font-mono text-white">
-                    Encrypted Stream
+                    Jetson Orin · IGX
                   </span>
                 </div>
               </div>
@@ -165,34 +160,35 @@ export default function PlatformPage() {
             <div className="bg-surface p-4 border-l border-primary/40 group hover:bg-surface-container-highest transition-colors">
               <div className="flex justify-between mb-4">
                 <span className="text-[10px] font-headline bg-outline-variant/20 px-2 py-1 uppercase text-white">
-                  Navigation
+                  Manipulation
                 </span>
                 <span className="text-[10px] font-mono text-primary">
-                  ID: SKL-992
+                  PROTOTYPE
                 </span>
               </div>
               <h4 className="font-headline font-bold uppercase mb-2">
-                Kinetic Pathfinding v4
+                Chef Knife Skills v1
               </h4>
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between text-[10px] uppercase font-headline text-on-surface-variant">
-                  <span>Benchmark</span>
-                  <span className="text-white">99.2% Accuracy</span>
+                  <span>Expert Source</span>
+                  <span className="text-white">Human Chef · 3 yrs</span>
                 </div>
                 <div className="flex justify-between text-[10px] uppercase font-headline text-on-surface-variant">
-                  <span>Latency</span>
-                  <span className="text-white">12ms (Jetson)</span>
+                  <span>Sim Training</span>
+                  <span className="text-white">~24 hrs · Isaac Sim</span>
+                </div>
+                <div className="flex justify-between text-[10px] uppercase font-headline text-on-surface-variant">
+                  <span>Transfer Time</span>
+                  <span className="text-white">~1 hr per humanoid</span>
                 </div>
               </div>
               <div className="flex justify-between items-center pt-4 border-t border-outline-variant/10">
-                <span className="text-lg font-headline font-bold text-white">
-                  $420
-                  <span className="text-xs font-normal text-on-surface-variant ml-1">
-                    /NODE
-                  </span>
+                <span className="text-xs font-headline text-on-surface-variant uppercase tracking-widest">
+                  Pricing TBD · Early Access
                 </span>
                 <button className="text-[10px] font-headline font-bold uppercase tracking-widest text-primary">
-                  Deploy
+                  Preview
                 </button>
               </div>
             </div>

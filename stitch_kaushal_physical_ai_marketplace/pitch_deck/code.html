@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -7,674 +6,618 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Noto+Sans+Devanagari:wght@700;900&amp;family=Noto+Sans+JP:wght@700&amp;family=Noto+Sans+KR:wght@700&amp;family=Noto+Sans+Arabic:wght@700&amp;family=Noto+Sans+Thai:wght@700&amp;display=swap" rel="stylesheet"/>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            background-color: #0e0e0e;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-        .font-headline { font-family: 'Space Grotesk', sans-serif; }
-        .data-grain {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.02;
-            pointer-events: none;
-            z-index: 9999;
-        }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #0e0e0e; }
-        ::-webkit-scrollbar-thumb { background: #ff9159; }
-    </style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { background-color: #0e0e0e; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    .font-headline { font-family: 'Space Grotesk', sans-serif; }
+    .data-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.02; pointer-events: none; z-index: 9999; }
+    section { width: 100%; }
+</style>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary": "#462000",
-                      "inverse-surface": "#f9f9f9",
-                      "primary": "#ff9159",
-                      "on-error-container": "#ffd2c8",
-                      "surface-bright": "#2c2c2c",
-                      "outline-variant": "#484848",
-                      "on-tertiary-container": "#523700",
-                      "surface-tint": "#ff9159",
-                      "on-tertiary-fixed-variant": "#5e4000",
-                      "on-tertiary-fixed": "#372400",
-                      "secondary-dim": "#eb832c",
-                      "inverse-primary": "#a14100",
-                      "error-dim": "#d53d18",
-                      "primary-fixed-dim": "#f66700",
-                      "primary-container": "#ff7a2f",
-                      "on-surface-variant": "#ababab",
-                      "surface-variant": "#262626",
-                      "surface-container-high": "#1f1f1f",
-                      "secondary": "#f88d36",
-                      "secondary-fixed": "#ffc69f",
-                      "outline": "#757575",
-                      "surface-dim": "#0e0e0e",
-                      "surface-container-highest": "#262626",
-                      "tertiary-container": "#fbb423",
-                      "background": "#0e0e0e",
-                      "on-primary": "#531e00",
-                      "tertiary-dim": "#eba60f",
-                      "error": "#ff7351",
-                      "on-error": "#450900",
-                      "tertiary-fixed-dim": "#eba60f",
-                      "on-primary-fixed-variant": "#4f1c00",
-                      "error-container": "#b92902",
-                      "tertiary": "#ffc562",
-                      "on-secondary-fixed-variant": "#803f00",
-                      "inverse-on-surface": "#555555",
-                      "surface-container-low": "#131313",
-                      "on-secondary-fixed": "#552800",
-                      "secondary-container": "#944a00",
-                      "on-primary-fixed": "#000000",
-                      "surface": "#0e0e0e",
-                      "on-background": "#ffffff",
-                      "tertiary-fixed": "#fbb423",
-                      "primary-dim": "#ff7524",
-                      "on-tertiary": "#5e4000",
-                      "on-primary-container": "#401500",
-                      "secondary-fixed-dim": "#ffb37d",
-                      "on-secondary-container": "#fff6f2",
-                      "surface-container-lowest": "#000000",
-                      "surface-container": "#191919",
-                      "primary-fixed": "#ff7a2f",
-                      "on-surface": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0px",
-                      "lg": "0px",
-                      "xl": "0px",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["Space Grotesk"],
-                      "body": ["Inter"],
-                      "label": ["Space Grotesk"]
-              }
-            },
-          },
-        }
-    </script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        "colors": {
+          "primary": "#ff9159", "primary-container": "#ff7a2f", "primary-dim": "#ff7524",
+          "on-primary": "#531e00", "on-primary-container": "#401500", "on-primary-fixed": "#000000",
+          "surface": "#0e0e0e", "surface-container-low": "#131313", "surface-container": "#191919",
+          "surface-container-high": "#1f1f1f", "surface-container-highest": "#262626",
+          "on-surface": "#ffffff", "on-surface-variant": "#ababab",
+          "outline": "#757575", "outline-variant": "#484848",
+          "secondary": "#f88d36", "tertiary": "#ffc562",
+          "error": "#ff7351", "background": "#0e0e0e"
+        },
+        "borderRadius": { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        "fontFamily": { "headline": ["Space Grotesk"], "body": ["Inter"], "label": ["Space Grotesk"] }
+      }}
+    }
+</script>
 </head>
 <body class="bg-surface selection:bg-primary selection:text-black">
 <div class="data-grain"></div>
-<!-- Navigation -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-10 h-20 bg-[#0e0e0e]/80 backdrop-blur-xl border-b border-[#484848]/15">
-<div class="text-2xl font-black tracking-tighter text-[#FF6B00] font-headline">PANDITA_AI</div>
-<nav class="hidden md:flex gap-10 font-headline tracking-[0.05em] uppercase text-xs font-bold">
-<a class="text-[#FF6B00] border-b-2 border-[#FF6B00] pb-1" href="#mission">MISSION</a>
-<a class="text-white/60 hover:text-white transition-colors" href="#core-tech">CORE_TECH</a>
-<a class="text-white/60 hover:text-white transition-colors" href="#market">MARKET</a>
-<a class="text-white/60 hover:text-white transition-colors" href="#traction">TRACTION</a>
-<a class="text-white/60 hover:text-white transition-colors" href="#equity">EQUITY</a>
-</nav>
-<button class="bg-primary-container text-black font-headline font-black px-6 py-2 tracking-widest text-xs uppercase hover:bg-primary transition-all">TERMINAL_ACCESS</button>
-</header>
-<!-- Side Telemetry (Visible on Scroll) -->
-<aside class="fixed left-0 top-0 h-full flex flex-col pt-24 bg-[#131313] w-16 items-center z-40 border-r border-outline-variant/10">
-<div class="flex flex-col gap-8 text-white/40">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
-<span class="material-symbols-outlined hover:text-white cursor-pointer">account_tree</span>
-<span class="material-symbols-outlined hover:text-white cursor-pointer">hub</span>
-<span class="material-symbols-outlined hover:text-white cursor-pointer">pie_chart</span>
-<span class="material-symbols-outlined hover:text-white cursor-pointer">settings_input_component</span>
-</div>
-<div class="mt-auto pb-10">
-<div class="w-1 h-24 bg-surface-container-highest relative">
-<div class="absolute top-0 left-0 w-full bg-primary h-1/3 animate-pulse"></div>
-</div>
-</div>
-</aside>
-<main class="pl-16">
+<main>
+
 <!-- Slide 1: Cover -->
-<section class="min-h-screen flex flex-col justify-center items-start px-20 relative overflow-hidden bg-surface" id="mission">
+<section class="min-h-screen flex flex-col justify-center items-start px-24 relative overflow-hidden bg-surface">
 <div class="absolute inset-0 z-0 opacity-40">
-<img alt="Cover" class="w-full h-full object-cover" src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/hero-robotics-lab.webp"/>
-<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+<img alt="Cover" class="w-full h-full object-cover" src="../../public/images/hero-robotics-lab.webp"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#0e0e0e] via-[#0e0e0e]/80 to-transparent"></div>
 </div>
-<div class="relative z-10 max-w-4xl">
-<div class="inline-block bg-primary-container text-black font-headline font-black px-4 py-1 mb-6 tracking-widest text-sm uppercase">SHAILKA SYSTEMS PVT. LTD. // SEED ROUND 2025</div>
-<h1 class="text-8xl md:text-[12rem] font-headline font-black tracking-tighter leading-none mb-4 text-white">
-                    PANDITA<span class="text-primary">AI</span>
+<div class="relative z-10 max-w-6xl">
+<div class="inline-block bg-primary-container text-black font-headline font-black px-6 py-2 mb-8 tracking-widest text-base uppercase">SHAILKA SYSTEMS PVT. LTD. // SEED ROUND 2026</div>
+<h1 class="text-[14rem] font-headline font-black tracking-tighter leading-none mb-6 text-white">
+    PANDITA<span class="text-primary">AI</span>
 </h1>
-<p class="text-4xl font-headline tracking-widest uppercase text-white/40 mb-4">The <span style="font-family:'Noto Sans Devanagari',sans-serif">कौशल</span> Marketplace</p>
-<div class="flex flex-wrap gap-x-5 gap-y-1 text-white/25 text-base tracking-wide mb-12">
-<span><span style="font-family:'Noto Sans Devanagari',sans-serif" class="text-white/40">कौशल</span> <span class="text-white/15 text-xs">(Hindi)</span></span>
+<p class="text-5xl font-headline tracking-widest uppercase text-white/40 mb-6">The <span style="font-family:'Noto Sans Devanagari',sans-serif">कौशल</span> Marketplace</p>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-white/25 text-lg tracking-wide mb-14">
+<span><span style="font-family:'Noto Sans Devanagari',sans-serif" class="text-white/40">कौशल</span> <span class="text-white/15 text-sm">(Hindi)</span></span>
 <span class="text-white/10">·</span>
-<span><span style="font-family:'Noto Sans JP',sans-serif">技能</span> <span class="text-white/15 text-xs">(Japanese)</span></span>
+<span><span style="font-family:'Noto Sans JP',sans-serif">技能</span> <span class="text-white/15 text-sm">(Japanese)</span></span>
 <span class="text-white/10">·</span>
-<span><span style="font-family:'Noto Sans KR',sans-serif">기술</span> <span class="text-white/15 text-xs">(Korean)</span></span>
+<span><span style="font-family:'Noto Sans KR',sans-serif">기술</span> <span class="text-white/15 text-sm">(Korean)</span></span>
 <span class="text-white/10">·</span>
-<span><span style="font-family:'Noto Sans Arabic',sans-serif" dir="rtl">مهارة</span> <span class="text-white/15 text-xs">(Arabic)</span></span>
+<span><span style="font-family:'Noto Sans Arabic',sans-serif" dir="rtl">مهارة</span> <span class="text-white/15 text-sm">(Arabic)</span></span>
 <span class="text-white/10">·</span>
-<span><span style="font-family:'Noto Sans Thai',sans-serif">ทักษะ</span> <span class="text-white/15 text-xs">(Thai)</span></span>
+<span><span style="font-family:'Noto Sans Thai',sans-serif">ทักษะ</span> <span class="text-white/15 text-sm">(Thai)</span></span>
 <span class="text-white/10">·</span>
-<span>навык <span class="text-white/15 text-xs">(Russian)</span></span>
+<span>навык <span class="text-white/15 text-sm">(Russian)</span></span>
 <span class="text-white/10">·</span>
-<span>habilidad <span class="text-white/15 text-xs">(Spanish)</span></span>
+<span>habilidad <span class="text-white/15 text-sm">(Spanish)</span></span>
 <span class="text-white/10">·</span>
-<span>compétence <span class="text-white/15 text-xs">(French)</span></span>
+<span>compétence <span class="text-white/15 text-sm">(French)</span></span>
 </div>
-<p class="text-xl text-white/50 max-w-2xl leading-relaxed">Capturing human expertise. Training robots in NVIDIA Omniverse.<br/>Deploying physical skills to the real world.</p>
+<p class="text-3xl text-white/50 max-w-4xl leading-relaxed">Capturing human expertise. Training robots in NVIDIA Omniverse.</p>
 </div>
-<div class="absolute bottom-10 right-20 text-right opacity-40 font-headline text-xs tracking-[0.3em] uppercase">
-                PANDITAAI.COM // NVIDIA INCEPTION MEMBER
-            </div>
+<div class="absolute bottom-12 right-24 text-right opacity-40 font-headline text-sm tracking-[0.3em] uppercase">PANDITAAI.COM // NVIDIA INCEPTION MEMBER</div>
 </section>
+
 <!-- Slide 2: Problem -->
-<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-20">
-<div class="grid grid-cols-12 gap-10 items-center">
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24">
+<div class="grid grid-cols-12 gap-16 items-center">
 <div class="col-span-5">
-<label class="text-primary font-headline tracking-widest uppercase mb-2 block">01_THE_PROBLEM</label>
-<h2 class="text-6xl font-headline font-black tracking-tight mb-8">TEACHING<br/>ROBOTS<br/>HUMAN SKILLS</h2>
-<p class="text-xl text-white/60 mb-12 leading-relaxed">Software replicates instantly. Physical skills don't — a master chef's knife work, a martial artist's precision, a gardener's touch. We capture expertise from human experts and teach it to robots using NVIDIA Isaac Sim in Omniverse, making any skill downloadable.</p>
+<label class="text-primary font-headline tracking-widest uppercase mb-4 block text-base">01_THE_PROBLEM</label>
+<h2 class="text-8xl font-headline font-black tracking-tight mb-10 leading-[0.95]">TEACHING<br/>ROBOTS<br/>HUMAN SKILLS</h2>
+<p class="text-2xl text-white/60 leading-relaxed">Software replicates instantly. Physical skills don't — a master chef's knife work, a martial artist's precision, a gardener's touch. We capture expertise from human experts and teach it to robots using NVIDIA Isaac Sim in Omniverse, making any skill downloadable.</p>
 </div>
-<div class="col-span-7 grid grid-cols-2 gap-1">
-<div class="bg-surface p-12 aspect-square flex flex-col justify-center border-l-4 border-primary">
-<span class="text-7xl font-headline font-black text-white">1x</span>
-<span class="text-primary font-headline tracking-widest uppercase text-sm mt-4">SKILLS DIE WITH THE EXPERT</span>
+<div class="col-span-7 grid grid-cols-2 gap-2">
+<div class="bg-surface p-14 aspect-square flex flex-col justify-center border-l-4 border-primary">
+<span class="text-8xl font-headline font-black text-white">1x</span>
+<span class="text-primary font-headline tracking-widest uppercase text-base mt-4">SKILLS DIE WITH THE EXPERT</span>
 </div>
-<div class="bg-surface p-12 aspect-square flex flex-col justify-center">
-<span class="text-7xl font-headline font-black text-white">$12T</span>
-<span class="text-primary font-headline tracking-widest uppercase text-sm mt-4">GLOBAL LABOR SKILLS GAP</span>
+<div class="bg-surface p-14 aspect-square flex flex-col justify-center">
+<span class="text-8xl font-headline font-black text-white">$12T</span>
+<span class="text-primary font-headline tracking-widest uppercase text-base mt-4">GLOBAL LABOR SKILLS GAP</span>
 </div>
-<div class="bg-surface p-12 aspect-square flex flex-col justify-center">
-<span class="text-7xl font-headline font-black text-white">1000x</span>
-<span class="text-primary font-headline tracking-widest uppercase text-sm mt-4">SIM TRAINING VS REAL-WORLD</span>
+<div class="bg-surface p-14 aspect-square flex flex-col justify-center">
+<span class="text-8xl font-headline font-black text-white">1000x</span>
+<span class="text-primary font-headline tracking-widest uppercase text-base mt-4">SIM TRAINING VS REAL-WORLD</span>
 </div>
-<div class="bg-surface p-12 aspect-square flex flex-col justify-center bg-primary-container/10">
-<span class="material-symbols-outlined text-6xl text-primary mb-4" data-icon="trending_up">trending_up</span>
-<span class="text-white font-headline font-bold uppercase">THE SOLUTION IS HERE</span>
+<div class="bg-primary-container/10 p-14 aspect-square flex flex-col justify-center">
+<span class="material-symbols-outlined text-7xl text-primary mb-4">trending_up</span>
+<span class="text-white font-headline font-bold uppercase text-xl">THE SOLUTION IS HERE</span>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Slide 3: Insight -->
-<section class="min-h-screen bg-surface flex flex-col justify-center px-20 text-center">
-<div class="max-w-4xl mx-auto">
-<label class="text-primary font-headline tracking-[0.4em] uppercase mb-12 block">02_THE_INSIGHT</label>
-<h2 class="text-7xl font-headline font-black tracking-tight mb-12 leading-none uppercase">HUMAN TO ROBOT<br/>SKILL TRANSFER</h2>
-<div class="grid grid-cols-3 gap-8 text-left border-t border-b border-outline-variant/15 py-16">
+<section class="min-h-screen bg-surface flex flex-col justify-center px-24 text-center">
+<div class="max-w-7xl mx-auto w-full">
+<label class="text-primary font-headline tracking-[0.4em] uppercase mb-12 block text-base">02_THE_INSIGHT</label>
+<h2 class="text-9xl font-headline font-black tracking-tight mb-20 leading-none uppercase">HUMAN TO ROBOT<br/>SKILL TRANSFER</h2>
+<div class="grid grid-cols-3 gap-12 text-left border-t border-b border-outline-variant/15 py-20">
 <div>
-<div class="text-primary mb-4">01. CAPTURE</div>
-<p class="text-white/60">Work with human experts — martial artists, chefs, dancers, gardeners — to record high-fidelity motion and decision data.</p>
+<div class="text-primary mb-6 font-headline font-black text-xl tracking-widest">01. CAPTURE</div>
+<p class="text-white/60 text-xl leading-relaxed">Work with human experts — martial artists, chefs, dancers, gardeners — to record high-fidelity motion and decision data.</p>
 </div>
 <div>
-<div class="text-primary mb-4">02. SIMULATE</div>
-<p class="text-white/60">Replicate expert behavior in NVIDIA Omniverse using Isaac Sim. Train robots through millions of parallel simulation cycles.</p>
+<div class="text-primary mb-6 font-headline font-black text-xl tracking-widest">02. SIMULATE</div>
+<p class="text-white/60 text-xl leading-relaxed">Replicate expert behavior in NVIDIA Omniverse using Isaac Sim. Train robots through millions of parallel simulation cycles.</p>
 </div>
 <div>
-<div class="text-primary mb-4">03. DEPLOY</div>
-<p class="text-white/60">Transfer trained skills to physical robots via sim-to-real. A master chef's knife technique, now executable by any robot arm.</p>
+<div class="text-primary mb-6 font-headline font-black text-xl tracking-widest">03. DEPLOY</div>
+<p class="text-white/60 text-xl leading-relaxed">Transfer trained skills to physical robots via sim-to-real. A master chef's knife technique, now executable by any robot arm.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Slide 4: Solution -->
-<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-20 overflow-hidden">
-<h2 class="text-5xl font-headline font-black mb-16 tracking-tighter">THE PANDITAAI PIPELINE</h2>
-<div class="flex gap-2 h-[400px]">
-<div class="flex-1 relative p-8 flex flex-col justify-between group transition-all duration-500 overflow-hidden">
-<img src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/human-robot-transfer.png" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" alt=""/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
-<span class="relative text-white/30 font-headline font-black text-6xl">01</span>
-<div class="relative">
-<h3 class="text-2xl font-headline font-black text-white mb-2 uppercase">CAPTURE</h3>
-<p class="text-white/50 text-sm">Record motion data from human experts: martial artists, chefs, dancers, gardeners.</p>
+
+<!-- Slide 4: Pipeline -->
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24 overflow-hidden">
+<h2 class="text-7xl font-headline font-black mb-14 tracking-tighter uppercase">THE PANDITAAI PIPELINE</h2>
+<div class="grid grid-cols-5 gap-4">
+<div class="bg-surface overflow-hidden flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img src="../../public/images/pipeline-capture.png" class="w-full h-full object-cover" alt="Human expert in VR motion capture suit"/>
+<div class="absolute top-3 left-3 bg-primary text-black px-3 py-1 font-headline text-xs font-black tracking-widest">01</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between border-t-2 border-primary">
+<h3 class="text-2xl font-headline font-black text-white mb-3 uppercase">CAPTURE</h3>
+<p class="text-white/60 text-sm leading-relaxed">Record motion from human experts via VR teleoperation and motion capture.</p>
 </div>
 </div>
-<div class="flex-1 relative p-8 flex flex-col justify-between group transition-all duration-500 overflow-hidden">
-<img src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/robots-simulation.png" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" alt=""/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
-<span class="relative text-white/30 font-headline font-black text-6xl">02</span>
-<div class="relative">
-<h3 class="text-2xl font-headline font-black text-white mb-2 uppercase">SIMULATE</h3>
-<p class="text-white/50 text-sm">Train in NVIDIA Omniverse using Isaac Sim at 1000x real-time speed.</p>
+<div class="bg-surface overflow-hidden flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img src="../../public/images/pipeline-simulate.png" class="w-full h-full object-cover" alt="1000 robots training in parallel in Isaac Sim"/>
+<div class="absolute top-3 left-3 bg-primary text-black px-3 py-1 font-headline text-xs font-black tracking-widest">02</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between border-t-2 border-primary/70">
+<h3 class="text-2xl font-headline font-black text-white mb-3 uppercase">SIMULATE</h3>
+<p class="text-white/60 text-sm leading-relaxed">1,000 robots training in parallel inside Isaac Sim. 1 hour = 1,000 hours.</p>
 </div>
 </div>
-<div class="flex-1 relative p-8 flex flex-col justify-between group transition-all duration-500 overflow-hidden bg-surface">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
-<span class="relative text-white/30 font-headline font-black text-6xl">03</span>
-<div class="relative">
-<h3 class="text-2xl font-headline font-black text-white mb-2 uppercase">VALIDATE</h3>
-<p class="text-white/50 text-sm">Stress-test across randomized physics, friction, and edge-cases in simulation.</p>
+<div class="bg-surface overflow-hidden flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img src="../../public/images/pipeline-validate.png" class="w-full h-full object-cover" alt="Robot stress testing in a validation lab"/>
+<div class="absolute top-3 left-3 bg-primary text-black px-3 py-1 font-headline text-xs font-black tracking-widest">03</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between border-t-2 border-primary/50">
+<h3 class="text-2xl font-headline font-black text-white mb-3 uppercase">VALIDATE</h3>
+<p class="text-white/60 text-sm leading-relaxed">Stress-test across randomized physics, friction, and edge cases in sim.</p>
 </div>
 </div>
-<div class="flex-1 relative p-8 flex flex-col justify-between group transition-all duration-500 overflow-hidden bg-surface">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
-<span class="relative text-white/30 font-headline font-black text-6xl">04</span>
-<div class="relative">
-<h3 class="text-2xl font-headline font-black text-white mb-2 uppercase">PUBLISH</h3>
-<p class="text-white/50 text-sm">List on the PanditaAI Marketplace with benchmarks and pricing.</p>
+<div class="bg-surface overflow-hidden flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img src="../../public/images/pipeline-publish.png" class="w-full h-full object-cover" alt="PanditaAI skill marketplace interface"/>
+<div class="absolute top-3 left-3 bg-primary text-black px-3 py-1 font-headline text-xs font-black tracking-widest">04</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between border-t-2 border-primary/30">
+<h3 class="text-2xl font-headline font-black text-white mb-3 uppercase">PUBLISH</h3>
+<p class="text-white/60 text-sm leading-relaxed">List on the PanditaAI Marketplace with performance benchmarks.</p>
 </div>
 </div>
-<div class="flex-1 relative p-8 flex flex-col justify-between group transition-all duration-500 overflow-hidden">
-<img src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/jetson-orin-lineup.webp" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" alt=""/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
-<span class="relative text-white/30 font-headline font-black text-6xl">05</span>
-<div class="relative">
-<h3 class="text-2xl font-headline font-black text-white mb-2 uppercase">DEPLOY</h3>
-<p class="text-white/50 text-sm">OTA delivery to physical robots on NVIDIA Jetson/IGX hardware.</p>
+<div class="bg-surface overflow-hidden flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img src="../../public/images/pipeline-deploy.png" class="w-full h-full object-cover" alt="Humanoid robot receiving OTA skill update"/>
+<div class="absolute top-3 left-3 bg-primary text-black px-3 py-1 font-headline text-xs font-black tracking-widest">05</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between border-t-2 border-white/30">
+<h3 class="text-2xl font-headline font-black text-white mb-3 uppercase">DEPLOY</h3>
+<p class="text-white/60 text-sm leading-relaxed">OTA delivery to robots on NVIDIA Jetson / IGX hardware.</p>
 </div>
 </div>
+</div>
+<div class="mt-10 flex items-center justify-between text-xs font-headline tracking-widest uppercase text-white/30">
+<span>HUMAN EXPERTISE</span>
+<div class="flex-1 mx-6 h-px bg-gradient-to-r from-primary via-primary/40 to-white/20"></div>
+<span>REAL-WORLD ROBOT</span>
 </div>
 </section>
-<!-- Slide 5: How It Works (Diagram Aesthetic) -->
-<section class="min-h-screen bg-surface flex flex-col justify-center px-20">
-<div class="grid grid-cols-2 gap-20">
-<div class="relative">
-<div class="w-full aspect-video bg-surface-container-high border border-outline-variant/10 overflow-hidden">
-<img src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/human-robot-transfer.png" class="w-full h-full object-cover" alt="Human expert teaching robot through VR motion capture"/>
+
+<!-- Slide 5: Architecture -->
+<section class="min-h-screen bg-surface flex flex-col justify-center px-24">
+<div class="grid grid-cols-2 gap-20 items-center">
+<div class="flex flex-col gap-5">
+<div class="relative aspect-video bg-surface-container-high border border-outline-variant/10 overflow-hidden">
+<img src="../../public/images/human-robot-transfer.png" class="w-full h-full object-cover" alt="Human expert teaching robot through VR motion capture"/>
+<div class="absolute top-4 left-4 bg-primary text-black px-4 py-2 font-headline text-sm font-black tracking-widest">EXPERT CAPTURE</div>
 </div>
-<div class="absolute -top-4 -right-4 bg-primary text-black px-3 py-1 font-headline text-xs font-black">SKILL_TRANSFER</div>
+<div class="relative aspect-video bg-surface-container-high border border-outline-variant/10 overflow-hidden">
+<img src="../../public/images/robots-simulation.png" class="w-full h-full object-cover" alt="1000 robots training simultaneously in NVIDIA Isaac Sim"/>
+<div class="absolute top-4 left-4 bg-primary text-black px-4 py-2 font-headline text-sm font-black tracking-widest">PARALLEL TRAINING</div>
+</div>
 </div>
 <div class="flex flex-col justify-center">
-<label class="text-primary font-headline tracking-widest uppercase mb-4">THE_ARCHITECTURE</label>
-<ul class="space-y-6">
-<li class="flex items-start gap-4">
-<span class="text-primary font-headline font-bold">01</span>
+<label class="text-primary font-headline tracking-widest uppercase mb-8 block text-base">THE_ARCHITECTURE</label>
+<h2 class="text-6xl font-headline font-black mb-12 tracking-tighter uppercase leading-none">HOW IT<br/>WORKS</h2>
+<ul class="space-y-10">
+<li class="flex items-start gap-6">
+<span class="text-primary font-headline font-black text-3xl">01</span>
 <div>
-<span class="text-white font-bold uppercase block">EXPERT MOTION CAPTURE</span>
-<span class="text-white/40 text-sm">High-fidelity recording of human skill data — movements, force, timing, decision points.</span>
+<span class="text-white font-bold uppercase block text-2xl mb-2">EXPERT MOTION CAPTURE</span>
+<span class="text-white/50 text-lg leading-relaxed block">VR teleoperation records human skill data — movements, force, timing, decision points.</span>
 </div>
 </li>
-<li class="flex items-start gap-4">
-<span class="text-primary font-headline font-bold">02</span>
+<li class="flex items-start gap-6">
+<span class="text-primary font-headline font-black text-3xl">02</span>
 <div>
-<span class="text-white font-bold uppercase block">OMNIVERSE + ISAAC SIM</span>
-<span class="text-white/40 text-sm">Massively parallel training in NVIDIA's digital twin environment at 1000x real-time.</span>
+<span class="text-white font-bold uppercase block text-2xl mb-2">OMNIVERSE + ISAAC SIM</span>
+<span class="text-white/50 text-lg leading-relaxed block">1,000 simulated robots train in parallel. 1 hour of sim = 1,000 physical hours of learning.</span>
 </div>
 </li>
-<li class="flex items-start gap-4">
-<span class="text-primary font-headline font-bold">03</span>
+<li class="flex items-start gap-6">
+<span class="text-primary font-headline font-black text-3xl">03</span>
 <div>
-<span class="text-white font-bold uppercase block">SIM-TO-REAL TRANSFER</span>
-<span class="text-white/40 text-sm">Domain randomization ensures skills work on real hardware from day one.</span>
+<span class="text-white font-bold uppercase block text-2xl mb-2">SIM-TO-REAL TRANSFER</span>
+<span class="text-white/50 text-lg leading-relaxed block">Domain randomization ensures skills work on real hardware from day one.</span>
 </div>
 </li>
 </ul>
 </div>
 </div>
 </section>
-<!-- Slide 6: Demo Marketplace UI -->
-<section class="min-h-screen bg-surface-container-low px-20 py-24">
+
+<!-- Slide 6: Skill Catalog -->
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24">
 <div class="flex justify-between items-end mb-12">
-<h2 class="text-5xl font-headline font-black uppercase tracking-tighter">SKILL_MARKETPLACE</h2>
-<div class="flex gap-4">
-<div class="px-4 py-2 bg-surface-container-high border border-outline-variant/10 text-xs font-headline tracking-widest">FILTER: ALL SKILLS</div>
-<div class="px-4 py-2 bg-primary text-black text-xs font-headline font-black tracking-widest">6 CATEGORIES</div>
+<h2 class="text-7xl font-headline font-black uppercase tracking-tighter">SKILL_CATALOG</h2>
+<div class="px-6 py-3 bg-primary text-black text-sm font-headline font-black tracking-widest">6 CATEGORIES IN DEVELOPMENT</div>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="bg-surface border-t-4 border-primary">
+<div class="w-full h-64 bg-surface-container-high flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary mb-3">sports_martial_arts</span>
+<span class="font-headline text-sm tracking-widest uppercase text-white/40">COMBAT MODULE</span>
+</div>
+<div class="p-10">
+<h4 class="font-headline font-black text-3xl mb-5">MARTIAL_ARTS</h4>
+<div class="flex gap-2 mb-8">
+<span class="px-3 py-1 bg-white/5 text-xs uppercase tracking-widest">HUMANOID_NATIVE</span>
+<span class="px-3 py-1 bg-white/5 text-xs uppercase tracking-widest">FULL_BODY</span>
+</div>
+<div class="border-t border-outline-variant/15 pt-6 space-y-3 text-base">
+<div class="flex justify-between"><span class="text-white/50">Human training</span><span class="text-white font-bold">~10 years</span></div>
+<div class="flex justify-between"><span class="text-white/50">Robot training (sim)</span><span class="text-primary font-bold">~48 hours</span></div>
+<div class="flex justify-between"><span class="text-white/50">Transfer to new robot</span><span class="text-primary font-bold">~2 hours</span></div>
 </div>
 </div>
-<div class="grid grid-cols-3 gap-6">
-<!-- Skill Card 1: Martial Arts -->
-<div class="bg-surface p-1 border-t-2 border-primary">
-<div class="w-full h-48 bg-surface-container-high flex flex-col items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-primary mb-2">sports_martial_arts</span>
-<span class="font-headline text-xs tracking-widest uppercase text-white/40">COMBAT MODULE</span>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline font-bold text-xl">MARTIAL_ARTS_V2</h4>
-<span class="text-primary text-xs font-headline font-black tracking-widest">$499/UNIT</span>
+<div class="bg-surface border-t-4 border-white/20">
+<div class="w-full h-64 bg-surface-container-high flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary mb-3">cooking</span>
+<span class="font-headline text-sm tracking-widest uppercase text-white/40">CULINARY MODULE</span>
 </div>
-<div class="flex gap-2 mb-6">
-<span class="px-2 py-1 bg-white/5 text-[10px] uppercase tracking-tighter">HUMANOID_NATIVE</span>
-<span class="px-2 py-1 bg-white/5 text-[10px] uppercase tracking-tighter">98.7%_ACCURACY</span>
+<div class="p-10">
+<h4 class="font-headline font-black text-3xl mb-5">CHEF_KNIFE_SKILLS</h4>
+<div class="flex gap-2 mb-8">
+<span class="px-3 py-1 bg-white/5 text-xs uppercase tracking-widest">MULTI_ARM</span>
+<span class="px-3 py-1 bg-white/5 text-xs uppercase tracking-widest">FOOD_SAFE</span>
 </div>
-<button class="w-full py-3 bg-surface-container-highest font-headline font-bold text-xs uppercase">DEPLOY_SKILL</button>
-</div>
-</div>
-<!-- Skill Card 2: Cooking -->
-<div class="bg-surface p-1 border-t-2 border-white/20">
-<div class="w-full h-48 bg-surface-container-high flex flex-col items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-primary mb-2">cooking</span>
-<span class="font-headline text-xs tracking-widest uppercase text-white/40">CULINARY MODULE</span>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline font-bold text-xl">CHEF_KNIFE_V1</h4>
-<span class="text-primary text-xs font-headline font-black tracking-widest">$349/UNIT</span>
-</div>
-<div class="flex gap-2 mb-6">
-<span class="px-2 py-1 bg-white/5 text-[10px] uppercase tracking-tighter">MULTI_ARM</span>
-<span class="px-2 py-1 bg-white/5 text-[10px] uppercase tracking-tighter">FOOD_SAFE</span>
-</div>
-<button class="w-full py-3 bg-surface-container-highest font-headline font-bold text-xs uppercase">DEPLOY_SKILL</button>
+<div class="border-t border-outline-variant/15 pt-6 space-y-3 text-base">
+<div class="flex justify-between"><span class="text-white/50">Human training</span><span class="text-white font-bold">~3 years</span></div>
+<div class="flex justify-between"><span class="text-white/50">Robot training (sim)</span><span class="text-primary font-bold">~24 hours</span></div>
+<div class="flex justify-between"><span class="text-white/50">Transfer to new robot</span><span class="text-primary font-bold">~1 hour</span></div>
 </div>
 </div>
-<!-- Skill Card 3: More Skills -->
-<div class="bg-surface p-1 border-t-2 border-white/20">
-<div class="w-full h-48 bg-surface-container-high flex flex-col items-center justify-center gap-3">
-<div class="flex gap-6">
-<div class="flex flex-col items-center"><span class="material-symbols-outlined text-3xl text-white/30">directions_walk</span><span class="text-[8px] text-white/20 uppercase mt-1">WALKING</span></div>
-<div class="flex flex-col items-center"><span class="material-symbols-outlined text-3xl text-white/30">music_note</span><span class="text-[8px] text-white/20 uppercase mt-1">DANCING</span></div>
-<div class="flex flex-col items-center"><span class="material-symbols-outlined text-3xl text-white/30">yard</span><span class="text-[8px] text-white/20 uppercase mt-1">GARDENING</span></div>
 </div>
-<span class="font-headline tracking-widest text-[10px] uppercase text-primary">+12 MORE SKILLS</span>
+<div class="bg-surface border-t-4 border-white/20">
+<div class="w-full h-64 bg-surface-container-high flex flex-col items-center justify-center gap-4">
+<div class="flex gap-8">
+<div class="flex flex-col items-center"><span class="material-symbols-outlined text-5xl text-white/40">directions_walk</span><span class="text-xs text-white/30 uppercase mt-2 tracking-widest">WALKING</span></div>
+<div class="flex flex-col items-center"><span class="material-symbols-outlined text-5xl text-white/40">music_note</span><span class="text-xs text-white/30 uppercase mt-2 tracking-widest">DANCING</span></div>
+<div class="flex flex-col items-center"><span class="material-symbols-outlined text-5xl text-white/40">yard</span><span class="text-xs text-white/30 uppercase mt-2 tracking-widest">GARDENING</span></div>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline font-bold text-xl text-white/60">EXPANDING CATALOG</h4>
+<span class="font-headline tracking-widest text-sm uppercase text-primary mt-2">+ MORE IN DEVELOPMENT</span>
 </div>
-<div class="h-10"></div>
-<button class="w-full py-3 border border-primary/30 font-headline font-bold text-xs uppercase text-primary">BROWSE_ALL</button>
+<div class="p-10">
+<h4 class="font-headline font-black text-3xl mb-5 text-white/60">EXPANDING CATALOG</h4>
+<div class="flex gap-2 mb-8">
+<span class="px-3 py-1 bg-white/5 text-xs uppercase tracking-widest">ROADMAP</span>
+</div>
+<div class="border-t border-outline-variant/15 pt-6 space-y-3 text-base">
+<div class="flex justify-between"><span class="text-white/50">Human-to-human</span><span class="text-white font-bold">Years</span></div>
+<div class="flex justify-between"><span class="text-white/50">Robot-to-robot</span><span class="text-primary font-bold">Hours</span></div>
+<div class="flex justify-between"><span class="text-white/50">Skill file size</span><span class="text-primary font-bold">~500MB–2GB</span></div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<!-- Slide 7: Hardware Native -->
-<section class="min-h-screen bg-surface flex items-center px-20">
-<div class="grid grid-cols-2 gap-20 items-center">
-<div class="order-2">
-<div class="p-10 border border-primary/20 bg-primary/5">
-<div class="flex items-center gap-6 mb-10">
-<div class="w-20 h-20 bg-white p-4">
-<div class="text-3xl font-headline font-black text-black">N</div>
+
+<!-- Slide 7: NVIDIA / Parallel Training Visual -->
+<section class="min-h-screen bg-surface flex flex-col justify-center px-24">
+<div class="flex items-center gap-6 mb-12">
+<div class="w-24 h-24 bg-[#76b900] flex items-center justify-center">
+<div class="text-5xl font-headline font-black text-black">N</div>
 </div>
 <div>
-<h3 class="text-3xl font-headline font-black uppercase">NVIDIA INCEPTION</h3>
-<p class="text-primary font-headline tracking-widest text-xs uppercase">PREMIUM MEMBER STATUS</p>
+<h3 class="text-4xl font-headline font-black uppercase">NVIDIA INCEPTION MEMBER</h3>
+<p class="text-primary font-headline tracking-widest text-sm uppercase mt-1">ISAAC SIM + OMNIVERSE PARTNER</p>
 </div>
 </div>
-<h2 class="text-4xl font-headline font-black mb-6 uppercase">HARDWARE_NATIVE</h2>
-<p class="text-white/60 mb-8 leading-relaxed">Skills trained in Isaac Sim deploy natively to NVIDIA Jetson Orin and IGX hardware. TensorRT optimization ensures sub-5ms inference for real-time skill execution.</p>
-<div class="flex gap-10">
+<div class="grid grid-cols-2 gap-16 items-center">
 <div>
-<div class="text-2xl font-black font-headline">5X</div>
-<div class="text-[10px] text-white/40 uppercase tracking-widest">FASTER INFERENCE</div>
+<img alt="1000 robots learning to walk simultaneously in NVIDIA Isaac Sim" class="w-full aspect-[16/10] object-cover border-l-4 border-primary" src="../../public/images/robots-simulation.png"/>
+<p class="text-xs text-white/30 mt-3 tracking-widest uppercase">Source: developer.nvidia.com/isaac</p>
 </div>
 <div>
-<div class="text-2xl font-black font-headline">40%</div>
-<div class="text-[10px] text-white/40 uppercase tracking-widest">ENERGY EFFICIENCY</div>
+<h2 class="text-7xl font-headline font-black mb-10 uppercase leading-none">MASSIVELY<br/>PARALLEL<br/>TRAINING</h2>
+<div class="grid grid-cols-3 gap-4 mb-10">
+<div class="bg-surface-container-high p-6 border-l-4 border-primary">
+<div class="text-5xl font-headline font-black text-primary">1,000</div>
+<div class="text-xs text-white/50 uppercase tracking-widest mt-2 leading-tight">Robots training in parallel</div>
+</div>
+<div class="bg-surface-container-high p-6 border-l-4 border-white/40">
+<div class="text-5xl font-headline font-black text-white">1 hr</div>
+<div class="text-xs text-white/50 uppercase tracking-widest mt-2 leading-tight">Of wall-clock time</div>
+</div>
+<div class="bg-surface-container-high p-6 border-l-4 border-primary">
+<div class="text-5xl font-headline font-black text-primary">=</div>
+<div class="text-xs text-white/50 uppercase tracking-widest mt-2 leading-tight">Equivalent output</div>
+</div>
+<div class="col-span-3 bg-primary/10 border border-primary/30 p-6 flex items-center gap-6">
+<div class="text-6xl font-headline font-black text-primary">1,000 hrs</div>
+<div class="text-white/70 text-sm uppercase tracking-widest leading-relaxed">of physical-world learning<br/>completed in 1 hour of simulation</div>
 </div>
 </div>
+<div class="grid grid-cols-2 gap-6 pt-6 border-t border-outline-variant/15">
+<div>
+<div class="text-3xl font-headline font-black text-white">&lt;5ms</div>
+<div class="text-xs text-white/40 uppercase tracking-widest mt-1">Jetson Orin inference</div>
+</div>
+<div>
+<div class="text-3xl font-headline font-black text-white">TensorRT</div>
+<div class="text-xs text-white/40 uppercase tracking-widest mt-1">Optimized for IGX + Jetson</div>
 </div>
 </div>
-<div class="order-1">
-<img alt="Robots training in NVIDIA Omniverse simulation" class="w-full object-cover border-l border-primary" src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/robots-simulation.png"/>
 </div>
 </div>
 </section>
+
 <!-- Slide 8: Market -->
-<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-20" id="market">
-<div class="max-w-6xl w-full">
-<h2 class="text-6xl font-headline font-black mb-16 tracking-tighter uppercase">THE MARKET_SCALE</h2>
-<div class="grid grid-cols-12 gap-px bg-outline-variant/10">
-<div class="col-span-4 bg-surface p-12">
-<label class="text-primary font-headline text-[10px] tracking-[0.3em] uppercase mb-4 block">TAM_TOTAL_MARKET</label>
-<div class="text-7xl font-headline font-black">$38B</div>
-<p class="text-white/30 text-sm mt-4 uppercase">Humanoid &amp; Cobot Market by 2030</p>
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24">
+<h2 class="text-7xl font-headline font-black mb-16 tracking-tighter uppercase">THE MARKET_SCALE</h2>
+<div class="grid grid-cols-3 gap-1 bg-outline-variant/10">
+<div class="bg-surface p-16">
+<label class="text-primary font-headline text-sm tracking-[0.3em] uppercase mb-6 block">TAM_TOTAL_MARKET</label>
+<div class="text-9xl font-headline font-black leading-none">$38B</div>
+<p class="text-white/40 text-lg mt-6 uppercase tracking-wide">Humanoid &amp; Cobot Market by 2030</p>
 </div>
-<div class="col-span-4 bg-surface p-12">
-<label class="text-primary font-headline text-[10px] tracking-[0.3em] uppercase mb-4 block">SAM_SERVICEABLE</label>
-<div class="text-7xl font-headline font-black">$15B</div>
-<p class="text-white/30 text-sm mt-4 uppercase">Robotics Software &amp; AI Skills</p>
+<div class="bg-surface p-16">
+<label class="text-primary font-headline text-sm tracking-[0.3em] uppercase mb-6 block">SAM_SERVICEABLE</label>
+<div class="text-9xl font-headline font-black leading-none">$15B</div>
+<p class="text-white/40 text-lg mt-6 uppercase tracking-wide">Robotics Software &amp; AI Skills</p>
 </div>
-<div class="col-span-4 bg-surface p-12">
-<label class="text-primary font-headline text-[10px] tracking-[0.3em] uppercase mb-4 block">SOM_TARGET</label>
-<div class="text-7xl font-headline font-black">$3B</div>
-<p class="text-white/30 text-sm mt-4 uppercase">Physical AI Skill Marketplace</p>
+<div class="bg-surface p-16">
+<label class="text-primary font-headline text-sm tracking-[0.3em] uppercase mb-6 block">SOM_TARGET</label>
+<div class="text-9xl font-headline font-black leading-none">$3B</div>
+<p class="text-white/40 text-lg mt-6 uppercase tracking-wide">Physical AI Skill Marketplace</p>
 </div>
 </div>
-<div class="mt-12 grid grid-cols-4 gap-6 text-xs text-white/30 font-headline tracking-wider">
-<div class="border-t border-outline-variant/15 pt-4"><span class="text-primary">$2.9B</span> humanoid market 2025 → <span class="text-primary">$14.5B</span> by 2032 (25.8% CAGR)</div>
-<div class="border-t border-outline-variant/15 pt-4">Physical Intelligence raised <span class="text-primary">$1B+</span> at $5.6B valuation</div>
-<div class="border-t border-outline-variant/15 pt-4">Skild AI raised <span class="text-primary">$1.4B</span> at $14B valuation</div>
-<div class="border-t border-outline-variant/15 pt-4">Figure AI raised <span class="text-primary">$1B+</span> at $39B valuation</div>
+<div class="mt-14 grid grid-cols-4 gap-6 text-base text-white/40 font-headline">
+<div class="border-t-2 border-primary/30 pt-5 leading-relaxed"><span class="text-primary font-bold">$2.9B &#8594; $14.5B</span><br/><span class="text-sm text-white/30">Humanoid market 2025 → 2032 at 25.8% CAGR</span></div>
+<div class="border-t-2 border-primary/30 pt-5 leading-relaxed"><span class="text-primary font-bold">Physical Intelligence</span><br/><span class="text-sm text-white/30">$1B+ raised at $5.6B valuation</span></div>
+<div class="border-t-2 border-primary/30 pt-5 leading-relaxed"><span class="text-primary font-bold">Skild AI</span><br/><span class="text-sm text-white/30">$1.4B raised at $14B valuation</span></div>
+<div class="border-t-2 border-primary/30 pt-5 leading-relaxed"><span class="text-primary font-bold">Figure AI</span><br/><span class="text-sm text-white/30">$1B+ raised at $39B valuation</span></div>
 </div>
-<p class="mt-6 text-[10px] text-white/20 tracking-widest uppercase">Sources: Grand View Research, Research and Markets, PitchBook, BusinessWire (2025–2026)</p>
+<div class="mt-10 pt-6 border-t border-outline-variant/15">
+<label class="text-white/30 font-headline text-xs tracking-[0.3em] uppercase mb-3 block">SOURCES</label>
+<div class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-headline tracking-wider">
+<a href="https://www.grandviewresearch.com/industry-analysis/humanoid-robot-market-report" class="text-primary/80 hover:text-primary underline decoration-primary/30">grandviewresearch.com/industry-analysis/humanoid-robot-market-report</a>
+<a href="https://www.researchandmarkets.com" class="text-primary/80 hover:text-primary underline decoration-primary/30">researchandmarkets.com</a>
+<a href="https://pitchbook.com" class="text-primary/80 hover:text-primary underline decoration-primary/30">pitchbook.com</a>
+<a href="https://www.businesswire.com" class="text-primary/80 hover:text-primary underline decoration-primary/30">businesswire.com</a>
+</div>
 </div>
 </section>
-<!-- Slide 9: Model -->
-<section class="min-h-screen bg-surface flex flex-col justify-center px-20">
-<div class="grid grid-cols-3 gap-px bg-outline-variant/20">
+
+<!-- Slide 9: Business Model -->
+<section class="min-h-screen bg-surface flex flex-col justify-center px-24">
+<h2 class="text-7xl font-headline font-black mb-16 tracking-tighter uppercase">REVENUE_MODEL</h2>
+<div class="grid grid-cols-3 gap-1 bg-outline-variant/20">
 <div class="bg-surface p-16 border-t-4 border-primary">
-<h3 class="text-2xl font-headline font-black uppercase mb-6">SKILL LICENSING</h3>
-<p class="text-5xl font-headline font-black mb-4">$300+</p>
-<p class="text-white/40 leading-relaxed">Per-skill license fee. Experts earn royalties on every deployment. Skills priced by complexity — walking ($300) to martial arts ($1,500+).</p>
+<h3 class="text-3xl font-headline font-black uppercase mb-8">SKILL LICENSING</h3>
+<p class="text-6xl font-headline font-black mb-6 text-primary">PER-USE</p>
+<p class="text-white/50 text-lg leading-relaxed">License-based model. Each skill licensed per-robot. Human experts earn royalties on every deployment of their captured skills.</p>
 </div>
 <div class="bg-surface p-16 border-t-4 border-white/20">
-<h3 class="text-2xl font-headline font-black uppercase mb-6">PLATFORM FEE</h3>
-<p class="text-5xl font-headline font-black mb-4">15-20%</p>
-<p class="text-white/40 leading-relaxed">Marketplace take rate on every transaction. Revenue share with human experts whose skills are captured and replicated.</p>
+<h3 class="text-3xl font-headline font-black uppercase mb-8">PLATFORM FEE</h3>
+<p class="text-6xl font-headline font-black mb-6">15-20%</p>
+<p class="text-white/50 text-lg leading-relaxed">Marketplace take rate on every transaction. Revenue share with human experts whose skills are captured and replicated.</p>
 </div>
 <div class="bg-surface p-16 border-t-4 border-white/20">
-<h3 class="text-2xl font-headline font-black uppercase mb-6">FLEET SUBSCRIPTIONS</h3>
-<p class="text-5xl font-headline font-black mb-4">$300/mo</p>
-<p class="text-white/40 leading-relaxed">Per-robot monthly subscription for enterprises deploying skills at scale. Includes OTA updates and skill versioning.</p>
+<h3 class="text-3xl font-headline font-black uppercase mb-8">FLEET LICENSE</h3>
+<p class="text-6xl font-headline font-black mb-6">ENTERPRISE</p>
+<p class="text-white/50 text-lg leading-relaxed">Volume licensing for enterprises deploying skills across robot fleets. Includes OTA updates, versioning, priority support.</p>
 </div>
 </div>
 </section>
-<!-- Slide 10: Traction -->
-<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-20" id="traction">
-<h2 class="text-5xl font-headline font-black mb-16 tracking-tighter uppercase">DEPLOYMENT_TIMELINE</h2>
+
+<!-- Slide 10: Timeline -->
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24">
+<h2 class="text-7xl font-headline font-black mb-20 tracking-tighter uppercase">DEPLOYMENT_TIMELINE</h2>
 <div class="relative">
 <div class="absolute top-1/2 left-0 w-full h-px bg-outline-variant/30 -translate-y-1/2"></div>
-<div class="grid grid-cols-4 gap-10">
-<div class="relative pt-10">
-<div class="w-4 h-4 bg-primary absolute -top-2 left-0 -translate-y-1/2 rounded-full ring-8 ring-primary/10"></div>
-<div class="text-primary font-headline font-black text-sm mb-2">Q2_2026 [NOW]</div>
-<h4 class="font-bold uppercase text-white mb-4">PROTOTYPING</h4>
-<p class="text-xs text-white/40 leading-relaxed">Procuring Unitree G1 humanoids. Building expert motion capture pipeline. Initial skill recording sessions.</p>
+<div class="grid grid-cols-4 gap-12">
+<div class="relative pt-16">
+<div class="w-6 h-6 bg-primary absolute -top-3 left-0 -translate-y-1/2 rounded-full ring-[12px] ring-primary/10"></div>
+<div class="text-primary font-headline font-black text-lg mb-3">Q2_2026 [NOW]</div>
+<h4 class="font-bold uppercase text-white mb-5 text-2xl">PROTOTYPING</h4>
+<p class="text-base text-white/50 leading-relaxed">Procuring Unitree G1 humanoids. Building expert motion capture pipeline. Initial skill recording sessions.</p>
 </div>
-<div class="relative pt-10">
-<div class="w-4 h-4 bg-white absolute -top-2 left-0 -translate-y-1/2 rounded-full ring-8 ring-white/10"></div>
-<div class="text-white/40 font-headline font-black text-sm mb-2">Q4_2026</div>
-<h4 class="font-bold uppercase text-white mb-4">BETA_MARKETPLACE</h4>
-<p class="text-xs text-white/40 leading-relaxed">First 5 skills trained in Isaac Sim. Beta marketplace live. Sim-to-real transfer validated on Jetson Orin.</p>
+<div class="relative pt-16">
+<div class="w-6 h-6 bg-white absolute -top-3 left-0 -translate-y-1/2 rounded-full ring-[12px] ring-white/10"></div>
+<div class="text-white/50 font-headline font-black text-lg mb-3">Q4_2026</div>
+<h4 class="font-bold uppercase text-white mb-5 text-2xl">BETA_MARKETPLACE</h4>
+<p class="text-base text-white/50 leading-relaxed">First 5 skills trained in Isaac Sim. Beta marketplace live. Sim-to-real transfer validated on Jetson Orin.</p>
 </div>
-<div class="relative pt-10">
-<div class="w-4 h-4 bg-white absolute -top-2 left-0 -translate-y-1/2 rounded-full ring-8 ring-white/10"></div>
-<div class="text-white/40 font-headline font-black text-sm mb-2">Q2_2027</div>
-<h4 class="font-bold uppercase text-white mb-4">PUBLIC_LAUNCH</h4>
-<p class="text-xs text-white/40 leading-relaxed">20+ skills live. Public marketplace on panditaai.com. Expert partnership program open.</p>
+<div class="relative pt-16">
+<div class="w-6 h-6 bg-white absolute -top-3 left-0 -translate-y-1/2 rounded-full ring-[12px] ring-white/10"></div>
+<div class="text-white/50 font-headline font-black text-lg mb-3">Q2_2027</div>
+<h4 class="font-bold uppercase text-white mb-5 text-2xl">PUBLIC_LAUNCH</h4>
+<p class="text-base text-white/50 leading-relaxed">20+ skills live. Public marketplace on panditaai.com. Expert partnership program open.</p>
 </div>
-<div class="relative pt-10">
-<div class="w-4 h-4 bg-white absolute -top-2 left-0 -translate-y-1/2 rounded-full ring-8 ring-white/10"></div>
-<div class="text-white/40 font-headline font-black text-sm mb-2">Q4_2027</div>
-<h4 class="font-bold uppercase text-white mb-4">COMMUNITY_SCALE</h4>
-<p class="text-xs text-white/40 leading-relaxed">Largest open skill catalog for robots. 100+ expert partners. Enterprise fleet deployments.</p>
+<div class="relative pt-16">
+<div class="w-6 h-6 bg-white absolute -top-3 left-0 -translate-y-1/2 rounded-full ring-[12px] ring-white/10"></div>
+<div class="text-white/50 font-headline font-black text-lg mb-3">Q4_2027</div>
+<h4 class="font-bold uppercase text-white mb-5 text-2xl">COMMUNITY_SCALE</h4>
+<p class="text-base text-white/50 leading-relaxed">Largest open skill catalog for robots. 100+ expert partners. Enterprise fleet deployments.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Slide 11: Competition Matrix -->
-<section class="min-h-screen bg-surface flex flex-col justify-center px-20">
-<h2 class="text-5xl font-headline font-black mb-16 tracking-tighter text-center uppercase">THE COMPETITIVE_LANDSCAPE</h2>
-<div class="relative w-full max-w-4xl mx-auto aspect-square border-l-2 border-b-2 border-outline-variant/30">
-<!-- X-Axis Label -->
-<div class="absolute -bottom-12 left-1/2 -translate-x-1/2 font-headline text-xs tracking-widest uppercase">HARDWARE_LOCK-IN   &lt; — &gt;   UNIVERSAL_SKILLS</div>
-<!-- Y-Axis Label -->
-<div class="absolute -left-12 top-1/2 -rotate-90 origin-center -translate-y-1/2 font-headline text-xs tracking-widest uppercase">MONOLITHIC_CODE   &lt; — &gt;   MARKETPLACE_DYNAMICS</div>
-<!-- Quadrant Labels -->
-<div class="absolute top-4 right-4 text-primary font-headline text-[10px] tracking-widest uppercase">FRONTIER_ZONE</div>
-<!-- Competitors -->
-<div class="absolute bottom-[20%] left-[20%] text-white/40 flex flex-col items-center">
-<div class="w-3 h-3 bg-white/20 mb-2"></div>
-<span class="text-[10px] uppercase font-bold">BOSTON DYNAMICS</span>
-<span class="text-[8px] text-white/20 mt-1">HARDWARE / CLOSED</span>
+
+<!-- Slide 11: Competition -->
+<section class="min-h-screen bg-surface flex flex-col justify-center px-24">
+<h2 class="text-7xl font-headline font-black mb-12 tracking-tighter text-center uppercase">COMPETITIVE_LANDSCAPE</h2>
+<div class="relative w-full max-w-[1400px] mx-auto border-l-2 border-b-2 border-outline-variant/30" style="aspect-ratio:16/8">
+<div class="absolute -bottom-12 left-1/2 -translate-x-1/2 font-headline text-sm tracking-widest uppercase text-white/40">VERTICALLY INTEGRATED &#8592; &#8594; OPEN MARKETPLACE</div>
+<div class="absolute -left-20 top-1/2 -rotate-90 origin-center -translate-y-1/2 font-headline text-sm tracking-widest uppercase text-white/40">HARDWARE ONLY &#8592; &#8594; SOFTWARE + SKILLS</div>
+<div class="absolute top-6 right-6 text-primary font-headline text-sm tracking-widest uppercase">OPEN SKILL PLATFORM</div>
+<div class="absolute bottom-[15%] left-[12%] text-white/40 flex flex-col items-center">
+<div class="w-4 h-4 bg-white/30 mb-2"></div>
+<span class="text-sm uppercase font-bold">BOSTON DYNAMICS</span>
+<span class="text-xs text-white/25 mt-1">HARDWARE / CLOSED</span>
 </div>
 <div class="absolute bottom-[28%] left-[30%] text-white/40 flex flex-col items-center">
-<div class="w-3 h-3 bg-white/20 mb-2"></div>
-<span class="text-[10px] uppercase font-bold">FIGURE AI</span>
-<span class="text-[8px] text-white/20 mt-1">$39B / FULL-STACK</span>
+<div class="w-4 h-4 bg-white/30 mb-2"></div>
+<span class="text-sm uppercase font-bold">FIGURE AI</span>
+<span class="text-xs text-white/25 mt-1">$39B / FULL-STACK</span>
 </div>
 <div class="absolute top-[30%] left-[22%] text-white/40 flex flex-col items-center">
-<div class="w-3 h-3 bg-white/20 mb-2"></div>
-<span class="text-[10px] uppercase font-bold">SKILD AI</span>
-<span class="text-[8px] text-white/20 mt-1">$14B / FOUNDATION MODEL</span>
+<div class="w-4 h-4 bg-white/30 mb-2"></div>
+<span class="text-sm uppercase font-bold">SKILD AI</span>
+<span class="text-xs text-white/25 mt-1">$14B / FOUNDATION MODEL</span>
 </div>
 <div class="absolute top-[35%] left-[48%] text-white/40 flex flex-col items-center">
-<div class="w-3 h-3 bg-white/20 mb-2"></div>
-<span class="text-[10px] uppercase font-bold">PHYSICAL INTELLIGENCE</span>
-<span class="text-[8px] text-white/20 mt-1">$5.6B / VLA MODELS</span>
+<div class="w-4 h-4 bg-white/30 mb-2"></div>
+<span class="text-sm uppercase font-bold">PHYSICAL INTELLIGENCE</span>
+<span class="text-xs text-white/25 mt-1">$5.6B / VLA MODELS</span>
 </div>
 <div class="absolute bottom-[30%] right-[35%] text-white/40 flex flex-col items-center">
-<div class="w-3 h-3 bg-white/20 mb-2"></div>
-<span class="text-[10px] uppercase font-bold">UNITREE</span>
-<span class="text-[8px] text-white/20 mt-1">AFFORDABLE HUMANOIDS</span>
+<div class="w-4 h-4 bg-white/30 mb-2"></div>
+<span class="text-sm uppercase font-bold">UNITREE</span>
+<span class="text-xs text-white/25 mt-1">AFFORDABLE HUMANOIDS</span>
 </div>
 <div class="absolute top-[12%] right-[12%] flex flex-col items-center animate-pulse">
-<div class="w-8 h-8 bg-primary mb-2 shadow-[0_0_20px_rgba(255,145,89,0.5)]"></div>
-<span class="text-primary text-xs uppercase font-black tracking-widest">PANDITAAI</span>
-<span class="text-[8px] text-primary/60 mt-1">OPEN MARKETPLACE / HUMAN SKILLS</span>
+<div class="w-10 h-10 bg-primary mb-2 shadow-[0_0_30px_rgba(255,145,89,0.6)]"></div>
+<span class="text-primary text-base uppercase font-black tracking-widest">PANDITAAI</span>
+<span class="text-xs text-primary/70 mt-1">OPEN MARKETPLACE / HUMAN SKILLS</span>
 </div>
+</div>
+<div class="mt-24 max-w-4xl mx-auto text-center">
+<p class="text-xl text-white/70 leading-relaxed"><span class="text-primary font-bold">Why we win:</span> Competitors build closed, full-stack humanoids. We build the open skill layer — any robot, any form factor, any manufacturer can license human-captured skills from our marketplace.</p>
 </div>
 </section>
+
 <!-- Slide 12: Team -->
-<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-20">
-<h2 class="text-5xl font-headline font-black mb-16 tracking-tighter uppercase">FOUNDING_TEAM</h2>
-<div class="grid grid-cols-2 gap-16 max-w-4xl">
-<div class="bg-surface group">
-<div class="aspect-[3/4] relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden bg-surface-container-high flex items-center justify-center">
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24">
+<h2 class="text-7xl font-headline font-black mb-16 tracking-tighter uppercase">FOUNDING_TEAM</h2>
+<div class="grid grid-cols-2 gap-16 w-full">
+<div class="bg-surface">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-high flex items-center justify-center">
 <div class="text-center">
-<span class="material-symbols-outlined text-8xl text-white/20">person</span>
-<p class="text-[10px] text-white/20 mt-2 uppercase tracking-widest">PHOTO PLACEHOLDER</p>
-</div>
-<div class="absolute inset-0 border-[10px] border-primary/0 group-hover:border-primary/20 transition-all"></div>
-</div>
-<div class="p-8">
-<h4 class="text-3xl font-headline font-black uppercase">SUMIT AGRAWAL</h4>
-<p class="text-primary font-headline tracking-widest text-[10px] uppercase mb-4">CEO &amp; FOUNDER</p>
-<p class="text-white/40 text-sm leading-relaxed">Building PanditaAI to democratize physical skills for robots. NVIDIA Inception member. Leading product, technology, and go-to-market strategy.</p>
+<span class="material-symbols-outlined text-[180px] text-white/15">person</span>
+<p class="text-sm text-white/25 mt-2 uppercase tracking-widest">PHOTO PLACEHOLDER</p>
 </div>
 </div>
-<div class="bg-surface group">
-<div class="aspect-[3/4] relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden bg-surface-container-high flex items-center justify-center">
+<div class="p-12">
+<h4 class="text-5xl font-headline font-black uppercase mb-3">SUMIT AGRAWAL</h4>
+<p class="text-primary font-headline tracking-widest text-sm uppercase mb-6">CEO &amp; FOUNDER</p>
+<p class="text-white/50 text-lg leading-relaxed">Senior software engineer with 8+ years shipping production AI, Web3, and cloud-native systems — scaled institutional crypto staking to $1.2B+ AUM, built multi-agent and MCP/WebMCP tooling, and fine-tuned LLMs for domain use cases. NVIDIA Inception member. Leading product, technology, and go-to-market at PanditaAI.</p>
+</div>
+</div>
+<div class="bg-surface">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-high flex items-center justify-center">
 <div class="text-center">
-<span class="material-symbols-outlined text-8xl text-white/20">person</span>
-<p class="text-[10px] text-white/20 mt-2 uppercase tracking-widest">PHOTO PLACEHOLDER</p>
+<span class="material-symbols-outlined text-[180px] text-white/15">person</span>
+<p class="text-sm text-white/25 mt-2 uppercase tracking-widest">PHOTO PLACEHOLDER</p>
 </div>
-<div class="absolute inset-0 border-[10px] border-primary/0 group-hover:border-primary/20 transition-all"></div>
 </div>
-<div class="p-8">
-<h4 class="text-3xl font-headline font-black uppercase">SHAILENDRA AGRAWAL</h4>
-<p class="text-primary font-headline tracking-widest text-[10px] uppercase mb-4">PRESIDENT</p>
-<p class="text-white/40 text-sm leading-relaxed">Bringing decades of business leadership and operational expertise. Overseeing corporate strategy, partnerships, and organizational growth.</p>
+<div class="p-12">
+<h4 class="text-5xl font-headline font-black uppercase mb-3">SHAILENDRA AGRAWAL</h4>
+<p class="text-primary font-headline tracking-widest text-sm uppercase mb-6">PRESIDENT</p>
+<p class="text-white/50 text-lg leading-relaxed">Veteran electrician, mechanic, and hardware specialist with decades of hands-on experience. Deeply passionate about building humanoid robots — leads hardware procurement, integration, and physical-systems engineering for PanditaAI's robot fleet.</p>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Slide 13: Raise -->
-<section class="min-h-screen bg-surface flex flex-col justify-center px-20" id="equity">
-<div class="max-w-4xl mx-auto w-full">
+<section class="min-h-screen bg-surface flex flex-col justify-center px-24">
+<div class="w-full">
 <div class="flex justify-between items-end mb-20">
 <div>
-<label class="text-primary font-headline tracking-[0.4em] uppercase mb-4 block">SEED_ROUND</label>
-<h2 class="text-8xl font-headline font-black tracking-tighter uppercase">$1M</h2>
+<label class="text-primary font-headline tracking-[0.4em] uppercase mb-4 block text-base">SEED_ROUND</label>
+<h2 class="text-[12rem] font-headline font-black tracking-tighter uppercase leading-none">$1M</h2>
 </div>
 <div class="text-right">
-<div class="text-white/40 font-headline tracking-widest uppercase text-xs mb-1">SAFE_INSTRUMENT</div>
-<div class="text-white font-bold">$5M VALUATION CAP</div>
+<div class="text-white/40 font-headline tracking-widest uppercase text-sm mb-2">SAFE_INSTRUMENT</div>
+<div class="text-white font-bold text-2xl">$5M VALUATION CAP</div>
 </div>
 </div>
-<div class="grid grid-cols-12 h-16 w-full">
-<div class="col-span-4 bg-primary border-r border-black flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-xs">35% HARDWARE</div>
-<div class="col-span-3 bg-primary/80 border-r border-black flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-xs">25% R&amp;D</div>
-<div class="col-span-3 bg-primary/60 border-r border-black flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-xs">25% TEAM</div>
-<div class="col-span-2 bg-primary/40 flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-xs">15% OPS</div>
+<div class="grid grid-cols-12 h-20 w-full">
+<div class="col-span-4 bg-primary border-r border-black flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-base">35% HARDWARE</div>
+<div class="col-span-3 bg-primary/80 border-r border-black flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-base">25% R&amp;D</div>
+<div class="col-span-3 bg-primary/60 border-r border-black flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-base">25% TEAM</div>
+<div class="col-span-2 bg-primary/40 flex items-center justify-center font-headline font-black text-black uppercase tracking-widest text-base">15% OPS</div>
 </div>
-<div class="mt-16 grid grid-cols-2 gap-16">
+<div class="mt-16 grid grid-cols-2 gap-20">
 <div>
-<p class="text-white/60 leading-relaxed mb-6">Fund allocation breakdown:</p>
-<div class="space-y-3 text-sm">
-<div class="flex justify-between text-white/50"><span>Unitree G1 EDU humanoids (3x)</span><span class="text-white font-bold">$132K</span></div>
-<div class="flex justify-between text-white/50"><span>Motion capture equipment</span><span class="text-white font-bold">$80K</span></div>
-<div class="flex justify-between text-white/50"><span>NVIDIA Omniverse compute</span><span class="text-white font-bold">$140K</span></div>
-<div class="flex justify-between text-white/50"><span>Engineering team (18 months)</span><span class="text-white font-bold">$400K</span></div>
-<div class="flex justify-between text-white/50"><span>Expert partnerships</span><span class="text-white font-bold">$100K</span></div>
-<div class="flex justify-between text-white/50"><span>Operations &amp; legal</span><span class="text-white font-bold">$148K</span></div>
+<p class="text-white/60 leading-relaxed mb-8 text-xl">Fund allocation breakdown:</p>
+<div class="space-y-4 text-lg">
+<div class="flex justify-between text-white/60"><span>Unitree G1 EDU humanoids (3x)</span><span class="text-white font-bold">$132K</span></div>
+<div class="flex justify-between text-white/60"><span>Motion capture equipment</span><span class="text-white font-bold">$80K</span></div>
+<div class="flex justify-between text-white/60"><span>NVIDIA Omniverse compute</span><span class="text-white font-bold">$140K</span></div>
+<div class="flex justify-between text-white/60"><span>Engineering team (18 months)</span><span class="text-white font-bold">$400K</span></div>
+<div class="flex justify-between text-white/60"><span>Expert partnerships</span><span class="text-white font-bold">$100K</span></div>
+<div class="flex justify-between text-white/60"><span>Operations &amp; legal</span><span class="text-white font-bold">$148K</span></div>
 </div>
 </div>
-<div class="space-y-4">
-<div class="flex justify-between border-b border-outline-variant/15 pb-2">
-<span class="text-xs uppercase text-white/40 tracking-widest">MIN_TICKET</span>
-<span class="text-xs uppercase text-white font-bold">$50,000</span>
+<div class="space-y-5">
+<div class="flex justify-between border-b border-outline-variant/15 pb-3">
+<span class="text-sm uppercase text-white/40 tracking-widest">MIN_TICKET</span>
+<span class="text-sm uppercase text-white font-bold">$50,000</span>
 </div>
-<div class="flex justify-between border-b border-outline-variant/15 pb-2">
-<span class="text-xs uppercase text-white/40 tracking-widest">CLOSING_DATE</span>
-<span class="text-xs uppercase text-white font-bold">SEP_30_2026</span>
+<div class="flex justify-between border-b border-outline-variant/15 pb-3">
+<span class="text-sm uppercase text-white/40 tracking-widest">CLOSING_DATE</span>
+<span class="text-sm uppercase text-white font-bold">SEP_30_2026</span>
 </div>
-<div class="flex justify-between border-b border-outline-variant/15 pb-2">
-<span class="text-xs uppercase text-white/40 tracking-widest">RUNWAY</span>
-<span class="text-xs uppercase text-white font-bold">18_MONTHS</span>
+<div class="flex justify-between border-b border-outline-variant/15 pb-3">
+<span class="text-sm uppercase text-white/40 tracking-widest">RUNWAY</span>
+<span class="text-sm uppercase text-white font-bold">18_MONTHS</span>
 </div>
-<div class="flex justify-between border-b border-outline-variant/15 pb-2">
-<span class="text-xs uppercase text-white/40 tracking-widest">STAGE</span>
-<span class="text-xs uppercase text-white font-bold">PRE-REVENUE / PROTOTYPE</span>
+<div class="flex justify-between border-b border-outline-variant/15 pb-3">
+<span class="text-sm uppercase text-white/40 tracking-widest">STAGE</span>
+<span class="text-sm uppercase text-white font-bold">PRE-REVENUE / PROTOTYPE</span>
 </div>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Slide 14: Vision -->
 <section class="min-h-screen bg-surface flex flex-col justify-center items-center relative overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Human expertise being transferred to robots" class="w-full h-full object-cover opacity-25" src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/human-robot-transfer.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface"></div>
+<img alt="Human expertise being transferred to robots" class="w-full h-full object-cover object-center opacity-30" src="../../public/images/robots-simulation.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-[#0e0e0e]/60 to-[#0e0e0e]/80"></div>
 </div>
-<div class="relative z-10 text-center max-w-5xl px-10">
-<h2 class="text-7xl font-headline font-black uppercase mb-12 tracking-tighter leading-[0.9]">THE DEFAULT LAYER<br/>FOR MOTION</h2>
-<p class="text-2xl font-headline font-light text-white/60 tracking-widest uppercase">Capturing human expertise. Replicating it in robots. At planetary scale.</p>
+<div class="relative z-10 text-center max-w-6xl px-10">
+<h2 class="text-[10rem] font-headline font-black uppercase mb-12 tracking-tighter leading-[0.85]">THE DEFAULT<br/>LAYER FOR<br/>MOTION</h2>
+<p class="text-3xl font-headline font-light text-white/60 tracking-widest uppercase">Capturing human expertise. Replicating it in robots. At planetary scale.</p>
 </div>
 </section>
+
 <!-- Slide 15: Contact -->
-<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-20 relative">
-<div class="max-w-4xl">
-<h2 class="text-5xl font-headline font-black mb-6 uppercase tracking-tighter">FUEL THE PHYSICAL<br/>REVOLUTION</h2>
-<div class="w-32 h-2 bg-primary mb-12"></div>
+<section class="min-h-screen bg-surface-container-low flex flex-col justify-center px-24 relative">
+<div class="w-full">
+<h2 class="text-7xl font-headline font-black mb-8 uppercase tracking-tighter leading-[0.95]">FUEL THE PHYSICAL<br/>REVOLUTION</h2>
+<div class="w-40 h-2 bg-primary mb-16"></div>
+<div class="grid grid-cols-2 gap-20 max-w-6xl">
 <div class="space-y-10">
-<div class="flex gap-20">
 <div>
-<label class="text-primary font-headline tracking-widest text-[10px] uppercase mb-2 block">COMPANY</label>
-<p class="text-2xl font-headline font-black uppercase">SHAILKA SYSTEMS PVT. LTD.</p>
-</div>
-<div>
-<label class="text-primary font-headline tracking-widest text-[10px] uppercase mb-2 block">WEBSITE</label>
-<p class="text-2xl font-headline font-black uppercase">PANDITAAI.COM</p>
-</div>
-</div>
-<div class="flex gap-20">
-<div>
-<label class="text-primary font-headline tracking-widest text-[10px] uppercase mb-2 block">HQ_LOCATION</label>
-<p class="text-lg font-headline font-bold uppercase">HD 072, WeWORK FUTURA, MAGARPATTA<br/>HADAPSAR, PUNE — 411028, MAHARASHTRA</p>
-</div>
+<label class="text-primary font-headline tracking-widest text-sm uppercase mb-3 block">COMPANY</label>
+<p class="text-3xl font-headline font-black uppercase">SHAILKA SYSTEMS PVT. LTD.</p>
 </div>
 <div>
-<label class="text-primary font-headline tracking-widest text-[10px] uppercase mb-2 block">DIRECT_SIGNAL</label>
-<p class="text-4xl font-headline font-black uppercase underline decoration-primary underline-offset-8">SUMIT@PANDITAAI.COM</p>
+<label class="text-primary font-headline tracking-widest text-sm uppercase mb-3 block">HQ_LOCATION</label>
+<p class="text-xl font-headline font-bold uppercase leading-relaxed">HD 072, WeWORK FUTURA, MAGARPATTA<br/>HADAPSAR, PUNE — 411028<br/>MAHARASHTRA, INDIA</p>
+</div>
+<div>
+<label class="text-primary font-headline tracking-widest text-sm uppercase mb-3 block">WEBSITE</label>
+<p class="text-3xl font-headline font-black uppercase">PANDITAAI.COM</p>
+</div>
+<div>
+<label class="text-primary font-headline tracking-widest text-sm uppercase mb-3 block">CONTACT</label>
+<p class="text-5xl font-headline font-black uppercase underline decoration-primary underline-offset-8">SUMIT@PANDITAAI.COM</p>
 </div>
 </div>
-<div class="mt-16 pt-12 border-t border-outline-variant/15 flex items-center gap-6">
-<div class="w-12 h-12 bg-white/5 flex items-center justify-center">
-<span class="material-symbols-outlined text-white/40" data-icon="lock">lock</span>
+<div class="flex flex-col items-end justify-start gap-8">
+<div class="w-56 h-56 border border-primary/20 p-3 flex items-center justify-center relative flex-shrink-0">
+<div class="absolute inset-0 border-t-2 border-l-2 w-10 h-10 border-primary"></div>
+<div class="absolute bottom-0 right-0 border-b-2 border-r-2 w-10 h-10 border-primary"></div>
+<img alt="QR code for panditaai.com" class="w-full h-full" src="../../public/images/qr-panditaai.png"/>
 </div>
+<p class="text-sm text-primary/70 font-headline tracking-widest uppercase">SCAN FOR PANDITAAI.COM</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-24 right-24 pt-8 border-t border-outline-variant/15 flex items-center gap-6">
+<span class="material-symbols-outlined text-white/30 text-2xl">lock</span>
 <p class="text-xs text-white/30 tracking-widest font-headline uppercase leading-loose">CONFIDENTIAL — FOR PROSPECTIVE INVESTORS ONLY // SHAILKA SYSTEMS PVT. LTD. // NVIDIA INCEPTION MEMBER // PUNE, INDIA</p>
 </div>
-</div>
-<div class="absolute bottom-20 right-20">
-<div class="w-48 h-48 border border-primary/20 p-2 flex items-center justify-center relative">
-<div class="absolute inset-0 border-t border-l w-8 h-8 border-primary"></div>
-<div class="absolute bottom-0 right-0 border-b border-r w-8 h-8 border-primary"></div>
-<img alt="QR code for panditaai.com" class="w-full h-full" src="file:///Users/sumitagrawal/CODE/sumit/n8n/projects/panditaai.com/public/images/qr-panditaai.png"/>
-</div>
-</div>
 </section>
-</main>
-<footer class="w-full flex justify-between items-center px-10 py-6 bg-[#0e0e0e] border-t border-[#484848]/10 font-headline text-[10px] tracking-[0.2em] uppercase text-white/30">
-<div class="text-white/20">©2025 SHAILKA SYSTEMS PVT. LTD. // PANDITAAI.COM</div>
-<div class="flex gap-10">
-<a class="hover:text-[#FF6B00] transition-colors" href="#">ENCRYPTION</a>
-<a class="hover:text-[#FF6B00] transition-colors" href="#">API_DOCS</a>
-<a class="hover:text-[#FF6B00] transition-colors" href="#">SYSTEM_STATUS</a>
-</div>
-</footer>
 
-```</body></html>
+</main>
+</body></html>

@@ -46,12 +46,12 @@ export default function InterestPage() {
           </p>
         </div>
         <div className="hidden lg:block col-span-4 text-right">
-          <div className="inline-block p-6 bg-surface-container-low border-l-2 border-primary">
+            <div className="inline-block p-6 bg-surface-container-low border-l-2 border-primary">
             <div className="font-headline text-[10px] tracking-widest text-primary mb-1 uppercase">
               Current Phase
             </div>
             <div className="font-headline text-xl font-bold tracking-widest uppercase">
-              System Alpha V.2
+              Prototyping · 2026
             </div>
             <div className="mt-4 flex justify-end gap-2">
               <div className="w-1 h-1 bg-primary"></div>
@@ -379,26 +379,26 @@ export default function InterestPage() {
       <section className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-1 px-12">
         <div className="bg-surface-container-low p-12 flex flex-col justify-between aspect-video">
           <h3 className="font-headline text-3xl font-bold uppercase tracking-tight">
-            System Telemetry
+            Roadmap Signal
           </h3>
           <div>
             <div className="font-headline text-[10px] text-primary tracking-widest uppercase mb-4">
-              Real-time Global Sync
+              Current Quarter Targets
             </div>
             <div className="space-y-2">
               <div className="flex justify-between text-[10px] uppercase tracking-widest">
-                <span className="text-on-surface-variant">Active Nodes</span>
-                <span>1,402</span>
+                <span className="text-on-surface-variant">Seed Closing</span>
+                <span>Sep 30 2026</span>
               </div>
               <div className="w-full h-[1px] bg-outline-variant/20"></div>
               <div className="flex justify-between text-[10px] uppercase tracking-widest">
-                <span className="text-on-surface-variant">Neural Latency</span>
-                <span>14.2 MS</span>
+                <span className="text-on-surface-variant">First Skill</span>
+                <span>Q2 2026 · Martial Arts</span>
               </div>
               <div className="w-full h-[1px] bg-outline-variant/20"></div>
               <div className="flex justify-between text-[10px] uppercase tracking-widest">
-                <span className="text-on-surface-variant">Training Compute</span>
-                <span>82.4 PFLOPS</span>
+                <span className="text-on-surface-variant">Beta Catalog</span>
+                <span>Q4 2026</span>
               </div>
             </div>
           </div>

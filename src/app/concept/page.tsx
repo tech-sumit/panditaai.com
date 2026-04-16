@@ -23,13 +23,11 @@ export default function ConceptPage() {
             </span>
           </div>
           <h1 className="font-headline text-7xl md:text-9xl font-bold leading-tight tracking-tighter mb-8">
-            PHYSICAL <br />
-            <span className="text-primary">AI SKILLS.</span>
+            HUMAN SKILLS, <br />
+            <span className="text-primary">REPLICATED.</span>
           </h1>
           <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
-            We are transitioning from static automation to dynamic physical
-            intelligence. PanditaAI defines the blueprint for modular,
-            transferable, and deployable physical skills — robotic expertise you can trade.
+            Software replicates instantly. Human skills — a master chef&apos;s knife work, a martial artist&apos;s precision — don&apos;t. PanditaAI captures expertise from human experts and teaches it to robots through NVIDIA Isaac Sim, making any skill downloadable.
           </p>
         </div>
         <div className="absolute bottom-12 right-12 flex flex-col items-end gap-2">
@@ -50,38 +48,32 @@ export default function ConceptPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div className="space-y-12">
             <h2 className="font-headline text-5xl font-bold tracking-tight">
-              THE FRAGMENTATION <br />
-              CRISIS.
+              SKILLS DIE WITH <br />
+              THE EXPERT.
             </h2>
             <div className="space-y-6 text-on-surface-variant font-body leading-relaxed text-lg">
               <p>
-                Current robotics development is trapped in &quot;silos of
-                specificity.&quot; A skill learned by a Boston Dynamics Spot
-                cannot be easily shared with an Agility Robotics Digit. Code is
-                proprietary, environments are closed, and learning is
-                non-transferable.
+                A master chef spends 3 years learning knife work. A martial artist trains for a decade. A gardener&apos;s touch is built over a lifetime. When they retire, the skill is gone.
               </p>
               <p>
-                This fragmentation forces every hardware manufacturer to
-                reinvent the wheel, slowing down the global adoption of
-                general-purpose robotics.
+                Meanwhile, humanoid robots ship without skills. Every hardware manufacturer re-trains from scratch, unable to license expertise from humans or from each other.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-8 pt-8">
               <div className="p-8 bg-surface border-l-4 border-error/50">
                 <div className="text-error font-headline text-3xl font-bold mb-2">
-                  94%
+                  10 yrs
                 </div>
                 <div className="text-xs font-headline uppercase tracking-widest text-on-surface-variant">
-                  Proprietary Lock-in
+                  Human Apprenticeship
                 </div>
               </div>
               <div className="p-8 bg-surface border-l-4 border-error/50">
                 <div className="text-error font-headline text-3xl font-bold mb-2">
-                  18mo
+                  48 hrs
                 </div>
                 <div className="text-xs font-headline uppercase tracking-widest text-on-surface-variant">
-                  Avg Skill Port Time
+                  Same skill in Isaac Sim
                 </div>
               </div>
             </div>
@@ -113,7 +105,20 @@ export default function ConceptPage() {
           </h2>
           <div className="w-24 h-[2px] bg-primary mx-auto mb-12" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+          <div className="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+            <div className="text-primary mb-8">
+              <span className="material-symbols-outlined text-5xl">
+                sensors
+              </span>
+            </div>
+            <h3 className="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">
+              EXPERT MOTION DATA
+            </h3>
+            <p className="text-on-surface-variant leading-relaxed">
+              High-fidelity recordings from human experts — VR teleoperation and motion capture sessions tracking force, timing, and decision points.
+            </p>
+          </div>
           <div className="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
             <div className="text-primary mb-8">
               <span className="material-symbols-outlined text-5xl">
@@ -121,39 +126,23 @@ export default function ConceptPage() {
               </span>
             </div>
             <h3 className="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">
-              NEURAL WEIGHTS
+              SIM-TRAINED POLICY
             </h3>
             <p className="text-on-surface-variant leading-relaxed">
-              The distilled intelligence trained through millions of
-              reinforcement learning iterations within the Isaac Sim universe.
+              The neural policy trained in NVIDIA Omniverse using Isaac Sim — 1,000 robots practicing in parallel across randomized physics and environments.
             </p>
           </div>
           <div className="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
             <div className="text-primary mb-8">
               <span className="material-symbols-outlined text-5xl">
-                settings_input_component
+                memory
               </span>
             </div>
             <h3 className="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">
-              CONTROL STACK
+              JETSON / IGX BINARY
             </h3>
             <p className="text-on-surface-variant leading-relaxed">
-              The hardware-agnostic API that maps neural intentions to
-              high-fidelity motor controls and sensor feedback loops.
-            </p>
-          </div>
-          <div className="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-            <div className="text-primary mb-8">
-              <span className="material-symbols-outlined text-5xl">
-                token
-              </span>
-            </div>
-            <h3 className="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">
-              ENV METADATA
-            </h3>
-            <p className="text-on-surface-variant leading-relaxed">
-              The defining parameters of physical constraints, friction
-              coefficients, and spatial limits the skill was optimized for.
+              The TensorRT-optimized deployable — a 500MB–2GB skill file that runs on NVIDIA Jetson Orin / IGX at sub-5ms inference.
             </p>
           </div>
         </div>
@@ -328,11 +317,10 @@ export default function ConceptPage() {
                 01
               </div>
               <h4 className="font-headline text-xl font-bold mb-4 uppercase">
-                Train &amp; Package
+                Experts Capture &amp; Earn
               </h4>
               <p className="text-on-surface-variant text-sm">
-                Upload your Isaac Sim environment and agent weights to the
-                PanditaAI compiler.
+                Chefs, martial artists, and craftsmen record their expertise and earn royalties every time the skill is deployed.
               </p>
             </div>
           </div>
@@ -349,11 +337,10 @@ export default function ConceptPage() {
                 02
               </div>
               <h4 className="font-headline text-xl font-bold mb-4 uppercase">
-                Benchmark
+                PanditaAI Trains
               </h4>
               <p className="text-on-surface-variant text-sm">
-                We run your physical skill against the &quot;PanditaAI Standard&quot; to
-                assign a reliability rating.
+                We run the Isaac Sim pipeline, validate against randomized physics, and publish benchmarks on the marketplace.
               </p>
             </div>
           </div>
@@ -370,11 +357,10 @@ export default function ConceptPage() {
                 03
               </div>
               <h4 className="font-headline text-xl font-bold mb-4 uppercase">
-                Deploy
+                Robots Deploy
               </h4>
               <p className="text-on-surface-variant text-sm">
-                End-users license the skill for specific hardware fleets with
-                one-click injection.
+                Humanoid manufacturers and operators license skills OTA to their fleets — Jetson Orin, IGX, or any NVIDIA-compatible robot.
               </p>
             </div>
           </div>

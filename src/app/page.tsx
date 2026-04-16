@@ -43,8 +43,7 @@ export default function HomePage() {
             <span>compétence <span className="text-white/15 text-xs">(French)</span></span>
           </div>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-light tracking-wide mb-12">
-            The open marketplace where physical AI skills trained in NVIDIA Isaac Sim are traded,
-            deployed, and executed on robots. PanditaAI is expertise, delivered.
+            Capturing human expertise. Training robots in NVIDIA Omniverse. An open marketplace of physical AI skills — martial arts, cooking, walking, dancing, gardening — deployable to any humanoid robot.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Link
@@ -54,7 +53,7 @@ export default function HomePage() {
               Explore The Marketplace
             </Link>
             <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest font-headline text-white/50">
-              <span>V. 0.8.4 Alpha</span>
+              <span>Prototyping Phase</span>
               <span className="w-1 h-1 bg-outline-variant rounded-full" />
               <span>NVIDIA Inception Member</span>
             </div>
@@ -74,13 +73,13 @@ export default function HomePage() {
       <section className="bg-primary-container py-4 overflow-hidden whitespace-nowrap border-y border-primary">
         <div className="flex animate-marquee items-center gap-12">
           <span className="text-on-primary-fixed font-black text-sm uppercase tracking-[0.4em] font-headline">
-            Seed Round Open // $2.5M Target // Physical Skills Marketplace // Deployment Ready
+            Seed Round Open // $1M Target // $5M Cap // Closing Sep 30 2026 // NVIDIA Inception
           </span>
           <span className="text-on-primary-fixed font-black text-sm uppercase tracking-[0.4em] font-headline">
-            Seed Round Open // $2.5M Target // Physical Skills Marketplace // Deployment Ready
+            Seed Round Open // $1M Target // $5M Cap // Closing Sep 30 2026 // NVIDIA Inception
           </span>
           <span className="text-on-primary-fixed font-black text-sm uppercase tracking-[0.4em] whitespace-nowrap font-headline">
-            Seed Round Open // $2.5M Target // Physical Skills Marketplace // Deployment Ready
+            Seed Round Open // $1M Target // $5M Cap // Closing Sep 30 2026 // NVIDIA Inception
           </span>
         </div>
       </section>
@@ -90,38 +89,36 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="text-4xl md:text-6xl font-black font-headline uppercase tracking-tight mb-8">
-                The End of <br /> <span className="text-primary">Hard-Coded</span> <br /> Robotics.
+                Teaching Robots <br /> <span className="text-primary">Human</span> <br /> Skills.
               </h2>
               <p className="text-on-surface-variant text-lg mb-12 leading-relaxed">
-                Robots today are brittle. PanditaAI replaces rigid code with <b>Downloadable Physical Skills</b>. Each physical skill is a
-                pre-trained neural module optimized for specific physical tasks, from warehouse picking to surgical
-                assistance.
+                Software replicates instantly. Human skills don&apos;t. A master chef&apos;s knife work, a martial artist&apos;s precision, a gardener&apos;s touch — these die with the expert. PanditaAI captures expertise and teaches it to robots using NVIDIA Isaac Sim in Omniverse.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-surface-container-high p-6 border-l-2 border-primary">
-                  <h4 className="text-primary font-bold text-xs uppercase tracking-widest mb-2">Sim-To-Real</h4>
+                  <h4 className="text-primary font-bold text-xs uppercase tracking-widest mb-2">1000x Training</h4>
                   <p className="text-xs text-on-surface-variant">
-                    Zero-shot transfer from Isaac Sim to physical hardware.
+                    1,000 simulated robots train in parallel. 1 hour of sim = 1,000 physical hours of learning.
                   </p>
                 </div>
                 <div className="bg-surface-container-high p-6 border-l-2 border-outline-variant">
-                  <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-2">Immutable Packaging</h4>
+                  <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-2">Open Marketplace</h4>
                   <p className="text-xs text-on-surface-variant">
-                    Containerized skills ready for instant edge deployment.
+                    License human-captured skills to any robot, any form factor, any manufacturer.
                   </p>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center p-12">
+              <div className="aspect-square bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center overflow-hidden">
                 <img
-                  className="w-full h-full object-contain mix-blend-screen"
-                  alt="Highly detailed 3D blueprint of a futuristic bionic hand with orange holographic data points floating around it"
-                  src="/images/bionic-hand.webp"
+                  className="w-full h-full object-cover"
+                  alt="Human expert in VR motion capture suit recording martial arts skill for robot training"
+                  src="/images/pipeline-capture.png"
                 />
               </div>
               <div className="absolute -top-4 -right-4 bg-primary-container p-4 text-on-primary-fixed font-black text-[10px] uppercase tracking-widest">
-                Skill: Precision_Grip.v4
+                Skill: Martial_Arts.v2
               </div>
             </div>
           </div>
@@ -141,27 +138,27 @@ export default function HomePage() {
               <div className="text-primary text-4xl font-black mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
                 01
               </div>
-              <h3 className="text-xl font-bold font-headline uppercase mb-4">Train</h3>
+              <h3 className="text-xl font-bold font-headline uppercase mb-4">Capture</h3>
               <p className="text-xs text-on-surface-variant leading-relaxed">
-                Massively parallel training in NVIDIA Isaac Sim environments with synthetic data generation.
+                Record motion from human experts — martial artists, chefs, dancers, gardeners — via VR teleoperation and motion capture.
               </p>
             </div>
             <div className="bg-surface p-8 group hover:bg-surface-container-low transition-colors duration-500">
               <div className="text-primary text-4xl font-black mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
                 02
               </div>
-              <h3 className="text-xl font-bold font-headline uppercase mb-4">Validate</h3>
+              <h3 className="text-xl font-bold font-headline uppercase mb-4">Simulate</h3>
               <p className="text-xs text-on-surface-variant leading-relaxed">
-                High-fidelity stress testing against randomized physics parameters to ensure robustness.
+                1,000 robots train in parallel inside NVIDIA Omniverse using Isaac Sim. 1 hour of sim = 1,000 physical hours.
               </p>
             </div>
             <div className="bg-surface p-8 group hover:bg-surface-container-low transition-colors duration-500">
               <div className="text-primary text-4xl font-black mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
                 03
               </div>
-              <h3 className="text-xl font-bold font-headline uppercase mb-4">Package</h3>
+              <h3 className="text-xl font-bold font-headline uppercase mb-4">Validate</h3>
               <p className="text-xs text-on-surface-variant leading-relaxed">
-                Optimization for TensorRT and packaging into our proprietary SKL format for edge runtime.
+                Stress-test across randomized physics, friction, and edge cases to ensure sim-to-real transfer.
               </p>
             </div>
             <div className="bg-surface p-8 group hover:bg-surface-container-low transition-colors duration-500">
@@ -170,7 +167,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold font-headline uppercase mb-4">Publish</h3>
               <p className="text-xs text-on-surface-variant leading-relaxed">
-                List on the PanditaAI Marketplace with verified performance benchmarks and hardware requirements.
+                List on the PanditaAI Marketplace with performance benchmarks. Experts earn royalties on every deployment.
               </p>
             </div>
             <div className="bg-surface p-8 group hover:bg-surface-container-low transition-colors duration-500">
@@ -179,7 +176,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold font-headline uppercase mb-4">Deploy</h3>
               <p className="text-xs text-on-surface-variant leading-relaxed">
-                Over-the-air deployment to Jetson-powered robots with instant hot-swapping of skills.
+                OTA delivery to robots on NVIDIA Jetson Orin / IGX. Sub-5ms inference via TensorRT.
               </p>
             </div>
           </div>
@@ -211,11 +208,10 @@ export default function HomePage() {
             </div>
             <div className="order-1 md:order-2">
               <h2 className="text-4xl md:text-5xl font-black font-headline uppercase mb-8">
-                Hardware Native Architecture
+                NVIDIA Native Architecture
               </h2>
               <p className="text-on-surface-variant mb-8">
-                Built specifically for the NVIDIA Edge stack. Our runtime leverages CUDA and TensorRT cores to achieve
-                sub-millisecond latency in perception-to-action loops.
+                Built on the NVIDIA edge stack. Skills trained in NVIDIA Omniverse using Isaac Sim deploy natively to Jetson Orin and IGX hardware, with TensorRT delivering sub-5ms inference on any compatible humanoid.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest">
@@ -225,7 +221,7 @@ export default function HomePage() {
                   >
                     check_circle
                   </span>
-                  Optimized for Jetson Orin AGX / NX
+                  NVIDIA Inception Member
                 </li>
                 <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest">
                   <span
@@ -234,7 +230,7 @@ export default function HomePage() {
                   >
                     check_circle
                   </span>
-                  Real-time ROS2 Integration
+                  Jetson Orin AGX / NX + IGX Deployment Targets
                 </li>
                 <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest">
                   <span
@@ -243,7 +239,7 @@ export default function HomePage() {
                   >
                     check_circle
                   </span>
-                  IGX Functional Safety Compliance
+                  Isaac Sim + Omniverse Training Pipeline
                 </li>
               </ul>
             </div>
@@ -255,15 +251,15 @@ export default function HomePage() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-xl">
-              <span className="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">The Context</span>
+              <span className="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Skill Catalog</span>
               <h2 className="text-5xl font-black font-headline uppercase italic">
-                Embodied AI <br /> is the Next Frontier
+                Human Skills <br /> Made Downloadable
               </h2>
             </div>
             <div className="text-right">
-              <div className="text-6xl font-black font-headline text-white/10 mb-2">2025</div>
+              <div className="text-6xl font-black font-headline text-white/10 mb-2">1000x</div>
               <p className="text-xs uppercase tracking-widest font-bold text-primary">
-                The Year of Simulation-to-Real
+                Parallel Sim Speedup
               </p>
             </div>
           </div>
@@ -273,12 +269,11 @@ export default function HomePage() {
                 className="material-symbols-outlined text-4xl text-primary mb-8"
                 style={{ fontVariationSettings: "'FILL' 0" }}
               >
-                precision_manufacturing
+                sports_martial_arts
               </span>
-              <h3 className="text-2xl font-bold font-headline uppercase mb-4">Scalability</h3>
+              <h3 className="text-2xl font-bold font-headline uppercase mb-4">Martial Arts</h3>
               <p className="text-on-surface-variant text-sm leading-relaxed">
-                Traditional robotics companies spend 80% of their time on custom code. We reduce development cycles from
-                months to days through modular skills.
+                Human training ~10 years. Robot training in sim ~48 hours. Transfer to a new humanoid ~2 hours.
               </p>
             </div>
             <div className="bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary transition-all group">
@@ -286,12 +281,11 @@ export default function HomePage() {
                 className="material-symbols-outlined text-4xl text-primary mb-8"
                 style={{ fontVariationSettings: "'FILL' 0" }}
               >
-                hub
+                cooking
               </span>
-              <h3 className="text-2xl font-bold font-headline uppercase mb-4">Interoperability</h3>
+              <h3 className="text-2xl font-bold font-headline uppercase mb-4">Chef Knife Skills</h3>
               <p className="text-on-surface-variant text-sm leading-relaxed">
-                Universal skill format allows a single trained behavior to work across diverse hardware form factors with
-                minimal fine-tuning.
+                Human training ~3 years. Robot training in sim ~24 hours. Transfer to a new humanoid ~1 hour.
               </p>
             </div>
             <div className="bg-surface-container-high p-10 border-t border-primary/20 hover:border-primary transition-all group">
@@ -299,12 +293,11 @@ export default function HomePage() {
                 className="material-symbols-outlined text-4xl text-primary mb-8"
                 style={{ fontVariationSettings: "'FILL' 0" }}
               >
-                monitoring
+                yard
               </span>
-              <h3 className="text-2xl font-bold font-headline uppercase mb-4">Data Dominance</h3>
+              <h3 className="text-2xl font-bold font-headline uppercase mb-4">Walking · Dancing · Gardening</h3>
               <p className="text-on-surface-variant text-sm leading-relaxed">
-                Our marketplace creates a flywheel of synthetic and real-world data, continuously refining the precision
-                of the entire skill catalog.
+                Expanding catalog of human expertise. Skill file sizes ~500MB–2GB, deployable OTA to any compatible robot.
               </p>
             </div>
           </div>
@@ -322,8 +315,7 @@ export default function HomePage() {
             Fuel the Physical <br /> Revolution.
           </h2>
           <p className="max-w-2xl mx-auto text-on-primary-fixed/80 text-xl font-medium mb-16">
-            PanditaAI is raising a Seed round to scale the physical skills marketplace and launch our simulation-as-a-service backend.
-            Join the leaderboard of Embodied AI infrastructure.
+            PanditaAI is raising a $1M Seed round ($5M valuation cap, closing Sep 30 2026) to procure humanoid hardware, build the motion-capture pipeline, and train the first wave of human-derived robot skills.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <Link

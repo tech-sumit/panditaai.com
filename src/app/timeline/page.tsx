@@ -10,17 +10,15 @@ export default function TimelinePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
           <div className="md:col-span-8">
             <span className="text-primary font-bold tracking-[0.3em] uppercase text-sm mb-4 block">
-              System Path_2024-2026
+              Roadmap_2026–2027
             </span>
             <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-8">
-              EXECUTION
+              18 MONTHS
               <br />
-              <span className="text-outline-variant/30">LIFECYCLE</span>
+              <span className="text-outline-variant/30">TO MARKETPLACE</span>
             </h1>
             <p className="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
-              A definitive roadmap for Physical AI deployment. From neural
-              architecture simulation to global hardware integration, we are
-              building the substrate of modern industry.
+              From first prototype skill to open marketplace. Seed closes Sep 30 2026, and we ship the first public skills catalog before EOY 2027.
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-4 border-l border-outline-variant/20 pl-8 pb-4">
@@ -58,23 +56,23 @@ export default function TimelinePage() {
                   </span>
                 </div>
                 <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">
-                  Phase One
+                  Phase One · Q2 2026
                 </span>
                 <h2 className="text-4xl font-bold tracking-tight mb-6">
-                  Foundational Stack
+                  Prototyping
                 </h2>
                 <ul className="space-y-4 text-sm text-on-surface-variant font-medium">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Neural Sim-Engine V1.0
+                    Procure first humanoid + Jetson Orin
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Proprietary Dataset Mining
+                    Motion-capture pipeline stood up
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Latency Benchmark Optimization
+                    First skill trained: martial arts v0
                   </li>
                 </ul>
               </div>
@@ -89,10 +87,10 @@ export default function TimelinePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
                 <div className="absolute bottom-8 left-8 flex gap-2">
                   <span className="px-3 py-1 bg-primary text-on-primary-fixed text-[10px] font-bold tracking-widest uppercase">
-                    Completed
+                    Active
                   </span>
                   <span className="px-3 py-1 bg-surface-container-highest/80 backdrop-blur text-white text-[10px] font-bold tracking-widest uppercase">
-                    Q1 2024
+                    Q2 2026
                   </span>
                 </div>
               </div>
@@ -102,17 +100,15 @@ export default function TimelinePage() {
                     Milestone: Seed Close
                   </h3>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
-                    Secured $4.2M in pre-seed funding from frontier-tech
-                    specialized partners. Core engineering team stabilized.
+                    $1M seed on $5M cap, closing Sep 30 2026. Funds allocated to hardware (35%), R&amp;D (25%), founding team (25%), operations (15%).
                   </p>
                 </div>
                 <div className="bg-surface-container-high p-8">
                   <h3 className="text-xs font-bold text-primary tracking-widest uppercase mb-4">
-                    Milestone: Alpha Test
+                    Milestone: First Skill
                   </h3>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
-                    Achieved sub-10ms inference speeds in simulated environments
-                    for multi-modal robotic control.
+                    End-to-end capture → Isaac Sim training → Jetson deployment demonstrated on a single humanoid.
                   </p>
                 </div>
               </div>
@@ -133,24 +129,22 @@ export default function TimelinePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
                 <div className="absolute bottom-8 left-8 flex gap-2">
                   <span className="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-widest uppercase">
-                    In Development
+                    Planned
                   </span>
                   <span className="px-3 py-1 bg-surface-container-highest/80 backdrop-blur text-white text-[10px] font-bold tracking-widest uppercase">
-                    Q3 2024 - Q1 2025
+                    Q4 2026 – Q2 2027
                   </span>
                 </div>
               </div>
               <div className="bg-surface-container-low p-12 flex flex-col items-center text-center">
                 <span className="text-[10px] font-bold tracking-[0.5em] text-primary uppercase mb-6">
-                  Simulation Benchmark
+                  Training Leverage
                 </span>
                 <h3 className="text-4xl font-bold tracking-tighter mb-4 italic">
-                  1,000,000+ OPS
+                  1,000 × 1 HR
                 </h3>
                 <p className="text-on-surface-variant max-w-lg text-sm">
-                  Targeting massive parallel training within our virtual
-                  substrate to accelerate robot learning by 100x compared to
-                  real-world data collection.
+                  1,000 simulated robots training in parallel. 1 hour of NVIDIA Omniverse runtime = 1,000 physical hours of human-derived practice.
                 </p>
               </div>
             </div>
@@ -162,23 +156,23 @@ export default function TimelinePage() {
                   </span>
                 </div>
                 <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">
-                  Phase Two
+                  Phase Two · Q4 2026
                 </span>
                 <h2 className="text-4xl font-bold tracking-tight mb-6">
-                  Marketplace Launch
+                  Beta Marketplace
                 </h2>
                 <ul className="space-y-4 text-sm text-on-surface-variant font-medium">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Model Weights Distribution Hub
+                    3–5 published skills (martial arts, chef, walking)
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Developer SDK Beta Release
+                    First paying pilot partner (robot OEM)
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Simulation-to-Reality Bridge
+                    Expert royalty model live
                   </li>
                 </ul>
               </div>
@@ -197,23 +191,23 @@ export default function TimelinePage() {
                   </span>
                 </div>
                 <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">
-                  Phase Three
+                  Phase Three · Q2–Q4 2027
                 </span>
                 <h2 className="text-4xl font-bold tracking-tight mb-6">
-                  Hardware Deployment
+                  Public Launch &amp; Scale
                 </h2>
                 <ul className="space-y-4 text-sm text-on-surface-variant font-medium">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    First-Party Edge Compute Node
+                    Public marketplace (Q2 2027)
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Logistics Fleet Integration
+                    Community-submitted skills (Q4 2027)
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 bg-primary" />
-                    Zero-Config Calibration Engine
+                    Fleet-license pricing tier for enterprises
                   </li>
                 </ul>
               </div>
@@ -231,27 +225,27 @@ export default function TimelinePage() {
                     Strategic Objective
                   </span>
                   <span className="block text-3xl font-bold tracking-tight text-white mt-1">
-                    Autonomous Ground Control
+                    Default Skill Layer for Humanoids
                   </span>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-1">
                 <div className="bg-surface-container-high/50 p-6">
-                  <span className="text-primary font-black text-2xl">48</span>
+                  <span className="text-primary font-black text-2xl">$38B</span>
                   <span className="block text-[9px] font-bold tracking-widest uppercase text-on-surface-variant">
-                    Global Hubs
+                    TAM by 2030
                   </span>
                 </div>
                 <div className="bg-surface-container-high/50 p-6">
-                  <span className="text-primary font-black text-2xl">500k</span>
+                  <span className="text-primary font-black text-2xl">$15B</span>
                   <span className="block text-[9px] font-bold tracking-widest uppercase text-on-surface-variant">
-                    Connected Units
+                    SAM (Skill Layer)
                   </span>
                 </div>
                 <div className="bg-surface-container-high/50 p-6">
-                  <span className="text-primary font-black text-2xl">0.4s</span>
+                  <span className="text-primary font-black text-2xl">$3B</span>
                   <span className="block text-[9px] font-bold tracking-widest uppercase text-on-surface-variant">
-                    Avg. Latency
+                    SOM (5yr)
                   </span>
                 </div>
               </div>
@@ -266,24 +260,21 @@ export default function TimelinePage() {
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
           <div className="relative z-10">
             <span className="text-primary font-bold tracking-[0.5em] uppercase text-xs mb-8 block">
-              Projected Outcome_2026+
+              Projected Outcome_2028+
             </span>
             <h2 className="text-6xl font-bold tracking-tighter mb-8">
-              GLOBAL PHYSICAL SCALE
+              THE SKILL LAYER FOR ANY ROBOT
             </h2>
             <p className="text-on-surface-variant text-xl max-w-3xl leading-relaxed mb-12">
-              By EOY 2026, PanditaAI will function as the orchestration layer
-              for a decentralized physical skill trading network. We
-              transition from a development platform to the global marketplace for
-              physical AI skills.
+              By 2028, PanditaAI becomes the default open catalog of human-derived skills for NVIDIA-powered humanoids — the neutral layer Figure, Boston Dynamics, and Unitree don&apos;t build themselves.
             </p>
             <div className="flex gap-8">
               <div className="flex flex-col">
                 <span className="text-xs font-bold uppercase tracking-widest text-outline">
-                  Target Outcome
+                  Business Model
                 </span>
                 <span className="text-2xl font-bold text-white mt-2">
-                  Industrial Dominance
+                  Per-use + Platform fee
                 </span>
               </div>
               <div className="w-[1px] h-12 bg-outline-variant/30" />
@@ -292,7 +283,7 @@ export default function TimelinePage() {
                   Market Position
                 </span>
                 <span className="text-2xl font-bold text-white mt-2">
-                  Standard Protocol
+                  Open Skill Standard
                 </span>
               </div>
             </div>

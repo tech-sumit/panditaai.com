@@ -33,29 +33,27 @@ export default function InvestorConnectPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             <span className="text-[10px] font-headline font-bold tracking-[0.2em] uppercase text-primary">
-              Live Funding Round: Series A-1
+              Seed Round Open · Closing Sep 30 2026
             </span>
           </div>
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tight leading-[0.9] uppercase mb-8">
-            Scaling <span className="text-primary">Physical</span> Intelligence.
+            Back the <span className="text-primary">Skill Layer</span>.
           </h1>
           <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed font-light">
-            PanditaAI is bridging the gap between digital cognition and physical
-            actuation. We are building the marketplace where physical AI skills are
-            traded for the next billion robotic workers.
+            PanditaAI is raising a $1M seed (SAFE, $5M cap) to build the open marketplace of human-derived physical skills for NVIDIA-powered humanoids. Min ticket $50,000. Angels and micro-funds welcome.
           </p>
         </div>
         <div className="col-span-12 md:col-span-4 flex flex-col gap-4">
-          <button className="w-full bg-primary-container text-on-primary-fixed py-5 font-headline font-bold uppercase tracking-[0.2em] hover:brightness-110 transition-all flex items-center justify-center gap-3">
-            Request Deck{" "}
-            <span className="material-symbols-outlined text-sm">download</span>
-          </button>
-          <button className="w-full border border-outline-variant/30 py-5 font-headline font-bold uppercase tracking-[0.2em] text-primary hover:bg-primary/10 transition-all flex items-center justify-center gap-3">
-            Book Meeting{" "}
+          <Link href="/pitch-deck" className="w-full bg-primary-container text-on-primary-fixed py-5 font-headline font-bold uppercase tracking-[0.2em] hover:brightness-110 transition-all flex items-center justify-center gap-3">
+            View Deck{" "}
+            <span className="material-symbols-outlined text-sm">slideshow</span>
+          </Link>
+          <a href="mailto:sumit@panditaai.com" className="w-full border border-outline-variant/30 py-5 font-headline font-bold uppercase tracking-[0.2em] text-primary hover:bg-primary/10 transition-all flex items-center justify-center gap-3">
+            Email Sumit{" "}
             <span className="material-symbols-outlined text-sm">
-              calendar_today
+              alternate_email
             </span>
-          </button>
+          </a>
         </div>
       </section>
 
@@ -68,13 +66,11 @@ export default function InvestorConnectPage() {
                 01 / Thesis
               </div>
               <h3 className="text-3xl font-headline font-medium leading-tight mb-6">
-                The Physical Transition.
+                Humanoids ship. Skills don&apos;t.
               </h3>
             </div>
             <p className="text-on-surface-variant font-light text-lg">
-              General intelligence has reached its digital limit. The next
-              frontier is the embodiment of AI in complex, unstructured physical
-              environments.
+              Figure, Unitree, Boston Dynamics and Tesla Optimus are commoditizing humanoid hardware. Whoever owns the open skill layer captures the software margin.
             </p>
           </div>
           <div className="bg-surface-container-low p-12 aspect-square flex flex-col justify-between border-l border-t border-outline-variant/10">
@@ -92,7 +88,7 @@ export default function InvestorConnectPage() {
                   check_circle
                 </span>
                 <span className="text-on-surface text-sm uppercase tracking-wider font-bold">
-                  Proprietary Haptic Data
+                  Open · Any Robot Any OEM
                 </span>
               </div>
               <div className="flex items-start gap-3">
@@ -100,7 +96,7 @@ export default function InvestorConnectPage() {
                   check_circle
                 </span>
                 <span className="text-on-surface text-sm uppercase tracking-wider font-bold">
-                  Low-Latency Kernel
+                  Human Expert Royalty Flywheel
                 </span>
               </div>
               <div className="flex items-start gap-3">
@@ -108,7 +104,7 @@ export default function InvestorConnectPage() {
                   check_circle
                 </span>
                 <span className="text-on-surface text-sm uppercase tracking-wider font-bold">
-                  Hardware Agnostic Architecture
+                  NVIDIA-Native Stack (Isaac + TensorRT)
                 </span>
               </div>
             </div>
@@ -137,7 +133,10 @@ export default function InvestorConnectPage() {
                   Capital Being Raised
                 </div>
                 <div className="text-6xl font-headline font-black text-white">
-                  $25.0M
+                  $1.0M
+                </div>
+                <div className="text-sm text-on-surface-variant mt-2">
+                  SAFE · $5M Valuation Cap · Min Ticket $50,000
                 </div>
               </div>
               <div className="border-b border-outline-variant/20 pb-8">
@@ -145,7 +144,7 @@ export default function InvestorConnectPage() {
                   Round Status
                 </div>
                 <div className="text-4xl font-headline font-bold text-primary">
-                  COMMITTED: 45%
+                  CLOSING SEP 30 2026
                 </div>
               </div>
             </div>
@@ -157,27 +156,27 @@ export default function InvestorConnectPage() {
             <div className="space-y-6">
               <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                 <span className="text-lg font-headline font-medium uppercase tracking-widest">
-                  R&D & Model Training
+                  Humanoid Hardware &amp; MoCap
                 </span>
-                <span className="text-2xl font-headline text-primary">40%</span>
+                <span className="text-2xl font-headline text-primary">35%</span>
               </div>
               <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                 <span className="text-lg font-headline font-medium uppercase tracking-widest">
-                  Core Engineering Team
+                  R&amp;D / Sim Compute
                 </span>
-                <span className="text-2xl font-headline text-primary">30%</span>
+                <span className="text-2xl font-headline text-primary">25%</span>
               </div>
               <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                 <span className="text-lg font-headline font-medium uppercase tracking-widest">
-                  Deployment Partnerships
+                  Founding Team
                 </span>
-                <span className="text-2xl font-headline text-primary">20%</span>
+                <span className="text-2xl font-headline text-primary">25%</span>
               </div>
               <div className="flex justify-between items-end border-b border-outline-variant/10 pb-4">
                 <span className="text-lg font-headline font-medium uppercase tracking-widest">
-                  Operations
+                  Operations &amp; Legal
                 </span>
-                <span className="text-2xl font-headline text-primary">10%</span>
+                <span className="text-2xl font-headline text-primary">15%</span>
               </div>
             </div>
           </div>
@@ -204,7 +203,7 @@ export default function InvestorConnectPage() {
                   Direct Line
                 </div>
                 <div className="text-white text-lg font-light tracking-wide">
-                  ir@panditaai.com
+                  sumit@panditaai.com
                 </div>
               </div>
             </div>
@@ -217,7 +216,20 @@ export default function InvestorConnectPage() {
                   HQ Location
                 </div>
                 <div className="text-white text-lg font-light tracking-wide">
-                  Palo Alto // San Francisco
+                  Pune, Maharashtra, India
+                </div>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-primary font-headline font-black text-xl leading-none">
+                /
+              </span>
+              <div>
+                <div className="text-xs font-headline font-bold tracking-widest uppercase mb-1">
+                  Entity
+                </div>
+                <div className="text-white text-lg font-light tracking-wide">
+                  Shailka Systems Pvt. Ltd.
                 </div>
               </div>
             </div>
