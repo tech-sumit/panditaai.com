@@ -1,30 +1,7 @@
-"use client";
-
-import { FormEvent, useState } from "react";
 import Link from "next/link";
-
-const API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL || "";
+import InvestorInterestForm from "@/components/ui/InvestorInterestForm";
 
 export default function InvestorConnectPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    try {
-      const res = await fetch(`${API_URL}/api/investor-connect`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      });
-      if (!res.ok) throw new Error("Submission failed");
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
     <div className="pt-32">
       {/* Hero Section */}
@@ -235,68 +212,11 @@ export default function InvestorConnectPage() {
             </div>
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-7 bg-surface-container-high p-12">
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-2">
-                <label
-                  htmlFor="investor-name"
-                  className="text-[10px] font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant"
-                >
-                  Investor Name
-                </label>
-                <input
-                  id="investor-name"
-                  name="investorName"
-                  className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-white font-headline tracking-widest placeholder:text-white/20 px-4 py-4"
-                  placeholder="FULL NAME"
-                  type="text"
-                />
-              </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor="firm-fund"
-                  className="text-[10px] font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant"
-                >
-                  Firm / Fund
-                </label>
-                <input
-                  id="firm-fund"
-                  name="firmFund"
-                  className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-white font-headline tracking-widest placeholder:text-white/20 px-4 py-4"
-                  placeholder="VENTURE CAPITAL / FAMILY OFFICE"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label
-                htmlFor="message-conviction"
-                className="text-[10px] font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant"
-              >
-                Message / Conviction
-              </label>
-              <textarea
-                id="message-conviction"
-                name="messageConviction"
-                className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-white font-headline tracking-widest placeholder:text-white/20 px-4 py-4 resize-none"
-                placeholder="BRIEF STATEMENT OF INTEREST"
-                rows={4}
-              ></textarea>
-            </div>
-            <button
-              className="w-full bg-primary text-on-primary-fixed font-headline font-black uppercase py-5 tracking-[0.4em] hover:bg-primary-container transition-colors disabled:opacity-50"
-              type="submit"
-              disabled={status === "sending" || status === "sent"}
-            >
-              {status === "sending" ? "Connecting..." : status === "sent" ? "Connection Established" : "Initialize Connection"}
-            </button>
-            {status === "error" && (
-              <p className="text-[10px] text-center text-error uppercase tracking-widest mt-4">
-                Connection failed. Please retry.
-              </p>
-            )}
-          </form>
+        <div className="col-span-12 lg:col-span-7">
+          <InvestorInterestForm
+            pageName="PanditaAI · Investor Connect (/investor-connect)"
+            submitLabel="Initialize Connection"
+          />
         </div>
       </section>
     </div>
