@@ -3,27 +3,103 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 
-const API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL || "";
+/**
+ * Investor interest capture page. Submissions are posted directly to the
+ * HubSpot public Forms API from the browser — no backend is required, which
+ * keeps the site deployable as a pure static export.
+ *
+ * Configure in `.env.local`:
+ *   NEXT_PUBLIC_HUBSPOT_PORTAL_ID=12345678
+ *   NEXT_PUBLIC_HUBSPOT_FORM_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ *
+ * The HubSpot form must expose these contact properties (standard + custom):
+ *   Standard: email, firstname, lastname, company, website, message
+ *   Custom:   investor_type, ticket_size, investment_timeline, nda_requested
+ */
+
+const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "";
+const HUBSPOT_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID || "";
+
+type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
+
+type HubSpotField = { objectTypeId: "0-1"; name: string; value: string };
+
+function splitName(full: string): { first: string; last: string } {
+  const trimmed = full.trim();
+  if (!trimmed) return { first: "", last: "" };
+  const parts = trimmed.split(/\s+/);
+  if (parts.length === 1) return { first: parts[0], last: "" };
+  return { first: parts[0], last: parts.slice(1).join(" ") };
+}
 
 export default function InterestPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorDetail, setErrorDetail] = useState<string>("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setErrorDetail("");
+
+    if (!HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_ID) {
+      setStatus("unconfigured");
+      return;
+    }
+
     setStatus("sending");
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+
+    const data = Object.fromEntries(
+      new FormData(e.currentTarget) as unknown as Iterable<[string, string]>,
+    );
+
+    const { first, last } = splitName(String(data.fullName || ""));
+
+    const field = (name: string, value: string): HubSpotField => ({
+      objectTypeId: "0-1",
+      name,
+      value,
+    });
+
+    const fields: HubSpotField[] = [
+      field("email", String(data.email || "")),
+      field("firstname", first),
+      field("lastname", last),
+      field("company", String(data.firm || "")),
+      field("website", String(data.link || "")),
+      field("message", String(data.notes || "")),
+      field("investor_type", String(data.investorType || "")),
+      field("ticket_size", String(data.ticketSize || "")),
+      field("investment_timeline", String(data.timeline || "")),
+      field("nda_requested", data.nda === "on" ? "true" : "false"),
+    ].filter((f) => f.value !== "");
+
+    const payload = {
+      fields,
+      context: {
+        pageUri: typeof window !== "undefined" ? window.location.href : "",
+        pageName: "PanditaAI · Investor Interest",
+      },
+    };
+
     try {
-      const res = await fetch(`${API_URL}/api/interest`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      });
-      if (!res.ok) throw new Error("Submission failed");
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integrations/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        },
+      );
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error(`HubSpot ${res.status}: ${body.slice(0, 200)}`);
+      }
       setStatus("sent");
-    } catch {
+    } catch (err) {
+      setErrorDetail(err instanceof Error ? err.message : "Unknown error");
       setStatus("error");
     }
   }
+
   return (
     <div className="pt-32 pb-24">
       {/* Hero Section */}
@@ -32,17 +108,18 @@ export default function InterestPage() {
           <div className="flex items-center gap-3 mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             <span className="font-headline text-xs tracking-[0.3em] uppercase text-primary">
-              Inbound Portal Open
+              Seed Round Open · $1M on $5M cap
             </span>
           </div>
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter leading-none mb-8">
-            ACCELERATING <br />{" "}
-            <span className="text-primary">PHYSICAL INTELLIGENCE.</span>
+            BACK THE SKILL LAYER <br />{" "}
+            <span className="text-primary">FOR PHYSICAL AI.</span>
           </h1>
           <p className="max-w-xl text-on-surface-variant font-body text-lg leading-relaxed">
-            PanditaAI is building the foundational marketplace for trading physical
-            AI skills for the next generation of robotics. We are seeking
-            partners to deploy, develop, and redefine the physical world.
+            PanditaAI is raising a $1M seed to build the open marketplace of
+            human-derived skills for NVIDIA-powered humanoids. Tell us who you
+            are and how you like to deploy capital — we&apos;ll share the full
+            data room and set up an intro call within 48 hours.
           </p>
         </div>
         <div className="hidden lg:block col-span-4 text-right">
@@ -51,7 +128,7 @@ export default function InterestPage() {
               Current Phase
             </div>
             <div className="font-headline text-xl font-bold tracking-widest uppercase">
-              Prototyping · 2026
+              Raising · Close Sep 30 2026
             </div>
             <div className="mt-4 flex justify-end gap-2">
               <div className="w-1 h-1 bg-primary"></div>
@@ -62,123 +139,124 @@ export default function InterestPage() {
         </div>
       </section>
 
-      {/* Segmented Pathways (Bento Style) */}
+      {/* Investor Profiles (Bento Style) */}
       <section className="px-12 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {/* Pathway 1: Robotics Co */}
+          {/* Profile 1: Angels */}
           <div className="group relative aspect-[4/5] bg-surface-container-low overflow-hidden cursor-pointer transition-all hover:bg-surface-container-high p-8 flex flex-col justify-between">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
               <span className="material-symbols-outlined text-6xl">
-                precision_manufacturing
+                person
               </span>
             </div>
             <div>
               <div className="font-headline text-xs tracking-widest text-primary mb-2 uppercase">
-                Pathway 01
+                Profile 01
               </div>
               <h3 className="font-headline text-2xl font-bold uppercase leading-tight">
-                Robotics
+                Angel
                 <br />
-                Companies
+                Investors
               </h3>
             </div>
             <div className="font-body text-sm text-on-surface-variant">
-              Deploy PanditaAI&apos;s end-to-end physical skill delivery and sensory fusion
-              stack on your hardware.
+              Solo cheques from $25K. Typical allocation $25K–$100K with pro-rata
+              rights on the Series A.
             </div>
           </div>
 
-          {/* Pathway 2: Developer */}
+          {/* Profile 2: VCs */}
           <div className="group relative aspect-[4/5] bg-surface-container-low overflow-hidden cursor-pointer transition-all hover:bg-surface-container-high p-8 flex flex-col justify-between">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
               <span className="material-symbols-outlined text-6xl">
-                terminal
+                hub
               </span>
             </div>
             <div>
               <div className="font-headline text-xs tracking-widest text-primary mb-2 uppercase">
-                Pathway 02
+                Profile 02
               </div>
               <h3 className="font-headline text-2xl font-bold uppercase leading-tight">
-                Independent
+                Venture
                 <br />
-                Developers
+                Firms
               </h3>
             </div>
             <div className="font-body text-sm text-on-surface-variant">
-              Access our SDK to build autonomous behaviors and simulation
-              environments.
+              Lead or co-lead the seed. Board observer seat and priority access
+              to pilot deployment data.
             </div>
           </div>
 
-          {/* Pathway 3: Research Lab */}
+          {/* Profile 3: Family Offices */}
           <div className="group relative aspect-[4/5] bg-surface-container-low overflow-hidden cursor-pointer transition-all hover:bg-surface-container-high p-8 flex flex-col justify-between">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
               <span className="material-symbols-outlined text-6xl">
-                science
+                account_balance
               </span>
             </div>
             <div>
               <div className="font-headline text-xs tracking-widest text-primary mb-2 uppercase">
-                Pathway 03
+                Profile 03
               </div>
               <h3 className="font-headline text-2xl font-bold uppercase leading-tight">
-                Research
+                Family
                 <br />
-                Labs
+                Offices
               </h3>
             </div>
             <div className="font-body text-sm text-on-surface-variant">
-              Collaborate on large-scale transformer models for physical
-              actuation and spatial reasoning.
+              Long-horizon capital into the physical-AI decade. Direct or via
+              dedicated deep-tech mandates.
             </div>
           </div>
 
-          {/* Pathway 4: Pilot Customer */}
+          {/* Profile 4: Strategic / Syndicate */}
           <div className="group relative aspect-[4/5] bg-surface-container-low overflow-hidden cursor-pointer transition-all hover:bg-surface-container-high p-8 flex flex-col justify-between">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
               <span className="material-symbols-outlined text-6xl">
-                factory
+                groups
               </span>
             </div>
             <div>
               <div className="font-headline text-xs tracking-widest text-primary mb-2 uppercase">
-                Pathway 04
+                Profile 04
               </div>
               <h3 className="font-headline text-2xl font-bold uppercase leading-tight">
-                Pilot
+                Strategic
                 <br />
-                Customers
+                &amp; Syndicates
               </h3>
             </div>
             <div className="font-body text-sm text-on-surface-variant">
-              Early-access deployment for logistics, manufacturing, and extreme
-              environment facilities.
+              Robot OEMs, NVIDIA ecosystem players, and angel syndicates pooling
+              allocations into a single SPV.
             </div>
           </div>
         </div>
       </section>
 
-      {/* Interest Capture Form */}
+      {/* Investor Interest Form */}
       <section className="px-12 grid grid-cols-12 gap-12">
         <div className="col-span-12 lg:col-span-5">
           <div className="sticky top-32">
             <h2 className="font-headline text-4xl font-bold uppercase tracking-tight mb-6">
-              Technical <br /> Intake Manifest
+              Investor <br /> Interest Form
             </h2>
             <p className="text-on-surface-variant mb-12">
-              Complete the technical diagnostic below. Our systems architecture
-              team reviews all submissions within 48 operational hours.
+              Share a few details and we&apos;ll send the full pitch deck, data
+              room, and a calendar link within 48 hours. All submissions are
+              handled confidentially.
             </p>
             <div className="space-y-8">
               <div className="flex gap-4 items-start">
                 <span className="font-headline text-primary font-bold">01</span>
                 <div>
                   <h4 className="font-headline text-xs font-bold uppercase tracking-widest mb-1">
-                    Identity Verification
+                    Identity
                   </h4>
                   <p className="text-xs text-on-surface-variant uppercase">
-                    Basic contact and organizational background
+                    Who you are and how to reach you
                   </p>
                 </div>
               </div>
@@ -186,10 +264,10 @@ export default function InterestPage() {
                 <span className="font-headline text-outline font-bold">02</span>
                 <div>
                   <h4 className="font-headline text-xs font-bold uppercase tracking-widest mb-1 text-outline">
-                    Stack Specification
+                    Investor Profile
                   </h4>
                   <p className="text-xs text-on-surface-variant/50 uppercase">
-                    Hardware, OS, and simulation environment data
+                    Capital type, firm, and ticket size
                   </p>
                 </div>
               </div>
@@ -197,10 +275,10 @@ export default function InterestPage() {
                 <span className="font-headline text-outline font-bold">03</span>
                 <div>
                   <h4 className="font-headline text-xs font-bold uppercase tracking-widest mb-1 text-outline">
-                    Intent Profile
+                    Timeline &amp; Interest
                   </h4>
                   <p className="text-xs text-on-surface-variant/50 uppercase">
-                    Deployment scale and collaboration goals
+                    When you can act and what drew you in
                   </p>
                 </div>
               </div>
@@ -213,128 +291,179 @@ export default function InterestPage() {
             onSubmit={handleSubmit}
             className="space-y-12 bg-surface-container-low p-12 border-l border-outline-variant/15"
           >
-            {/* Section 1: Contact */}
+            {/* Section 1: Identity */}
             <div className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="group">
                   <label
-                    htmlFor="legal-name"
+                    htmlFor="full-name"
                     className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors"
                   >
-                    Legal Name
+                    Full Name
                   </label>
                   <input
-                    id="legal-name"
-                    name="legalName"
+                    id="full-name"
+                    name="fullName"
                     type="text"
-                    placeholder="SURNAME, GIVEN"
+                    required
+                    placeholder="JANE SMITH"
                     className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
                   />
                 </div>
                 <div className="group">
                   <label
-                    htmlFor="organization"
+                    htmlFor="firm"
                     className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors"
                   >
-                    Organization
+                    Firm / Fund (optional)
                   </label>
                   <input
-                    id="organization"
-                    name="organization"
+                    id="firm"
+                    name="firm"
                     type="text"
-                    placeholder="ENTITY NAME"
+                    placeholder="SEQUOIA, FAMILY OFFICE, INDEPENDENT..."
                     className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
                   />
                 </div>
               </div>
-              <div className="group">
-                <label
-                  htmlFor="email"
-                  className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors"
-                >
-                  Secure Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="USER@DOMAIN.TLD"
-                  className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
-                />
-              </div>
-            </div>
-
-            {/* Section 2: Technical Questions */}
-            <div className="pt-8 border-t border-outline-variant/20 space-y-8">
-              <div className="group">
-                <label
-                  htmlFor="hardware-stack"
-                  className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-4 group-focus-within:text-primary transition-colors"
-                >
-                  Current Hardware Stack / Actuator Specs
-                </label>
-                <textarea
-                  id="hardware-stack"
-                  name="hardwareStack"
-                  rows={3}
-                  placeholder="Details on degrees of freedom, torque sensors, compute capacity..."
-                  className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
-                />
-              </div>
-              <div>
-                <label className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-6">
-                  Primary Simulation Environment
-                </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <label className="cursor-pointer">
-                    <input
-                      className="hidden peer"
-                      name="sim"
-                      type="radio"
-                      value="isaac-sim"
-                    />
-                    <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
-                      Isaac Sim
-                    </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="group">
+                  <label
+                    htmlFor="email"
+                    className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors"
+                  >
+                    Email
                   </label>
-                  <label className="cursor-pointer">
-                    <input
-                      className="hidden peer"
-                      name="sim"
-                      type="radio"
-                      value="mujoco"
-                    />
-                    <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
-                      MuJoCo
-                    </div>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="YOU@DOMAIN.COM"
+                    className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
+                  />
+                </div>
+                <div className="group">
+                  <label
+                    htmlFor="link"
+                    className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors"
+                  >
+                    LinkedIn / Website (optional)
                   </label>
-                  <label className="cursor-pointer">
-                    <input
-                      className="hidden peer"
-                      name="sim"
-                      type="radio"
-                      value="gazebo"
-                    />
-                    <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
-                      Gazebo
-                    </div>
-                  </label>
-                  <label className="cursor-pointer">
-                    <input
-                      className="hidden peer"
-                      name="sim"
-                      type="radio"
-                      value="custom"
-                    />
-                    <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
-                      Custom
-                    </div>
-                  </label>
+                  <input
+                    id="link"
+                    name="link"
+                    type="url"
+                    placeholder="HTTPS://..."
+                    className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* Section 3: High-Trust Signal */}
+            {/* Section 2: Investor Profile */}
+            <div className="pt-8 border-t border-outline-variant/20 space-y-8">
+              <div>
+                <label className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-6">
+                  Investor Type
+                </label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {[
+                    { value: "angel", label: "Angel" },
+                    { value: "vc", label: "VC / Fund" },
+                    { value: "family-office", label: "Family Office" },
+                    { value: "syndicate", label: "Syndicate / SPV" },
+                    { value: "strategic", label: "Strategic / Corporate" },
+                    { value: "other", label: "Other" },
+                  ].map((opt) => (
+                    <label className="cursor-pointer" key={opt.value}>
+                      <input
+                        className="hidden peer"
+                        name="investorType"
+                        type="radio"
+                        value={opt.value}
+                      />
+                      <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
+                        {opt.label}
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-6">
+                  Ticket Size
+                </label>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                  {[
+                    { value: "<25k", label: "< $25K" },
+                    { value: "25-100k", label: "$25K–$100K" },
+                    { value: "100-250k", label: "$100K–$250K" },
+                    { value: "250-500k", label: "$250K–$500K" },
+                    { value: "500k+", label: "$500K+" },
+                  ].map((opt) => (
+                    <label className="cursor-pointer" key={opt.value}>
+                      <input
+                        className="hidden peer"
+                        name="ticketSize"
+                        type="radio"
+                        value={opt.value}
+                      />
+                      <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
+                        {opt.label}
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Section 3: Timeline & Interest */}
+            <div className="pt-8 border-t border-outline-variant/20 space-y-8">
+              <div>
+                <label className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-6">
+                  Decision Timeline
+                </label>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  {[
+                    { value: "ready", label: "Ready to commit" },
+                    { value: "1-3-months", label: "1–3 months" },
+                    { value: "exploratory", label: "Exploratory" },
+                  ].map((opt) => (
+                    <label className="cursor-pointer" key={opt.value}>
+                      <input
+                        className="hidden peer"
+                        name="timeline"
+                        type="radio"
+                        value={opt.value}
+                      />
+                      <div className="py-3 text-center border border-outline-variant/30 font-headline text-[10px] uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary-fixed peer-checked:border-primary hover:border-primary transition-all">
+                        {opt.label}
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="group">
+                <label
+                  htmlFor="notes"
+                  className="block font-headline text-[10px] uppercase tracking-widest text-on-surface-variant mb-4 group-focus-within:text-primary transition-colors"
+                >
+                  What drew you to PanditaAI? (optional)
+                </label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  rows={4}
+                  placeholder="Thesis fit, prior portfolio overlap, specific questions, intro source..."
+                  className="w-full bg-surface-container-highest border-none focus:ring-0 border-b-2 border-transparent focus:border-primary px-4 py-3 font-body text-white placeholder-white/20"
+                />
+              </div>
+            </div>
+
+            {/* Section 4: Consent & Submit */}
             <div className="pt-8 border-t border-outline-variant/20 space-y-6">
               <div className="flex items-start gap-4">
                 <input
@@ -347,9 +476,8 @@ export default function InterestPage() {
                   className="text-xs text-on-surface-variant font-body leading-relaxed"
                   htmlFor="nda"
                 >
-                  I request a Mutual Non-Disclosure Agreement (mNDA) prior to
-                  disclosing proprietary hardware specifications or pilot site
-                  locations.
+                  I&apos;d like a mutual NDA before accessing the data room and
+                  financial model.
                 </label>
               </div>
               <button
@@ -357,18 +485,31 @@ export default function InterestPage() {
                 type="submit"
                 disabled={status === "sending" || status === "sent"}
               >
-                {status === "sending" ? "TRANSMITTING..." : status === "sent" ? "RECEIVED" : "TRANSMIT INTEREST"}
+                {status === "sending"
+                  ? "SENDING..."
+                  : status === "sent"
+                    ? "RECEIVED · WE’LL BE IN TOUCH"
+                    : "REGISTER INTEREST"}
                 <span className="material-symbols-outlined text-sm">
                   {status === "sent" ? "check_circle" : "send"}
                 </span>
               </button>
               {status === "error" && (
                 <p className="text-[10px] text-center text-error uppercase tracking-widest">
-                  Transmission failed. Please retry.
+                  Could not reach HubSpot. Please retry or email
+                  invest@panditaai.com.
+                  {errorDetail ? ` (${errorDetail})` : ""}
+                </p>
+              )}
+              {status === "unconfigured" && (
+                <p className="text-[10px] text-center text-error uppercase tracking-widest">
+                  HubSpot portal not configured. Set
+                  NEXT_PUBLIC_HUBSPOT_PORTAL_ID and
+                  NEXT_PUBLIC_HUBSPOT_FORM_ID.
                 </p>
               )}
               <p className="text-[10px] text-center text-on-surface-variant uppercase tracking-widest opacity-50">
-                Encryption Status: AES-256 Enabled
+                Submissions routed to HubSpot CRM · Encryption: TLS 1.3
               </p>
             </div>
           </form>
@@ -379,27 +520,40 @@ export default function InterestPage() {
       <section className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-1 px-12">
         <div className="bg-surface-container-low p-12 flex flex-col justify-between aspect-video">
           <h3 className="font-headline text-3xl font-bold uppercase tracking-tight">
-            Roadmap Signal
+            Round Signal
           </h3>
           <div>
             <div className="font-headline text-[10px] text-primary tracking-widest uppercase mb-4">
-              Current Quarter Targets
+              Seed Round Terms
             </div>
             <div className="space-y-2">
               <div className="flex justify-between text-[10px] uppercase tracking-widest">
-                <span className="text-on-surface-variant">Seed Closing</span>
+                <span className="text-on-surface-variant">Raise</span>
+                <span>$1M on $5M cap</span>
+              </div>
+              <div className="w-full h-[1px] bg-outline-variant/20"></div>
+              <div className="flex justify-between text-[10px] uppercase tracking-widest">
+                <span className="text-on-surface-variant">Instrument</span>
+                <span>SAFE · Post-money</span>
+              </div>
+              <div className="w-full h-[1px] bg-outline-variant/20"></div>
+              <div className="flex justify-between text-[10px] uppercase tracking-widest">
+                <span className="text-on-surface-variant">Close Target</span>
                 <span>Sep 30 2026</span>
               </div>
               <div className="w-full h-[1px] bg-outline-variant/20"></div>
               <div className="flex justify-between text-[10px] uppercase tracking-widest">
-                <span className="text-on-surface-variant">First Skill</span>
-                <span>Q2 2026 · Martial Arts</span>
+                <span className="text-on-surface-variant">Use of Funds</span>
+                <span>35% HW · 25% R&amp;D · 25% Team · 15% Ops</span>
               </div>
-              <div className="w-full h-[1px] bg-outline-variant/20"></div>
-              <div className="flex justify-between text-[10px] uppercase tracking-widest">
-                <span className="text-on-surface-variant">Beta Catalog</span>
-                <span>Q4 2026</span>
-              </div>
+            </div>
+            <div className="mt-6">
+              <Link
+                className="font-headline text-[10px] text-primary tracking-widest uppercase hover:underline"
+                href="/pitch-deck"
+              >
+                View pitch deck →
+              </Link>
             </div>
           </div>
         </div>
@@ -413,7 +567,7 @@ export default function InterestPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
           <div className="absolute bottom-8 left-8">
             <div className="font-headline text-xs tracking-widest text-primary mb-2 uppercase">
-              Hardware Integration
+              What you&apos;re backing
             </div>
             <h3 className="font-headline text-2xl font-bold uppercase">
               Vision to Actuation
