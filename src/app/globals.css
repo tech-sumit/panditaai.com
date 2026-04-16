@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body overflow-x-hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-primary-container text-on-primary-fixed;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0e0e0e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ff9159;
+  }
+}
+
+@layer components {
+  .data-grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .solar-flare {
+    background: linear-gradient(to right, #ff9159, #ff7a2f);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 145, 89, 0.4);
+  }
+
+  .btn-primary {
+    @apply bg-primary-container text-on-primary-fixed px-6 py-3 font-headline font-bold uppercase text-xs tracking-widest active:scale-95 duration-150 transition-all;
+  }
+
+  .btn-ghost {
+    @apply border border-outline-variant/30 text-primary px-6 py-3 font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary/10 active:scale-95 duration-150 transition-all;
+  }
+
+  .section-label {
+    @apply text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block font-headline;
+  }
+
+  .glass-dock {
+    background: rgba(14, 14, 14, 0.6);
+    backdrop-filter: blur(24px);
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 20s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

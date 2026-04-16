@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAUSHAL | Investor Connect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .data-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#fbb423",
+                      "surface-bright": "#2c2c2c",
+                      "tertiary-dim": "#eba60f",
+                      "on-secondary-fixed-variant": "#803f00",
+                      "inverse-on-surface": "#555555",
+                      "tertiary": "#ffc562",
+                      "on-secondary": "#462000",
+                      "on-tertiary-fixed-variant": "#5e4000",
+                      "on-tertiary": "#5e4000",
+                      "error": "#ff7351",
+                      "primary-container": "#ff7a2f",
+                      "surface-dim": "#0e0e0e",
+                      "secondary-container": "#944a00",
+                      "tertiary-fixed-dim": "#eba60f",
+                      "surface-container-high": "#1f1f1f",
+                      "on-primary-container": "#401500",
+                      "surface-container-lowest": "#000000",
+                      "surface-container-low": "#131313",
+                      "surface-tint": "#ff9159",
+                      "on-tertiary-container": "#523700",
+                      "secondary-dim": "#eb832c",
+                      "primary": "#ff9159",
+                      "on-background": "#ffffff",
+                      "on-surface": "#ffffff",
+                      "on-primary-fixed": "#000000",
+                      "error-dim": "#d53d18",
+                      "error-container": "#b92902",
+                      "outline-variant": "#484848",
+                      "on-surface-variant": "#ababab",
+                      "tertiary-container": "#fbb423",
+                      "on-tertiary-fixed": "#372400",
+                      "inverse-primary": "#a14100",
+                      "on-primary": "#531e00",
+                      "surface-variant": "#262626",
+                      "on-primary-fixed-variant": "#4f1c00",
+                      "on-error": "#450900",
+                      "surface-container-highest": "#262626",
+                      "primary-fixed-dim": "#f66700",
+                      "on-secondary-container": "#fff6f2",
+                      "secondary-fixed": "#ffc69f",
+                      "secondary": "#f88d36",
+                      "primary-dim": "#ff7524",
+                      "secondary-fixed-dim": "#ffb37d",
+                      "background": "#0e0e0e",
+                      "inverse-surface": "#f9f9f9",
+                      "outline": "#757575",
+                      "on-secondary-fixed": "#552800",
+                      "surface": "#0e0e0e",
+                      "on-error-container": "#ffd2c8",
+                      "primary-fixed": "#ff7a2f",
+                      "surface-container": "#191919"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Inter"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          }
+        }
+      </script>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 data-grain z-[100]"></div>
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-[#0e0e0e]/60 backdrop-blur-xl transition-all duration-300">
+<div class="text-2xl font-bold tracking-[0.1em] text-[#FF6B00] font-headline uppercase">KAUSHAL</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Home</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Concept</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Platform</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Vision</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Timeline</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Pitch Deck</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-[#FF6B00] border-b-2 border-[#FF6B00] pb-1" href="#">Investor Connect</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block bg-primary-container text-on-primary-fixed px-6 py-2 font-headline font-bold uppercase text-xs tracking-widest active:scale-95 duration-150">Record Interest</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-12 mb-32 grid grid-cols-12 gap-8 items-end">
+<div class="col-span-12 md:col-span-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-headline font-bold tracking-[0.2em] uppercase text-primary">Live Funding Round: Series A-1</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-bold tracking-tight leading-[0.9] uppercase mb-8">
+                    Scaling <span class="text-primary">Physical</span> Intelligence.
+                </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed font-light">
+                    Kaushal is bridging the gap between digital cognition and physical actuation. We are building the foundational OS for the next billion robotic workers.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col gap-4">
+<button class="w-full bg-primary-container text-on-primary-fixed py-5 font-headline font-bold uppercase tracking-[0.2em] hover:brightness-110 transition-all flex items-center justify-center gap-3">
+                    Request Deck <span class="material-symbols-outlined text-sm">download</span>
+</button>
+<button class="w-full border border-outline-variant/30 py-5 font-headline font-bold uppercase tracking-[0.2em] text-primary hover:bg-primary/10 transition-all flex items-center justify-center gap-3">
+                    Book Meeting <span class="material-symbols-outlined text-sm">calendar_today</span>
+</button>
+</div>
+</section>
+<!-- Thesis & Conviction Bento -->
+<section class="px-12 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<div class="bg-surface-container-low p-12 aspect-square flex flex-col justify-between border-l border-t border-outline-variant/10">
+<div>
+<div class="text-primary font-headline font-bold mb-4 text-xs tracking-widest uppercase">01 / Thesis</div>
+<h3 class="text-3xl font-headline font-medium leading-tight mb-6">The Physical Transition.</h3>
+</div>
+<p class="text-on-surface-variant font-light text-lg">General intelligence has reached its digital limit. The next frontier is the embodiment of AI in complex, unstructured physical environments.</p>
+</div>
+<div class="bg-surface-container-low p-12 aspect-square flex flex-col justify-between border-l border-t border-outline-variant/10">
+<div>
+<div class="text-primary font-headline font-bold mb-4 text-xs tracking-widest uppercase">02 / Edge</div>
+<h3 class="text-3xl font-headline font-medium leading-tight mb-6">Why Kaushal Wins.</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-on-surface text-sm uppercase tracking-wider font-bold">Proprietary Haptic Data</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-on-surface text-sm uppercase tracking-wider font-bold">Low-Latency Kernel</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-on-surface text-sm uppercase tracking-wider font-bold">Hardware Agnostic Architecture</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-0 aspect-square overflow-hidden border-l border-r border-t border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Futuristic robotic arm performing precise assembly tasks in a dark, high-tech industrial laboratory with orange accent lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgcB35GkrqaqfoTjg2LlcFCMF8lbp4KA050ucpHp6Gr-LosjG8Bd8rMRwTQNp0UArbDHJNXKzsaHq95lEfRVf4vVL1tmJys5e4myaOZmy5X5562ZWnCLcyviyTyOyBiscVtT_oM9oeJQk9moFNg3C-1FiSpqc5QUXJ-OHRkyt_K_hM0ePHV-l9Q_jPWFqytyhqgCxpIjchOAN2p7f89FT1C3OmRXh1RGUzfk32bmpv5zuHZfAR0lONcZz0QSomIOsEFDNa3fwxKepi"/>
+</div>
+</div>
+</section>
+<!-- Capital & Use of Funds -->
+<section class="bg-surface-container-low py-32 px-12 mb-32 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 relative z-10">
+<div>
+<h2 class="text-5xl font-headline font-bold uppercase tracking-tighter mb-12">The Round <span class="text-primary">Parameters</span></h2>
+<div class="space-y-12">
+<div class="border-b border-outline-variant/20 pb-8">
+<div class="text-[10px] uppercase font-headline tracking-[0.3em] text-on-surface-variant mb-2">Capital Being Raised</div>
+<div class="text-6xl font-headline font-black text-white">$25.0M</div>
+</div>
+<div class="border-b border-outline-variant/20 pb-8">
+<div class="text-[10px] uppercase font-headline tracking-[0.3em] text-on-surface-variant mb-2">Round Status</div>
+<div class="text-4xl font-headline font-bold text-primary">COMMITTED: 45%</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-headline font-bold tracking-[0.4em] uppercase text-primary mb-12">Deployment Strategy</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-lg font-headline font-medium uppercase tracking-widest">R&amp;D &amp; Model Training</span>
+<span class="text-2xl font-headline text-primary">40%</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-lg font-headline font-medium uppercase tracking-widest">Core Engineering Team</span>
+<span class="text-2xl font-headline text-primary">30%</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-lg font-headline font-medium uppercase tracking-widest">Deployment Partnerships</span>
+<span class="text-2xl font-headline text-primary">20%</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-lg font-headline font-medium uppercase tracking-widest">Operations</span>
+<span class="text-2xl font-headline text-primary">10%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Investor Connect Form -->
+<section class="px-12 mb-32 grid grid-cols-12 gap-16">
+<div class="col-span-12 lg:col-span-5">
+<h2 class="text-4xl font-headline font-bold uppercase mb-8">Secure Your <span class="text-primary">Allocation.</span></h2>
+<p class="text-on-surface-variant mb-12 text-lg">Formal outreach for institutional investors and strategic partners. Please provide credentials for terminal access.</p>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<span class="text-primary font-headline font-black text-xl leading-none">/</span>
+<div>
+<div class="text-xs font-headline font-bold tracking-widest uppercase mb-1">Direct Line</div>
+<div class="text-white text-lg font-light tracking-wide">ir@kaushal.ai</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary font-headline font-black text-xl leading-none">/</span>
+<div>
+<div class="text-xs font-headline font-bold tracking-widest uppercase mb-1">HQ Location</div>
+<div class="text-white text-lg font-light tracking-wide">Palo Alto // San Francisco</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 bg-surface-container-high p-12">
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-[10px] font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant">Investor Name</label>
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-white font-headline tracking-widest placeholder:text-white/20 px-4 py-4" placeholder="FULL NAME" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant">Firm / Fund</label>
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-white font-headline tracking-widest placeholder:text-white/20 px-4 py-4" placeholder="VENTURE CAPITAL / FAMILY OFFICE" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant">Message / Conviction</label>
+<textarea class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-white font-headline tracking-widest placeholder:text-white/20 px-4 py-4 resize-none" placeholder="BRIEF STATEMENT OF INTEREST" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary-fixed font-headline font-black uppercase py-5 tracking-[0.4em] hover:bg-primary-container transition-colors" type="submit">Initialize Connection</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#0e0e0e] border-t border-outline-variant/10">
+<div class="text-xl font-black text-white font-headline tracking-widest uppercase">KAUSHAL</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Contact Systems</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Terminal Access</a>
+</div>
+<div class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/20">
+            © 2024 KAUSHAL PHYSICAL AI. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

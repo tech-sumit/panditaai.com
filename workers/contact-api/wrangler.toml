@@ -1,0 +1,8 @@
+name = "panditaai-contact"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "panditaai-contacts"
+database_id = "" # Run `npm run db:create` and paste the ID here

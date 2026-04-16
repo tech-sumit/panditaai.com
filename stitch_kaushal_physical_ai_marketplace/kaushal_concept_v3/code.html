@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#fbb423",
+                    "surface-bright": "#2c2c2c",
+                    "tertiary-dim": "#eba60f",
+                    "on-secondary-fixed-variant": "#803f00",
+                    "inverse-on-surface": "#555555",
+                    "tertiary": "#ffc562",
+                    "on-secondary": "#462000",
+                    "on-tertiary-fixed-variant": "#5e4000",
+                    "on-tertiary": "#5e4000",
+                    "error": "#ff7351",
+                    "primary-container": "#ff7a2f",
+                    "surface-dim": "#0e0e0e",
+                    "secondary-container": "#944a00",
+                    "tertiary-fixed-dim": "#eba60f",
+                    "surface-container-high": "#1f1f1f",
+                    "on-primary-container": "#401500",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-low": "#131313",
+                    "surface-tint": "#ff9159",
+                    "on-tertiary-container": "#523700",
+                    "secondary-dim": "#eb832c",
+                    "primary": "#ff9159",
+                    "on-background": "#ffffff",
+                    "on-surface": "#ffffff",
+                    "on-primary-fixed": "#000000",
+                    "error-dim": "#d53d18",
+                    "error-container": "#b92902",
+                    "outline-variant": "#484848",
+                    "on-surface-variant": "#ababab",
+                    "tertiary-container": "#fbb423",
+                    "on-tertiary-fixed": "#372400",
+                    "inverse-primary": "#a14100",
+                    "on-primary": "#531e00",
+                    "surface-variant": "#262626",
+                    "on-primary-fixed-variant": "#4f1c00",
+                    "on-error": "#450900",
+                    "surface-container-highest": "#262626",
+                    "primary-fixed-dim": "#f66700",
+                    "on-secondary-container": "#fff6f2",
+                    "secondary-fixed": "#ffc69f",
+                    "secondary": "#f88d36",
+                    "primary-dim": "#ff7524",
+                    "secondary-fixed-dim": "#ffb37d",
+                    "background": "#0e0e0e",
+                    "inverse-surface": "#f9f9f9",
+                    "outline": "#757575",
+                    "on-secondary-fixed": "#552800",
+                    "surface": "#0e0e0e",
+                    "on-error-container": "#ffd2c8",
+                    "primary-fixed": "#ff7a2f",
+                    "surface-container": "#191919"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    font-family: "Inter", sans-serif;
+    background-color: #0e0e0e;
+    color: #fff
+    }
+.font-headline {
+    font-family: "Space Grotesk", sans-serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.data-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAVTSH9bvO4CstnPubJx1iVvaRJLmXeBJaX99uYz3dXgAbKMKMgNQdqsNeTtaIPBwMB2HnHcp9JBUn6-tziVTUdszMOY5quiDsLTDCxrIU8ctPe6l-viL5Fqhlr9TB_Xxat23C7iUW34UiYUJhMRaWWbOGNE2a1JYjxyNZ8nn5qjhLcXJ-YvjGd4s_J2cbkpiDbZm98o1JCpQi4AnGhL3kKX3XZ9WYGAggRq4C91vRgK5M-8dFKMDJG1YOLQ-ADvtqKHd5nIPKvc0d8);
+    opacity: 0.02;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 data-grain z-50"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-[100] flex justify-between items-center px-12 py-6 bg-[#0e0e0e]/60 backdrop-blur-xl transition-all duration-300">
+<div class="text-2xl font-bold tracking-[0.1em] text-[#FF6B00] font-headline">KAUSHAL</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Home</a>
+<a class="font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold text-[#FF6B00] border-b-2 border-[#FF6B00] pb-1" href="#">Concept</a>
+<a class="font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Platform</a>
+<a class="font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Vision</a>
+<a class="font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Timeline</a>
+<a class="font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Pitch Deck</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary-fixed font-headline font-bold uppercase text-xs px-6 py-3 tracking-widest active:scale-95 duration-150">Record Interest</button>
+<button class="border border-outline-variant/20 text-white/70 font-headline font-bold uppercase text-xs px-6 py-3 tracking-widest hover:bg-primary/10 transition-colors">Investor Connect</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex flex-col justify-center px-12 pt-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic high-tech lab" class="w-full h-full object-cover opacity-20 grayscale brightness-50" data-alt="A cinematic wide shot of a futuristic robotics lab with dark atmospheric lighting, orange laser grids, and mechanical arms in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCotZ4HWUt8EoAWHf9O_q5fs1nY4bpDXKoOVvdWOjnG5fIUhadw0UvPRmCA2vFVcd7qWZ8hco4BB1NSbwcPnammBIf6-bHdFS0IqxDPHfG_8XWsN1TzzBYkoEPL7BW3knh5BmFsidgOxIRFOonyacw6qJwIu6Kk04nIiwYUQjYsWM6b1ik3YUOrnKGWS7WNwNqtYkuY5AGzcVrg4nNFx0AESH__Knmv0dQYje0Z2VsNUNu3tqcEQs6DQRpVBOHdE1elJMP1kfEi_Z-o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-5xl">
+<div class="flex items-center gap-4 mb-6">
+<span class="w-12 h-[2px] bg-primary"></span>
+<span class="font-headline tracking-[0.3em] uppercase text-primary text-sm font-bold">Category Evolution</span>
+</div>
+<h1 class="font-headline text-7xl md:text-9xl font-bold leading-tight tracking-tighter mb-8">
+                PHYSICAL <br/><span class="text-primary">AI SKILLS.</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                We are transitioning from static automation to dynamic physical intelligence. Kaushal defines the blueprint for modular, transferable, and deployable robotic expertise.
+            </p>
+</div>
+<div class="absolute bottom-12 right-12 flex flex-col items-end gap-2">
+<div class="text-primary font-headline text-xs tracking-widest uppercase">System Status</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-headline text-sm font-bold tracking-widest">ORBITAL COMMAND ACTIVE</span>
+</div>
+</div>
+</header>
+<!-- The Problem: Fragmented Skills -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+<div class="space-y-12">
+<h2 class="font-headline text-5xl font-bold tracking-tight">THE FRAGMENTATION <br/>CRISIS.</h2>
+<div class="space-y-6 text-on-surface-variant font-body leading-relaxed text-lg">
+<p>Current robotics development is trapped in "silos of specificity." A skill learned by a Boston Dynamics Spot cannot be easily shared with an Agility Robotics Digit. Code is proprietary, environments are closed, and learning is non-transferable.</p>
+<p>This fragmentation forces every hardware manufacturer to reinvent the wheel, slowing down the global adoption of general-purpose robotics.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 pt-8">
+<div class="p-8 bg-surface border-l-4 border-error/50">
+<div class="text-error font-headline text-3xl font-bold mb-2">94%</div>
+<div class="text-xs font-headline uppercase tracking-widest text-on-surface-variant">Proprietary Lock-in</div>
+</div>
+<div class="p-8 bg-surface border-l-4 border-error/50">
+<div class="text-error font-headline text-3xl font-bold mb-2">18mo</div>
+<div class="text-xs font-headline uppercase tracking-widest text-on-surface-variant">Avg Skill Port Time</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<img alt="Broken motherboard" class="w-full grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="Abstract macro shot of futuristic electronic circuits with glowing orange lines and sharp geometric shadows to represent fragmented technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzFKaLcCKE49ZgR5S1Nw9kmsMfMMNHKKRBf99tzDDFKD24mzBqw2jZcUYfI6pEIDT26LHBLybvxUZ4vH2kq2G2NDbicHN-AYWjvKwrSb_mwa15i-G6yec1VCXJ5we-iG_MX23Jobdc8rEnieECVSBYa3vH50cAcl4kuv5BgCLvs8bSQt6muNgYTAvzSojWcmNltbW6MiZnBEqvSgk6TFS8HtC4vQf7C0001Wz6erfWaGB_-kUbS0wDelIx1_zhu4gFUPhGWI38xtsy"/>
+<div class="absolute top-8 right-8 p-4 bg-surface-container-high/80 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary mb-2 block">warning</span>
+<div class="font-headline text-xs tracking-widest uppercase">System Inefficiency</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Definition: Physical AI Skill -->
+<section class="py-32 px-12">
+<div class="text-center mb-24">
+<h2 class="font-headline text-5xl font-bold tracking-tight mb-6">WHAT IS A PHYSICAL AI SKILL?</h2>
+<div class="w-24 h-[2px] bg-primary mx-auto mb-12"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<div class="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="text-primary mb-8"><span class="material-symbols-outlined text-5xl">psychology</span></div>
+<h3 class="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">NEURAL WEIGHTS</h3>
+<p class="text-on-surface-variant leading-relaxed">The distilled intelligence trained through millions of reinforcement learning iterations within the Isaac Sim universe.</p>
+</div>
+<div class="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="text-primary mb-8"><span class="material-symbols-outlined text-5xl">settings_input_component</span></div>
+<h3 class="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">CONTROL STACK</h3>
+<p class="text-on-surface-variant leading-relaxed">The hardware-agnostic API that maps neural intentions to high-fidelity motor controls and sensor feedback loops.</p>
+</div>
+<div class="bg-surface-container-low p-12 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="text-primary mb-8"><span class="material-symbols-outlined text-5xl">token</span></div>
+<h3 class="font-headline text-2xl font-bold mb-4 tracking-wide uppercase">ENV METADATA</h3>
+<p class="text-on-surface-variant leading-relaxed">The defining parameters of physical constraints, friction coefficients, and spatial limits the skill was optimized for.</p>
+</div>
+</div>
+</section>
+<!-- Isaac Sim Workflow (Bento Grid) -->
+<section class="py-32 px-12 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-4">THE TRAINING FORGE.</h2>
+<p class="text-on-surface-variant font-body">Leveraging NVIDIA Isaac Sim for hyper-accelerated learning.</p>
+</div>
+<div class="grid grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Large Feature -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-low relative overflow-hidden flex flex-col justify-end p-12">
+<img alt="Robot simulation" class="absolute inset-0 w-full h-full object-cover opacity-30 hover:scale-105 transition-transform duration-[2000ms]" data-alt="Digital twin representation of a robotic arm in a simulated blue-tinted warehouse environment with data overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy_d3qB_0sJyHeiXk2uLi65WxR8Us9R3Act3Do7adrzePqB3U1O6arpnmzGL7cA6r9YHpg76A1BmJoVRq2c4a904l5iKfE2BDx0m83chA2o8x1IhPXEPShL0oZQtVOsFKRdHhW6Am0vjJwZ_GMZnVrWK8n2NSAHgwgaD2TEoZcbUKOJBRq5MzhLVp_TK8x7Bl51sXuO-7u2C0xKMArL9XmQYzKveVYfxe7NhVQGTm2aWqvRpKVxOZ7PcDN03-2dH3FD5JMFRlRQrNQ"/>
+<div class="relative z-10">
+<div class="font-headline text-primary text-xs tracking-widest uppercase mb-4">Phase 01</div>
+<h3 class="font-headline text-4xl font-bold mb-4 uppercase">Sim-First Synthesis</h3>
+<p class="text-on-surface-variant max-w-lg">Millions of parallel robot instances learning a single task across 1,000+ varying environmental permutations in minutes.</p>
+</div>
+</div>
+<!-- Small Feature 1 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-high p-10 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl">view_in_ar</span>
+<div>
+<div class="font-headline text-primary text-xs tracking-widest uppercase mb-2">Phase 02</div>
+<h3 class="font-headline text-2xl font-bold mb-2 uppercase">PhysX Validation</h3>
+<p class="text-on-surface-variant text-sm">Stress-testing the skill against extreme physical scenarios to ensure safety and reliability.</p>
+</div>
+</div>
+<!-- Small Feature 2 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-high p-10 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl">data_thresholding</span>
+<div>
+<div class="font-headline text-primary text-xs tracking-widest uppercase mb-2">Phase 03</div>
+<h3 class="font-headline text-2xl font-bold mb-2 uppercase">Telemetry Distillation</h3>
+<p class="text-on-surface-variant text-sm">Compressing multi-terabyte training runs into lightweight, executable AI skill modules.</p>
+</div>
+</div>
+<!-- Medium Feature -->
+<div class="col-span-12 md:col-span-8 bg-primary/90 flex flex-col justify-center p-12">
+<h3 class="font-headline text-on-primary-fixed text-4xl font-black mb-4 uppercase italic">Zero-Shot Deployment</h3>
+<p class="text-on-primary-fixed/80 text-lg leading-tight">The ultimate goal: A skill that works on hardware the first time it's turned on, because the simulation was perfect.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sim-to-Real Transfer (Tech Diagram Layout) -->
+<section class="py-32 px-12 relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1">
+<div class="relative p-8 border border-outline-variant/20 bg-surface-container-low">
+<!-- Tech Diagram Placeholder Style -->
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+<span class="font-headline text-xs text-primary">LAYER_01: GAIT_NEURAL_NET</span>
+<span class="text-[10px] text-white/30 font-mono">HASH: 77-AX-09</span>
+</div>
+<div class="h-48 flex items-end gap-2 px-4">
+<div class="flex-1 bg-primary/20 h-[60%]"></div>
+<div class="flex-1 bg-primary/40 h-[80%]"></div>
+<div class="flex-1 bg-primary h-[40%]"></div>
+<div class="flex-1 bg-primary/60 h-[90%]"></div>
+<div class="flex-1 bg-primary/30 h-[55%]"></div>
+<div class="flex-1 bg-primary/50 h-[75%]"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-highest text-xs font-mono text-white/50">SENSOR_FUSION_SYNC: ACTIVE</div>
+<div class="p-4 bg-surface-container-highest text-xs font-mono text-white/50">LATENCY_COMP: 2ms</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline text-5xl font-bold tracking-tight mb-8">SIM-TO-REAL <br/>TRANSFER.</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8">Bridging the "Reality Gap" is our core technical achievement. Kaushal's adapter layers use Domain Randomization to ensure that skills trained in perfect silicon math survive the messy noise of the real world.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 text-primary font-headline font-bold">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="uppercase tracking-widest text-sm">Dynamic Friction Compensation</span>
+</li>
+<li class="flex items-center gap-4 text-primary font-headline font-bold">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="uppercase tracking-widest text-sm">Visual Noise Masking</span>
+</li>
+<li class="flex items-center gap-4 text-primary font-headline font-bold">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="uppercase tracking-widest text-sm">Actuator Lag Modeling</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Marketplace Flow -->
+<section class="py-32 px-12 bg-surface-container-low border-y border-outline-variant/10">
+<div class="text-center max-w-3xl mx-auto mb-24">
+<h2 class="font-headline text-5xl font-bold tracking-tight uppercase mb-6 italic">The Skill Marketplace.</h2>
+<p class="text-on-surface-variant leading-relaxed">A global repository of physical intelligence. Developers build and train; operators purchase and deploy.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 justify-center">
+<!-- Step 1 -->
+<div class="flex-1 max-w-sm p-1 bg-gradient-to-br from-primary/30 to-transparent">
+<div class="bg-surface h-full p-10">
+<div class="font-headline text-6xl font-black text-outline-variant/20 mb-4">01</div>
+<h4 class="font-headline text-xl font-bold mb-4 uppercase">Train &amp; Package</h4>
+<p class="text-on-surface-variant text-sm">Upload your Isaac Sim environment and agent weights to the Kaushal compiler.</p>
+</div>
+</div>
+<!-- Arrow (Hidden on mobile) -->
+<div class="hidden md:flex items-center text-primary/20">
+<span class="material-symbols-outlined text-4xl">arrow_forward</span>
+</div>
+<!-- Step 2 -->
+<div class="flex-1 max-w-sm p-1 bg-gradient-to-br from-primary/30 to-transparent">
+<div class="bg-surface h-full p-10">
+<div class="font-headline text-6xl font-black text-outline-variant/20 mb-4">02</div>
+<h4 class="font-headline text-xl font-bold mb-4 uppercase">Benchmark</h4>
+<p class="text-on-surface-variant text-sm">We run your skill against the "Kaushal Standard" to assign a reliability rating.</p>
+</div>
+</div>
+<!-- Arrow -->
+<div class="hidden md:flex items-center text-primary/20">
+<span class="material-symbols-outlined text-4xl">arrow_forward</span>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 max-w-sm p-1 bg-gradient-to-br from-primary/30 to-transparent">
+<div class="bg-surface h-full p-10">
+<div class="font-headline text-6xl font-black text-outline-variant/20 mb-4">03</div>
+<h4 class="font-headline text-xl font-bold mb-4 uppercase">License</h4>
+<h4 class="font-headline text-xl font-bold mb-4 uppercase">Deploy</h4>
+<p class="text-on-surface-variant text-sm">End-users license the skill for specific hardware fleets with one-click injection.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-40 px-12 text-center">
+<h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter mb-12 uppercase italic">BUILD THE FUTURE <br/>OF MOTION.</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary-container text-on-primary-fixed font-headline font-bold uppercase text-lg px-12 py-5 tracking-[0.2em] hover:scale-105 duration-300">Start Training</button>
+<button class="border-2 border-outline-variant/30 text-white font-headline font-bold uppercase text-lg px-12 py-5 tracking-[0.2em] hover:bg-white/5 duration-300">Read the Whitepaper</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#0e0e0e] border-t border-outline-variant/5">
+<div class="text-xl font-black text-white font-headline tracking-widest">KAUSHAL</div>
+<div class="flex gap-10">
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Contact Systems</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-[#FF6B00]" href="#">Terminal Access</a>
+</div>
+<div class="font-['Space_Grotesk'] tracking-widest text-[10px] uppercase text-white/20">
+            © 2024 KAUSHAL PHYSICAL AI. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

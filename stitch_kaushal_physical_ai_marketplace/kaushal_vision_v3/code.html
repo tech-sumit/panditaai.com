@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed": "#fbb423",
+                "surface-bright": "#2c2c2c",
+                "tertiary-dim": "#eba60f",
+                "on-secondary-fixed-variant": "#803f00",
+                "inverse-on-surface": "#555555",
+                "tertiary": "#ffc562",
+                "on-secondary": "#462000",
+                "on-tertiary-fixed-variant": "#5e4000",
+                "on-tertiary": "#5e4000",
+                "error": "#ff7351",
+                "primary-container": "#ff7a2f",
+                "surface-dim": "#0e0e0e",
+                "secondary-container": "#944a00",
+                "tertiary-fixed-dim": "#eba60f",
+                "surface-container-high": "#1f1f1f",
+                "on-primary-container": "#401500",
+                "surface-container-lowest": "#000000",
+                "surface-container-low": "#131313",
+                "surface-tint": "#ff9159",
+                "on-tertiary-container": "#523700",
+                "secondary-dim": "#eb832c",
+                "primary": "#ff9159",
+                "on-background": "#ffffff",
+                "on-surface": "#ffffff",
+                "on-primary-fixed": "#000000",
+                "error-dim": "#d53d18",
+                "error-container": "#b92902",
+                "outline-variant": "#484848",
+                "on-surface-variant": "#ababab",
+                "tertiary-container": "#fbb423",
+                "on-tertiary-fixed": "#372400",
+                "inverse-primary": "#a14100",
+                "on-primary": "#531e00",
+                "surface-variant": "#262626",
+                "on-primary-fixed-variant": "#4f1c00",
+                "on-error": "#450900",
+                "surface-container-highest": "#262626",
+                "primary-fixed-dim": "#f66700",
+                "on-secondary-container": "#fff6f2",
+                "secondary-fixed": "#ffc69f",
+                "secondary": "#f88d36",
+                "primary-dim": "#ff7524",
+                "secondary-fixed-dim": "#ffb37d",
+                "background": "#0e0e0e",
+                "inverse-surface": "#f9f9f9",
+                "outline": "#757575",
+                "on-secondary-fixed": "#552800",
+                "surface": "#0e0e0e",
+                "on-error-container": "#ffd2c8",
+                "primary-fixed": "#ff7a2f",
+                "surface-container": "#191919"
+            },
+            "borderRadius": {
+                "DEFAULT": "0rem",
+                "lg": "0rem",
+                "xl": "0rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .data-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+        .solar-flare {
+            background: linear-gradient(to right, #ff9159, #ff7a2f);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #ff9159; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
+<div class="fixed inset-0 data-grain z-50"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-[60] flex justify-between items-center px-12 py-6 bg-[#0e0e0e]/60 backdrop-blur-xl transition-all duration-300">
+<div class="text-2xl font-bold tracking-[0.1em] text-[#FF6B00] font-headline">KAUSHAL</div>
+<div class="hidden md:flex items-center gap-10 font-['Space_Grotesk'] tracking-[0.05em] uppercase text-sm font-bold">
+<a class="text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Home</a>
+<a class="text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Concept</a>
+<a class="text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Platform</a>
+<a class="text-[#FF6B00] border-b-2 border-[#FF6B00] pb-1" href="#">Vision</a>
+<a class="text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Timeline</a>
+<a class="text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Pitch Deck</a>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 font-headline font-bold text-sm uppercase tracking-widest active:scale-95 duration-150">Record Interest</button>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero: The Orbital Command -->
+<section class="min-height-[1024px] pt-32 pb-20 px-12 flex flex-col justify-end relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="Cinematic high-tech futuristic robotics laboratory with glowing orange lights and complex mechanical structures in dark atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6sUawcA1WmKHSbeuOm7oA9a4movrAl2dYUJ70CUU32WnpX_zrZYlg_o_mDihdHgd5MmRzmrWXDMBWYTdAceLR4MsNazqoe3xS9WM2sBIMQR3pTdrFoAziqzpJJnHOqNSizkOLThGLvV1Q0bTuRDjVoea_BiAOhF_P_X2H2JNHd1DuRiPUpgi7cxdtMQCABgSMM9oXQV1-c-WEjilw8fGQxE64nYakcs3kyL4_CP67n7BJErN__xhxvN4JhIr881NqJRHxUvwTUcMj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-headline text-primary tracking-[0.4em] uppercase text-xs">Strategic Mandate // 2024-2034</span>
+</div>
+<h1 class="font-headline text-7xl md:text-9xl font-black tracking-tighter leading-none mb-12">
+                    THE ARCHITECTURE <br/>
+<span class="text-primary italic">OF AGENCY</span>
+</h1>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-6">
+<p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed">
+                            We are not building robots. We are building the substrate upon which the next billion physical actions will be executed. 
+                        </p>
+</div>
+<div class="md:col-span-6 flex justify-end">
+<div class="p-8 bg-surface-container-low backdrop-blur-md border-l-4 border-primary">
+<span class="block font-headline text-xs uppercase tracking-widest text-primary mb-2">Primary Objective</span>
+<p class="text-sm font-medium tracking-tight">Standardizing robot skill distribution for the frontier economy.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Manifesto Section: Skill-Native / Modular -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+<div>
+<h2 class="font-headline text-5xl font-extrabold tracking-tight mb-8">SKILL-NATIVE <br/>BY DESIGN.</h2>
+<div class="space-y-8 text-lg text-on-surface-variant leading-relaxed">
+<p>
+                            Traditional robotics is trapped in the "Monolith Era"—where hardware and software are inseparable, expensive, and rigid. Kaushal breaks this cycle. 
+                        </p>
+<p class="text-white font-medium border-l border-outline-variant pl-6 py-2">
+                            Our architecture treats skills as modular, hot-swappable assets. A robot is no longer a tool; it is a container for physical expertise.
+                        </p>
+<p>
+                            By decoupling the cognitive "skill layer" from the mechanical "actuation layer," we enable a world where capability is downloaded, not hard-coded.
+                        </p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary text-4xl">extension</span>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Modular Logic</h3>
+</div>
+<div class="bg-primary p-8 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-on-primary-fixed text-4xl">dynamic_feed</span>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight text-on-primary-fixed">Instant Deployment</h3>
+</div>
+<div class="bg-surface-container-low p-8 flex flex-col justify-between aspect-square col-span-2">
+<span class="material-symbols-outlined text-outline text-4xl">hub</span>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Distributed Intelligence</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure Bento: The Physical AI Economy -->
+<section class="py-20 px-12 bg-surface-container-low relative">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<span class="font-headline text-primary tracking-[0.3em] uppercase text-xs block mb-4">Core Infrastructure</span>
+<h2 class="font-headline text-6xl font-black tracking-tighter">THE DISTRIBUTION LAYER</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-highest p-12 flex flex-col justify-end relative overflow-hidden min-h-[500px]">
+<div class="absolute top-0 right-0 p-8 text-primary/20 font-black text-9xl font-headline pointer-events-none">01</div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="Detailed view of a metallic robotic hand performing a precise industrial assembly task under spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaE4RTzBDX7bOos1sUmLKMZOvnARRvkO2sPKjcURia3oBq71vGhRblum6JTaau_blxGQuC-Mnhjh6FwVMa9JARgH6Ab3SPXyjQQfQpKwQaWzeToFoZ2rRlkBZlwN_4lRuVM6XCIsctWrvffYDNwEUnFD3z-GMNlp61ZyFgCzKsH1l_uutOEsFiiOTjSQDW9x9mSiQTPRXF51XoBZ25tlizJs7UXxbdHW-51SfMa3gF3aJmlK-8sORwS7jxSqQvnOTnJSyJbZidT4Ru"/>
+<h3 class="font-headline text-3xl font-bold mb-4 relative z-10">Neural Skill Registry</h3>
+<p class="text-on-surface-variant relative z-10">A centralized, high-fidelity repository of neural-weighted skills, ready for cross-platform deployment.</p>
+</div>
+<div class="bg-primary-container p-10 flex flex-col justify-between">
+<span class="material-symbols-outlined text-on-primary-fixed text-3xl">open_in_new</span>
+<h3 class="font-headline text-xl font-bold text-on-primary-fixed uppercase">Open Ecosystem</h3>
+</div>
+<div class="bg-surface-container-high p-10 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+<h3 class="font-headline text-xl font-bold uppercase">Dev Core API</h3>
+</div>
+<div class="md:col-span-2 bg-surface p-10 border-l border-primary/30">
+<h3 class="font-headline text-2xl font-bold mb-4">India-Origin Talent</h3>
+<p class="text-sm text-on-surface-variant mb-6">Leveraging the world's most dense engineering ecosystem to solve global physical bottlenecks.</p>
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="font-headline text-3xl font-black text-primary">12K+</span>
+<span class="text-[10px] uppercase tracking-widest text-outline">Engineers</span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-headline text-3xl font-black text-primary">Global</span>
+<span class="text-[10px] uppercase tracking-widest text-outline">Demand Reach</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Thesis: Open Ecosystem -->
+<section class="py-32 px-12 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center">
+<div class="w-full md:w-1/2">
+<div class="aspect-video bg-surface-container-highest relative">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-9xl opacity-20">cloud_sync</span>
+</div>
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="Abstract macro shot of a blue and orange circuit board representing high-speed data transmission" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtBSuje9fG_3HUFv8EEWlaABNRgeDTu1WaClR8QJ4PsT00iNGCbDPYMmXqdorORi57ffLNAmwiVEvBwhbxWr0ZN6p_BUlGXbmqb9r92Lt_KRwgR2oqwglOGJ1mCt43s1CEChPR3f2xeLtNiueWpFSz_DLJDgEqG9YCgDpKulSYZD6x-Snn5cC_irKhNfu4AhZNCYW6jzFJqYk-yx4hj1zmFCMR7XlcSMynyd5J5tQ1W_DO_BxHQ2kPsQyXyG9HAnZATC6N176FRAg1"/>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-8">THE OPEN ECOSYSTEM THESIS</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8 italic">
+                        "Closed systems die in the frontier. Intelligence requires friction, collaboration, and rapid iteration."
+                    </p>
+<p class="text-on-surface-variant leading-relaxed">
+                        Kaushal isn't just a platform; it's a protocol. We believe the future of robotics shouldn't be controlled by a single factory. By opening our skill-native infrastructure to developers worldwide, we create a compound effect of utility that no siloed company can match.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Global Talent / India Core -->
+<section class="py-20 bg-[#131313] px-12">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-8">
+<h2 class="font-headline text-5xl font-black tracking-tighter mb-12">INDIA ORIGIN. <br/><span class="text-primary">GLOBAL SCALE.</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-primary text-sm tracking-widest uppercase">The Talent Reservoir</h4>
+<p class="text-on-surface-variant text-sm">We draw from a demographic dividend unmatched in history. Kaushal is the conduit for Indian engineering excellence to solve the labor shortage in the West and East alike.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-primary text-sm tracking-widest uppercase">The Distribution Vision</h4>
+<p class="text-on-surface-variant text-sm">Becoming the default layer for robot skill distribution means every hardware OEM becomes a Kaushal partner. We are the 'Intel Inside' for the physical AI era.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface p-12 border-t-4 border-primary">
+<div class="space-y-12">
+<div>
+<span class="font-headline text-4xl font-black block">85%</span>
+<span class="text-xs text-outline uppercase tracking-widest">Efficiency Gain per Deployment</span>
+</div>
+<div>
+<span class="font-headline text-4xl font-black block">24/7</span>
+<span class="text-xs text-outline uppercase tracking-widest">Cross-Platform Sync</span>
+</div>
+<button class="w-full border border-primary text-primary font-headline font-bold py-4 uppercase tracking-widest hover:bg-primary hover:text-on-primary-fixed transition-all">Explore the Roadmap</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Manifesto Statement -->
+<section class="py-48 px-12 bg-surface text-center relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-5 pointer-events-none">
+<span class="font-headline font-black text-[40vw] leading-none select-none">KAUSHAL</span>
+</div>
+<div class="max-w-4xl mx-auto relative z-10">
+<h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-12">THE DEFAULT LAYER <br/>FOR MOTION.</h2>
+<p class="text-2xl text-on-surface-variant font-light mb-16 leading-relaxed">
+                    By 2030, the question won't be "What can your robot do?" but "Does it run on Kaushal?" We are standardizing the physical world, one skill at a time.
+                </p>
+<button class="solar-flare text-on-primary-fixed px-12 py-5 font-headline font-black text-xl uppercase tracking-[0.2em] active:scale-95 transition-all">
+                    Partner With The Future
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#131313]">
+<div class="text-xl font-black text-white font-headline">KAUSHAL</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Contact Systems</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40 hover:text-white transition-opacity" href="#">Terminal Access</a>
+</div>
+<div class="font-['Space_Grotesk'] tracking-widest text-xs uppercase text-white/40">
+            © 2024 KAUSHAL PHYSICAL AI. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

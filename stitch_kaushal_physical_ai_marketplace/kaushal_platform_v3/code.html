@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#fbb423",
+                        "surface-bright": "#2c2c2c",
+                        "tertiary-dim": "#eba60f",
+                        "on-secondary-fixed-variant": "#803f00",
+                        "inverse-on-surface": "#555555",
+                        "tertiary": "#ffc562",
+                        "on-secondary": "#462000",
+                        "on-tertiary-fixed-variant": "#5e4000",
+                        "on-tertiary": "#5e4000",
+                        "error": "#ff7351",
+                        "primary-container": "#ff7a2f",
+                        "surface-dim": "#0e0e0e",
+                        "secondary-container": "#944a00",
+                        "tertiary-fixed-dim": "#eba60f",
+                        "surface-container-high": "#1f1f1f",
+                        "on-primary-container": "#401500",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#131313",
+                        "surface-tint": "#ff9159",
+                        "on-tertiary-container": "#523700",
+                        "secondary-dim": "#eb832c",
+                        "primary": "#ff9159",
+                        "on-background": "#ffffff",
+                        "on-surface": "#ffffff",
+                        "on-primary-fixed": "#000000",
+                        "error-dim": "#d53d18",
+                        "error-container": "#b92902",
+                        "outline-variant": "#484848",
+                        "on-surface-variant": "#ababab",
+                        "tertiary-container": "#fbb423",
+                        "on-tertiary-fixed": "#372400",
+                        "inverse-primary": "#a14100",
+                        "on-primary": "#531e00",
+                        "surface-variant": "#262626",
+                        "on-primary-fixed-variant": "#4f1c00",
+                        "on-error": "#450900",
+                        "surface-container-highest": "#262626",
+                        "primary-fixed-dim": "#f66700",
+                        "on-secondary-container": "#fff6f2",
+                        "secondary-fixed": "#ffc69f",
+                        "secondary": "#f88d36",
+                        "primary-dim": "#ff7524",
+                        "secondary-fixed-dim": "#ffb37d",
+                        "background": "#0e0e0e",
+                        "inverse-surface": "#f9f9f9",
+                        "outline": "#757575",
+                        "on-secondary-fixed": "#552800",
+                        "surface": "#0e0e0e",
+                        "on-error-container": "#ffd2c8",
+                        "primary-fixed": "#ff7a2f",
+                        "surface-container": "#191919"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .data-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
+<div class="fixed inset-0 data-grain z-[60]"></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-[#0e0e0e]/60 backdrop-blur-xl">
+<div class="text-2xl font-bold tracking-[0.1em] text-[#FF6B00] font-headline">KAUSHAL</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Home</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Concept</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-[#FF6B00] border-b-2 border-[#FF6B00] pb-1" href="#">Platform</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Vision</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Timeline</a>
+<a class="font-headline tracking-[0.05em] uppercase text-sm font-bold text-white/70 hover:text-[#FF6B00] transition-colors duration-300" href="#">Pitch Deck</a>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 font-headline font-bold uppercase text-xs tracking-widest active:scale-95 duration-150">Record Interest</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Header -->
+<section class="px-12 mb-24 max-w-7xl mx-auto grid grid-cols-12 gap-8 items-end">
+<div class="col-span-12 md:col-span-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-3 h-3 bg-primary animate-pulse"></span>
+<span class="font-headline text-primary tracking-[0.3em] uppercase text-xs font-bold">Orbital Command Unit</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-bold tracking-tight leading-[0.9] mb-8">
+                    THE PHYSICAL <br/><span class="text-primary">AI ARCHITECTURE</span>
+</h1>
+<p class="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
+                    Kaushal is the unified substrate for Physical AI. We bridge the gap between high-level creator logic and edge-device execution through a distributed, high-performance telemetry pipeline.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-4 border-l border-outline-variant/20 pl-8 pb-4">
+<div class="space-y-4">
+<div>
+<div class="text-[10px] text-outline font-headline uppercase tracking-[0.2em] mb-1">Status</div>
+<div class="text-sm font-headline uppercase text-white">System: Operational</div>
+</div>
+<div>
+<div class="text-[10px] text-outline font-headline uppercase tracking-[0.2em] mb-1">Compute Backend</div>
+<div class="text-sm font-headline uppercase text-white">Cloudflare Workers Edge</div>
+</div>
+<div>
+<div class="text-[10px] text-outline font-headline uppercase tracking-[0.2em] mb-1">Throughput</div>
+<div class="text-sm font-headline uppercase text-white">4.2 PB/s Telemetry Hub</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ecosystem Bento Grid -->
+<section class="px-12 mb-32 max-w-7xl mx-auto">
+<div class="grid grid-cols-12 gap-4">
+<!-- Creator Card -->
+<div class="col-span-12 md:col-span-7 bg-surface-container-low p-12 flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-primary text-4xl">upload_file</span>
+<h3 class="text-3xl font-headline font-bold tracking-tight uppercase">Creator Workflow</h3>
+</div>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="text-primary font-headline font-bold text-lg">01.</div>
+<div>
+<h4 class="font-headline font-bold uppercase tracking-wider mb-2">Neural Upload</h4>
+<p class="text-on-surface-variant text-sm">Drag and drop trained weights (PyTorch/ONNX). Kaushal sanitizes and optimizes kernels for target hardware architectures automatically.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="text-primary font-headline font-bold text-lg">02.</div>
+<div>
+<h4 class="font-headline font-bold uppercase tracking-wider mb-2">Publish &amp; Version</h4>
+<p class="text-on-surface-variant text-sm">Push to the global Skill Registry. Every publish generates a unique cryptographic hash for runtime verification.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<button class="border border-outline-variant/30 text-primary px-8 py-3 font-headline text-xs font-bold uppercase tracking-widest hover:bg-primary/10 transition-all">Launch Studio</button>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[300px]">hub</span>
+</div>
+</div>
+<!-- Deployment pipeline stats -->
+<div class="col-span-12 md:col-span-5 bg-surface-container-high p-8 flex flex-col justify-between border-t-2 border-primary">
+<div>
+<h3 class="font-headline font-bold tracking-widest uppercase text-xs text-primary mb-8">Deployment Pipeline</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-xs font-headline uppercase text-on-surface-variant">Auth Handshake</span>
+<span class="text-sm font-mono text-white">0.4ms</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-xs font-headline uppercase text-on-surface-variant">Global Routing</span>
+<span class="text-sm font-mono text-white">CF-Workers/Anycast</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="text-xs font-headline uppercase text-on-surface-variant">Runtime Inject</span>
+<span class="text-sm font-mono text-white">Encrypted Stream</span>
+</div>
+</div>
+</div>
+<div class="aspect-video bg-surface mt-8 relative">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-px bg-primary/20 absolute"></div>
+<div class="w-1/2 h-full border-x border-primary/20 absolute"></div>
+<span class="text-[10px] font-headline text-primary/60 uppercase tracking-[0.4em] z-10 bg-surface px-4">Active Telemetry Stream</span>
+</div>
+</div>
+</div>
+<!-- Skill Cards UI Preview -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-6">
+<h3 class="font-headline font-bold uppercase text-xs text-on-surface-variant mb-6 flex justify-between items-center">
+                        Marketplace Preview
+                        <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 tracking-tighter">LIVE FEED</span>
+</h3>
+<!-- Skill Card -->
+<div class="bg-surface p-4 border-l border-primary/40 group hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between mb-4">
+<span class="text-[10px] font-headline bg-outline-variant/20 px-2 py-1 uppercase text-white">Navigation</span>
+<span class="text-[10px] font-mono text-primary">ID: SKL-992</span>
+</div>
+<h4 class="font-headline font-bold uppercase mb-2">Kinetic Pathfinding v4</h4>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-[10px] uppercase font-headline text-on-surface-variant">
+<span>Benchmark</span>
+<span class="text-white">99.2% Accuracy</span>
+</div>
+<div class="flex justify-between text-[10px] uppercase font-headline text-on-surface-variant">
+<span>Latency</span>
+<span class="text-white">12ms (Jetson)</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+<span class="text-lg font-headline font-bold text-white">$420<span class="text-xs font-normal text-on-surface-variant ml-1">/NODE</span></span>
+<button class="text-[10px] font-headline font-bold uppercase tracking-widest text-primary">Deploy</button>
+</div>
+</div>
+</div>
+<!-- Runtime / Compatibility Section -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-low grid grid-cols-1 md:grid-cols-2">
+<div class="p-12 border-r border-outline-variant/10">
+<h3 class="text-3xl font-headline font-bold tracking-tight uppercase mb-6 leading-tight">Universal <br/>Hardware Bridge</h3>
+<p class="text-on-surface-variant text-sm mb-8">Seamless execution across the NVIDIA edge ecosystem. Our runtime provides native optimization for specific ISA requirements without code modification.</p>
+<div class="space-y-4">
+<div class="bg-surface-container-highest p-4 flex items-center justify-between">
+<span class="font-headline font-bold uppercase text-xs tracking-widest">NVIDIA Jetson AGX</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-container-highest p-4 flex items-center justify-between">
+<span class="font-headline font-bold uppercase text-xs tracking-widest">NVIDIA IGX Orin</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<div class="p-12 flex flex-col justify-center items-center text-center relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="Technical schematic of a circuit board and microchips with blue glowing light paths and futuristic digital interface elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTZJ1FH0F-CigLbCYjCEzy0tz-UKmzPMAELJSSLIomzpBM0HvWsXdrVCOUwTGyla1OD0s_Jyhn1Y9V07-dJ4VrvRvBvrISjV9Y7YvIxnNmPY9Z31GhkyvtciJj0GJojwYRRN_61Or2afXN11vhoMMXQez5gzJ5vlOi5h42csdd_uT5hmQDiZ0cu7yfrPLC5UI6b5ktps1rrLZC7fhNfQJTu8c137CKw7FB7T2eWxWWv39B82x1N9Dop4sJvFfwB6Y_FYYL9NuoNuhg"/>
+<div class="relative z-10">
+<div class="mb-6 inline-block p-4 border border-primary">
+<span class="material-symbols-outlined text-5xl text-primary">memory</span>
+</div>
+<h4 class="font-headline font-bold uppercase tracking-widest mb-2">Runtime Workflow</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Zero-Latency Local Execution</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Pipeline Visualization -->
+<section class="mb-32 bg-surface-container-low py-24">
+<div class="px-12 max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-4xl font-headline font-bold uppercase tracking-tighter mb-4">The Infrastructure Stack</h2>
+<p class="text-on-surface-variant font-light">Powered by Cloudflare Workers for global low-latency orchestration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Connector lines for desktop -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-outline-variant/30 -z-0"></div>
+<div class="bg-surface p-8 border-b-4 border-primary z-10">
+<div class="text-primary font-headline font-bold mb-4">LOAD</div>
+<h5 class="font-headline font-bold uppercase text-sm mb-2">Ingress Node</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Raw sensor telemetry and skill manifest validation at the edge.</p>
+</div>
+<div class="bg-surface p-8 border-b-4 border-primary z-10">
+<div class="text-primary font-headline font-bold mb-4">RESOLVE</div>
+<h5 class="font-headline font-bold uppercase text-sm mb-2">CF-Worker Core</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Dynamic routing and subscription verification via distributed backend.</p>
+</div>
+<div class="bg-surface p-8 border-b-4 border-primary z-10">
+<div class="text-primary font-headline font-bold mb-4">OPTIMIZE</div>
+<h5 class="font-headline font-bold uppercase text-sm mb-2">Kernel JIT</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Just-in-time optimization of neural weights for specific device SKU.</p>
+</div>
+<div class="bg-surface p-8 border-b-4 border-primary z-10">
+<div class="text-primary font-headline font-bold mb-4">EXECUTE</div>
+<h5 class="font-headline font-bold uppercase text-sm mb-2">Local Runtime</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Deterministic physical movement execution with safety interlocks.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA / Footer Split -->
+<section class="px-12 mb-32 max-w-7xl mx-auto">
+<div class="bg-primary flex flex-col md:flex-row items-center">
+<div class="p-16 flex-1">
+<h2 class="text-on-primary-fixed text-5xl font-headline font-bold tracking-tighter uppercase mb-6 leading-[0.85]">Join the <br/>Physical AI Frontier</h2>
+<p class="text-on-primary-fixed/80 max-w-md font-medium text-lg leading-relaxed">We are currently onboarding early hardware partners and world-class AI creators.</p>
+</div>
+<div class="p-16 flex flex-col gap-4">
+<button class="bg-on-primary-fixed text-primary px-12 py-5 font-headline font-black uppercase text-sm tracking-widest hover:scale-105 transition-transform">Investor Connect</button>
+<button class="border-2 border-on-primary-fixed text-on-primary-fixed px-12 py-5 font-headline font-bold uppercase text-sm tracking-widest hover:bg-on-primary-fixed hover:text-primary transition-colors">Documentation</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#0e0e0e] bg-[#131313]">
+<div class="text-xl font-black text-white font-headline">KAUSHAL PHYSICAL AI</div>
+<div class="flex gap-8">
+<a class="font-headline tracking-widest text-[10px] uppercase text-white/40 hover:text-white transition-opacity" href="#">Privacy Policy</a>
+<a class="font-headline tracking-widest text-[10px] uppercase text-white/40 hover:text-white transition-opacity" href="#">Terms of Service</a>
+<a class="font-headline tracking-widest text-[10px] uppercase text-white/40 hover:text-white transition-opacity" href="#">Contact Systems</a>
+<a class="font-headline tracking-widest text-[10px] uppercase text-white/40 hover:text-white transition-opacity" href="#">Terminal Access</a>
+</div>
+<div class="font-headline tracking-widest text-[10px] uppercase text-white/40">
+            © 2024 KAUSHAL PHYSICAL AI. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>
