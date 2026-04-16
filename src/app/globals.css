@@ -58,6 +58,22 @@
     background: rgba(14, 14, 14, 0.6);
     backdrop-filter: blur(24px);
   }
+
+  .font-devanagari {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  .font-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .font-kr {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+  .font-thai {
+    font-family: 'Noto Sans Thai', sans-serif;
+  }
 }
 
 @layer utilities {

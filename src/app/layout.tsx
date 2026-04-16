@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Noto+Sans+Devanagari:wght@700;900&family=Noto+Sans+JP:wght@700&family=Noto+Sans+KR:wght@700&family=Noto+Sans+Arabic:wght@700&family=Noto+Sans+Thai:wght@700&display=swap"
           rel="stylesheet"
         />
       </head>

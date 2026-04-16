@@ -22,8 +22,26 @@ export default function HomePage() {
             </span>
           </div>
           <h1 className="text-6xl md:text-9xl font-black font-headline tracking-tighter leading-none mb-6 text-white uppercase italic">
-            The Kaushal<br />(Skill) <span className="text-primary not-italic">Marketplace</span>
+            The <span className="font-devanagari not-italic">कौशल</span>
+            <br /><span className="text-primary not-italic">Marketplace</span>
           </h1>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-6 text-white/25 text-sm font-medium tracking-wide">
+            <span><span className="font-devanagari text-white/40">कौशल</span> <span className="text-white/15 text-xs">(Hindi)</span></span>
+            <span className="text-white/10">·</span>
+            <span><span className="font-jp">技能</span> <span className="text-white/15 text-xs">(Japanese)</span></span>
+            <span className="text-white/10">·</span>
+            <span><span className="font-kr">기술</span> <span className="text-white/15 text-xs">(Korean)</span></span>
+            <span className="text-white/10">·</span>
+            <span><span className="font-arabic" dir="rtl">مهارة</span> <span className="text-white/15 text-xs">(Arabic)</span></span>
+            <span className="text-white/10">·</span>
+            <span><span className="font-thai">ทักษะ</span> <span className="text-white/15 text-xs">(Thai)</span></span>
+            <span className="text-white/10">·</span>
+            <span>навык <span className="text-white/15 text-xs">(Russian)</span></span>
+            <span className="text-white/10">·</span>
+            <span>habilidad <span className="text-white/15 text-xs">(Spanish)</span></span>
+            <span className="text-white/10">·</span>
+            <span>compétence <span className="text-white/15 text-xs">(French)</span></span>
+          </div>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-light tracking-wide mb-12">
             The open marketplace where physical AI skills trained in NVIDIA Isaac Sim are traded,
             deployed, and executed on robots. PanditaAI is expertise, delivered.
