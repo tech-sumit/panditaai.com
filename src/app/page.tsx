@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+import SkillWordCycle, { SKILL_WORDS } from "@/components/ui/SkillWordCycle";
 
 export default function HomePage() {
+  const [skillIndex, setSkillIndex] = useState(0);
   return (
     <>
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -21,26 +24,41 @@ export default function HomePage() {
               Live Training Systems Active
             </span>
           </div>
-          <h1 className="text-6xl md:text-9xl font-black font-headline tracking-tighter leading-none mb-6 text-white uppercase italic">
-            The <span className="font-devanagari not-italic">कौशल</span>
-            <br /><span className="text-primary not-italic">Marketplace</span>
+          <h1 className="text-6xl md:text-9xl font-black font-headline tracking-tighter leading-[1.05] mb-6 text-white uppercase italic">
+            The <SkillWordCycle onChange={setSkillIndex} />
+            <br />
+            <span className="text-primary not-italic">Marketplace</span>
           </h1>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-6 text-white/25 text-sm font-medium tracking-wide">
-            <span><span className="font-devanagari text-white/40">कौशल</span> <span className="text-white/15 text-xs">(Hindi)</span></span>
-            <span className="text-white/10">·</span>
-            <span><span className="font-jp">技能</span> <span className="text-white/15 text-xs">(Japanese)</span></span>
-            <span className="text-white/10">·</span>
-            <span><span className="font-kr">기술</span> <span className="text-white/15 text-xs">(Korean)</span></span>
-            <span className="text-white/10">·</span>
-            <span><span className="font-arabic" dir="rtl">مهارة</span> <span className="text-white/15 text-xs">(Arabic)</span></span>
-            <span className="text-white/10">·</span>
-            <span><span className="font-thai">ทักษะ</span> <span className="text-white/15 text-xs">(Thai)</span></span>
-            <span className="text-white/10">·</span>
-            <span>навык <span className="text-white/15 text-xs">(Russian)</span></span>
-            <span className="text-white/10">·</span>
-            <span>habilidad <span className="text-white/15 text-xs">(Spanish)</span></span>
-            <span className="text-white/10">·</span>
-            <span>compétence <span className="text-white/15 text-xs">(French)</span></span>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-6 text-sm font-medium tracking-wide">
+            {SKILL_WORDS.map((entry, i) => {
+              const active = i === skillIndex;
+              return (
+                <span key={entry.lang} className="flex items-center gap-5">
+                  <span
+                    className={`transition-colors duration-300 ${
+                      active ? "text-primary" : "text-white/25"
+                    }`}
+                  >
+                    <span
+                      className={entry.fontClass ?? ""}
+                      dir={entry.dir ?? "ltr"}
+                    >
+                      {entry.word}
+                    </span>{" "}
+                    <span
+                      className={`text-xs transition-colors duration-300 ${
+                        active ? "text-primary/70" : "text-white/15"
+                      }`}
+                    >
+                      ({entry.lang})
+                    </span>
+                  </span>
+                  {i < SKILL_WORDS.length - 1 && (
+                    <span className="text-white/10">·</span>
+                  )}
+                </span>
+              );
+            })}
           </div>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-light tracking-wide mb-12">
             Capturing human expertise. Training robots in NVIDIA Omniverse. An open marketplace of physical AI skills — martial arts, cooking, walking, dancing, gardening — deployable to any humanoid robot.
